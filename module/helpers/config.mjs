@@ -1,23 +1,23 @@
-export const BOILERPLATE = {};
+export const zerok = {};
 
 /**
  * The set of Ability Scores used within the sytem.
  * @type {Object}
  */
- BOILERPLATE.abilities = {
-  "str": "BOILERPLATE.AbilityStr",
-  "dex": "BOILERPLATE.AbilityDex",
-  "con": "BOILERPLATE.AbilityCon",
-  "int": "BOILERPLATE.AbilityInt",
-  "wis": "BOILERPLATE.AbilityWis",
-  "cha": "BOILERPLATE.AbilityCha"
+ zerok.abilities = {
+  "str": "zerok.AbilityStr",
+  "dex": "zerok.AbilityDex",
+  "con": "zerok.AbilityCon",
+  "int": "zerok.AbilityInt",
+  "wis": "zerok.AbilityWis",
+  "cha": "zerok.AbilityCha"
 };
 
-BOILERPLATE.abilityAbbreviations = {
-  "str": "BOILERPLATE.AbilityStrAbbr",
-  "dex": "BOILERPLATE.AbilityDexAbbr",
-  "con": "BOILERPLATE.AbilityConAbbr",
-  "int": "BOILERPLATE.AbilityIntAbbr",
-  "wis": "BOILERPLATE.AbilityWisAbbr",
-  "cha": "BOILERPLATE.AbilityChaAbbr"
+zerok.abilityAbbreviations = {
+  "str": "zerok.AbilityStrAbbr",
+  "dex": "zerok.AbilityDexAbbr",
+  "con": "zerok.AbilityConAbbr",
+  "int": "zerok.AbilityIntAbbr",
+  "wis": "zerok.AbilityWisAbbr",
+  "cha": "zerok.AbilityChaAbbr"
 };
