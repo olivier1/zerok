@@ -1,0 +1,36 @@
+{
+    "name": "zerok",
+    "title": "ZeroK",
+    "description": "ZeroK System",
+    "version": "0.1",
+    "minimumCoreVersion": "0.8.9",
+    "compatibleCoreVersion": "0.8.9",
+    "author": "Olivier Bouchard Vanasse",
+    "esmodules": ["module/zerok.js"],
+    "styles": ["css/zerok.css"],
+    "scripts": [],
+    "packs": [{
+        "label": "Skills",
+        "entity": "Item",
+        "name": "zerokskills-fantasy",
+        "path": "./packs/zerokskills-fantasy.db",
+        "system": "zerok",
+        "module": "zerok"
+    }],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "gridDistance": 1,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "secChar.wounds",
+    "secondaryTokenAttribute": "power",
+    "socket": true,
+    "url": "https://github.com/olivier1/zerok",
+    "manifest": "https://raw.githubusercontent.com/olivier1/zerok/master/system.json",
+    "download": "https://github.com/olivier1/zerok/archive/0.1.zip",
+    "license": "LICENSE.txt"
+}
