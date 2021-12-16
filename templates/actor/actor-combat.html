@@ -1,0 +1,571 @@
+<div class="sheet-combat flexcol">
+
+    <div class="characteristics grid grid-10col">
+        <span class="characteristicsSpan"></span>
+
+        {{#each data.characteristics as |char key|}}
+        {{#unless (compareString key "inf")}}
+        <div class="charCross flexcol flex-group-center">
+            <label for="data.characteristics.{{key}}.value" class="resource-label">{{key}}</label>
+        </div>
+        {{/unless}}
+        {{/each}}
+        <div class="charCross flexcol flex-group-center">
+            <span class="characteristicsSpan">Total</span>
+        </div>
+        {{#each data.characteristics as |char key|}}
+        {{#unless (compareString key "inf")}}
+        <div class="charCross flexcol flex-group-center">
+            <span class="char-total rollable button" data-roll-type="char" data-target="{{char.total}}" data-label="{{char.label}}" data-char="{{key}}" title="Bonus: {{char.bonus}}">{{char.total}}</span>
+        </div>
+        {{/unless}}
+        {{/each}}
+    </div>
+    <div class="resources flexrow">
+
+        <div class="flex-group-center">
+            <label for="data.secChar.wounds.value" class="resource-label">Wounds</label>
+            <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" class="combat-resources" data-target="data.secChar.wounds.value" value="{{data.secChar.wounds.value}}" data-dtype="Number"/>
+                <span> / </span>
+                <input type="text" class="combat-resources" data-target="data.secChar.wounds.max" value="{{data.secChar.wounds.max}}" data-dtype="Number"/>
+            </div>
+        </div>
+        <div class="flex-group-center">
+            <label for="data.secChar.fatigue.value" class="resource-label">Fatigue</label>
+            <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" class="combat-resources" data-target="data.secChar.fatigue.value" value="{{data.secChar.fatigue.value}}" data-dtype="Number"/>
+                <span> / </span>
+                <span type="text">{{data.secChar.fatigue.max}}</span>
+            </div>
+        </div>
+
+        <div class="flex-group-center">
+            <label for="data.fatigue.value" class="resource-label">Global Modifier</label>
+            <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" class="combat-resources" data-target="data.globalMOD.value" value="{{data.globalMOD.value}}" data-dtype="Number"/>
+            </div>
+        </div>
+        <div class="flex-group-center">
+            <label for="data.fatigue.value" class="resource-label">Fate</label>
+            <div class="resource-content flexrow flex-center flex-between">
+                <input type="text" class="combat-resources" data-target="data.secChar.fate.value" value="{{data.secChar.fate.value}}" data-dtype="Number"/>
+                <span> / </span>
+                <input type="text" class="combat-resources" data-target="data.secChar.fate.max" value="{{data.secChar.fate.max}}" data-dtype="Number"/>
+            </div>
+        </div>
+        {{#each actor.skills as |skill key|}}
+        {{#if (contains skill.name "Dodge")}}
+        <div class=" flex-group-center">
+            <label class="resource-label">{{skill.name}}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+                <span class="char-total rollable button" data-roll-type="skill" data-target="{{skill.data.total.value}}" data-label="{{skill.name}}" data-char="{{skill.data.characteristic.value}}" >{{skill.data.total.value}}</span>
+            </div>
+        </div>
+        {{/if}}
+        {{#if (contains skill.name "Parry")}}
+        <div class="flex-group-center">
+            <label class="resource-label">{{skill.name}}</label>
+            <div class="resource-content flexrow flex-center flex-between">
+                <span class="char-total rollable button" data-roll-type="skill" data-target="{{skill.data.total.value}}" data-label="{{skill.name}}" data-char="{{skill.data.characteristic.value}}" >{{skill.data.total.value}}</span>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+        <div class="flex-group-center">
+            <label class="resource-label">Fear</label>
+            <div class="resource-content flexrow flex-center flex-between">
+                <span class="char-total rollable button" data-roll-type="fear" data-target="{{data.characteristics.wp.total}}" data-label="Fear" data-char="wp" >Test</span>
+            </div>
+        </div>
+    </div>
+    <div class="combat-weaponsarmor grid grid-2col">
+        <div class="flexcol flex-group-center">
+            {{#if (length favoritePowers)}}
+            <span class="section-title">POWERS</span>
+            {{#each favoritePowers}}
+            <div class="list-item flexcol">
+            
+            <div class="grid grid-3col">
+
+
+
+
+                <a class="list-item psy-name item-descr" data-name="{{this.name}}" data-item-descr="{{this.data.description.value}}">Name: {{this.name}}</a>
+
+
+
+                <label class="list-item">Action: {{this.data.action.value}}</label>
+
+                {{#unless (contains ../data.psykana.psykerType.value "navigator")}}
+                
+
+                
+                <div class="list-item flexrow">
+                    <label>PR: </label>
+                    <input type="text" class="item-text-input" data-target="data.curPR.value" data-item-id="{{this._id}}" value="{{this.data.curPR.value}}" data-dtype="Number">
+                </div>
+
+
+                <label class="list-item">Sustain: {{this.data.sustain.value}}</label>
+                {{else}}
+                
+
+                
+                {{/unless}}
+                
+
+
+
+                
+
+
+
+                <label class="list-item">Range: {{this.data.range.value}}m</label>
+
+                {{#if (contains this.data.class.value "psychic")}}
+
+
+
+                <label class="list-item">Penetration: {{this.data.pen.value}}</label>
+
+                <div class="list-item">
+                    <span>Special: 
+                        {{#each this.flags.zerok as |flag key|}}
+
+                        {{#if this}}
+
+                        {{#with (lookup ../zerok.weaponFlags [key])~}}
+                        <a class="item-descr" data-name="{{label}}" data-item-descr="{{description}}" >
+
+                            {{label}}{{/with}}{{#if (isnumber this)}}({{this}}){{/if}}</a>
+                        {{/if}}{{/each}}
+
+                    </span>
+
+                </div>
+
+                <label class="list-item">Damage Type: {{this.data.damageType.value}}</label>
+
+                {{/if}}
+
+                <div class="list-item flexcol">
+                    <label>Test Target: </label>
+                    <span data-item-id="{{this._id}}" class="rollable powerItem button{{#if (greaterThan this.data.curPR.value ../data.psykana.pr.effective)}} power-push{{else}} power-safe{{/if}}" data-roll-type="focuspower" data-target="{{this.data.target.value}}" data-label="{{this.name}}" data-char="{{this.data.testChar.type}}">{{this.data.target.value}}</span>
+                </div>
+                {{#if (contains this.data.class.value "psychic")}}
+                <label class="list-item">Damage: <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.damageFormula.value}}" data-weapon="{{this._id}}">{{this.data.damageFormula.value}}</a></label>
+                {{else if (contains this.data.class.value "Buff/Debuff")}}
+                <label class="list-item"><a class="buff-debuff button" data-label="{{this.name}}"data-power="{{this._id}}">Apply Buff/Debuff</a></label>
+                {{/if}}
+                
+               
+            </div>
+
+
+
+        </div>
+            {{/each}}
+            {{/if}}
+            <span class="section-title" title="This represents your wielded weapons, you can add additional wielded weapons if you have sub weapons or mechadentrites etc.">WEAPONS</span>
+            <div class="flexrow">
+                <a class="worn-item-plus plus-button" title="Add extra weapon"></a>
+                <a class="worn-item-minus minus-button" title="Delete extra weapon"></a>
+            </div>
+            <div class="flexrow">
+                <div class="flexcol weapon-select">
+                    <span>Left Hand</span>
+                    <select class="hand-weapon" data-hand="left" id="left">
+
+                        
+                        <option value="" {{#if data.secChar.wornGear.weapons.[1].data}}selected{{/if}}>None</option>
+                        
+                        {{#each actor.meleeWeapons}}
+                        <option value="{{this._id}}" {{#if (contains this.data.isEquipped "left")}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                        {{#each actor.rangedWeapons}}
+
+                        <option value="{{this._id}}" {{#if (contains this.data.isEquipped "left")}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="flexcol weapon-select">
+                    <span>Right Hand</span>
+                    <select class="hand-weapon" data-hand="right"  id="right">
+                        
+                        <option value="" {{#if data.secChar.wornGear.weapons.[0].data}}selected{{/if}}>None</option>
+                        
+                        {{#each actor.meleeWeapons}}
+                        <option value="{{this._id}}" {{#if (contains this.data.isEquipped "right")}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                        {{#each actor.rangedWeapons}}
+
+                        <option value="{{this._id}}" {{#if (contains this.data.isEquipped "right")}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+
+                        
+                    </select>
+                </div>
+                {{#each data.secChar.wornGear.extraWeapons}}
+                
+                <div class="flexcol weapon-select">
+                    <label>Extra Weapon</label>
+                    <select class="extra-weapon" data-index="{{@index}}">
+                       
+                        <option value="" {{#if data.secChar.wornGear.extraWeapons.[@index].data}}selected{{/if}}>None</option>
+                        {{#each ../actor.meleeWeapons}}
+                        <option value="{{this._id}}" {{#if (contains this.data.isEquipped @../index)}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                        {{#each ../actor.rangedWeapons}}
+                        <option value="{{this._id}}" {{#if (contains this.data.isEquipped @../index)}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                        
+                    </select>
+                </div>
+                
+
+                {{/each}}
+
+
+            </div>
+            {{#each wornGear.weapons}}
+
+            {{#if (contains this.type "ranged")}}
+
+            <div class="weapons grid grid-2col">
+                <div class="weapon-name">
+                    <span>Name: {{this.name}}</span>
+                </div>
+
+
+                <div class="list-item">
+                    <span>Attack: </span> 
+                    {{#if (greaterThan this.data.data.clip.value 0)}}
+                    <span class="ranged-attack rollable button" data-roll-type="rangedAttack" data-target="{{../data.characteristics.bs.total}}" data-item-id="{{this._id}}" data-label="Ranged Attack" data-char="bs">Roll</span>
+                    {{else}}
+                    <span class="weapon-reload button" data-weapon="{{this._id}}" >Reload</span>
+                    {{/if}}
+                </div>
+                <div class="list-item">
+                    <span>Damage: </span> 
+                    <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.data.damageFormula.value}}" data-weapon="{{this._id}}"> {{this.data.data.damageFormula.value}}</a>
+
+                </div>
+                {{#if this.data.flags.zerok.force}}
+                <div class="list-item">
+
+                    <a class="force-roll button" data-label="Force"> Force</a>
+
+
+                </div>
+                {{/if}}
+                {{#if this.data.flags.zerok.maximal}}
+                <div class="list-item">
+                    <span>Maximal: <input type="checkbox" class="maximal" data-item-id="{{this._id}}"  {{checked this.data.flags.zerok.maximalMode}}></span>
+
+
+                </div>
+                {{/if}}
+                {{#if this.data.flags.zerok.lasModal}}
+                <div class="list-item">
+                    <span>Las Fire Mode: 
+                        <select class="lasMode"  data-item-id="{{this._id}}" data-dtype="Number">
+                            {{#select this.data.flags.zerok.lasMode}}
+                            
+                            {{#each this.data.zerok.lasModes}}
+
+                            <option value="{{@index}}">{{this}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </span>
+
+
+                </div>
+                {{/if}}
+
+                {{#unless (contains this.data.data.class.value "thrown")}}
+                <div class="list-item ammo-list">
+
+                    <label>Remaining Ammo:</label>
+                    <select class="weapon-ammo" data-weapon="{{this._id}}" data-previous="{{this.data.data.ammo._id}}">
+
+                        {{#select this.data.data.ammo._id}}
+                        <option value="">None</option>
+
+                        {{#each ../actor.equippableAmmo}}
+                        {{#if (compareString this.data.class.value ../this.data.data.class.value)}}
+                        {{#if (compareString this.data.type.value ../this.data.data.type.value)}}
+                        <option value="{{this._id}}">{{this.name}}:{{this.data.amount.value}}</option>
+                        {{/if}}
+                        {{/if}}
+                        {{/each}}
+
+                        {{/select}}
+                    </select>
+                </div>
+                {{else}}
+                <div class="list-item">
+                    <span>Amount: {{this.data.data.amount.value}}</span> 
+
+
+                </div>
+                {{/unless}}
+                <div class="list-item flexrow">
+                    <span>Current Clip: </span>
+
+                    <input class="item-text-input" type="text" data-target="data.clip.value"  value="{{this.data.data.clip.value}}" data-item-id="{{this._id}}" data-dtype="Number">
+                    <span> / </span>
+                    <span>{{this.data.data.clip.max}}</span>
+
+
+                </div>
+                <div class="list-item">
+                    <span>Range: {{this.data.data.range.value}}m</span>
+                </div>
+                <div class="list-item">
+                    <span>Penetration: {{this.data.data.pen.value}}</span>
+
+                </div>
+                <div class="list-item">
+                    <label>Rate of Fire: {{this.data.data.rof.[0].value}}/{{this.data.data.rof.[1].value}}/{{this.data.data.rof.[2].value}}</label>
+                </div>
+                <div class="list-item">
+                    <span>Reload: {{this.data.data.reload.value}}</span>
+
+                </div>
+                <div class="list-item">
+                    <span>Special: 
+                        
+                        {{#each this.data.flags.zerok as |flag key|}}
+                        
+
+                        {{#if (checkSpecial this)}}
+
+                        {{#with (lookup ../data.zerok.weaponFlags [key])~}}
+                        <a class="item-descr" data-name="{{label}}" data-item-descr="{{description}}" >
+
+                            {{label}}{{/with}}{{#if (isnumber this)}}({{this}}){{/if}}</a>
+                        {{/if}}{{/each}}
+                    </span>
+
+                </div>
+                <div class="list-item">
+                    <span>Damage Type: {{this.data.data.damageType.value}}</span>
+
+                </div>
+                <div class="list-item">
+                    <span>Weapon Class: {{this.data.data.class.value}}</span>
+
+
+                </div>
+                <div class="list-item">
+                    <span>Weapon Type: {{this.data.data.type.value}}</span>
+
+
+                </div>
+
+            </div>
+            {{else if (contains this.type "melee")}}
+            <div class="weapons grid grid-2col">
+
+                <div class="weapon-name">
+                    <span>Name: {{this.name}}</span>
+                </div>
+
+
+                <div class="list-item">
+                    <span>Attack: </span> 
+                    <span class="melee-attack rollable button" data-roll-type="meleeAttack" data-target="{{../data.characteristics.ws.total}}" data-item-id="{{this.id}}" data-label="Melee Attack" data-char="ws">Roll</span>
+                </div>
+                <div class="list-item">
+                    <span>Damage: </span>
+                    <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.data.damageFormula.value}}" data-weapon="{{this._id}}"> {{this.data.data.damageFormula.value}}</a>
+                </div>
+                {{#if this.data.flags.zerok.force}}
+                <div class="list-item">
+
+                    <a class="force-roll button" data-label="Force"> Force</a>
+
+
+                </div>
+                {{/if}}
+                <div class="list-item">
+                    <span>Reach: {{this.data.data.range.value}}m</span>
+                </div>
+                <div class="list-item">
+                    <span>Penetration: {{this.data.data.pen.value}}</span>
+
+                </div>
+                <div class="list-item">
+                    <span>Special: 
+
+                        {{#each this.data.flags.zerok as |flag key|}}
+
+                        {{#if (checkSpecial this)}}
+
+                        {{#with (lookup ../data.zerok.weaponFlags [key])~}}
+                        <a class="item-descr" data-name="{{label}}" data-item-descr="{{description}}" >
+
+                            {{label}}{{/with}}{{#if (isnumber this)}}({{this}}){{/if}}</a>
+                        {{/if}}{{/each}}
+                    </span>
+
+                </div>
+                <div class="list-item">
+                    <span>Damage Type: {{this.data.data.damageType.value}}</span>
+
+                </div>
+                <div class="list-item">
+                    <span>Weapon Class: {{this.data.data.class.value}}</span>
+
+
+                </div>
+                <div class="list-item">
+                    <span>Weapon Type: {{this.data.data.type.value}}</span>
+                </div>
+
+            </div>
+            {{/if}}
+
+            {{/each}}
+
+        </div>
+        <div class="flexcol flex-group-center">
+            <span class="section-title">SIZE</span>
+            <select class="sizeSelect" name="data.secChar.size.value" data-dtype="Number">
+                {{#select data.secChar.size.value}}
+
+                {{#each size}}
+
+                <option value="{{@index}}">{{this.name}}</option>
+
+                {{/each}}
+                {{/select}}
+            </select>
+            <span class="section-title">MOVEMENT</span>
+            <div class="flexrow">
+                <div class="movementbox flex-group-center">
+                    <div class="movementlabel"> <label for="data.fatigue.value" class="movementcontent resource-label">Half Move</label></div>
+
+                    <div class="movementnumber">
+                        <span>{{data.secChar.movement.half}}</span>
+                    </div>
+                </div>
+                <div class="movementbox flex-group-center">
+                    <div class="movementlabel"> <label for="data.fatigue.value" class="movementcontent resource-label">Full Move</label></div>
+
+                    <div class="movementnumber">
+                        <span>{{data.secChar.movement.full}}</span>
+                    </div>
+                </div>
+                <div class="movementbox flex-group-center">
+                    <div class="movementlabel"> <label for="data.fatigue.value" class="movementcontent resource-label">Charge</label></div>
+
+                    <div class="movementnumber">
+                        <span>{{data.secChar.movement.charge}}</span>
+                    </div>
+                </div>
+                <div class="movementbox flex-group-center">
+                    <div class="movementlabel"> <label for="data.fatigue.value" class="movementcontent resource-label">Run</label></div>
+
+                    <div class="movementnumber">
+                        <span>{{data.secChar.movement.run}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="forcefield flexcol">
+
+                <span class="section-title">FORCE FIELD</span>
+                <div class="flexcol flex-group-center">
+                    <select class="force-field" >
+                        
+                        <option value="" {{#if data.secChar.wornGear.forceField.data}}selected{{/if}}>None</option>
+                        {{#each actor.forceFields}}
+                        <option value="{{this._id}}" {{#if this.data.isEquipped}}selected{{/if}}>{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                    {{#if data.secChar.wornGear.forceField._id}}
+                    <div class="forcefield flexrow flex-group-center">
+                        <label>Overload: {{data.secChar.wornGear.forceField.data.rating.overload}}</label>
+                        <label>Rating: </label> 
+                        <span class="forcefield rollable button" data-roll-type="forcefield" data-target="{{data.secChar.wornGear.forceField.data.rating.value}}" data-label="{{data.secChar.wornGear.forceField.name}}" data-char="{{data.secChar.wornGear.forceField.data.rating.overload}}" >{{data.secChar.wornGear.forceField.data.rating.value}}</span>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="forcefield flexcol" >
+                <span class="section-title">ARMOR & ABSORBTION</span>
+                <select class="armor-select" >
+                    
+                    <option value="" {{#if data.secChar.wornGear.armor.data}}selected{{/if}}>None</option>
+                    {{#each actor.armors}}
+
+                    <option value="{{this._id}}" {{#if this.data.isEquipped}}selected{{/if}}>{{this.name}}</option>
+                    {{/each}}
+                </select>
+                <div class="flexcol">
+                    <span class="section-title">COVER</span>
+                    <span class="cover-reset button">Reset Cover</span>
+                    <input type="text"  title="cover" name="data.secChar.cover.value" value="{{data.secChar.cover.value}}" data-dtype="Number"/>
+                    <div class="flexrow flex-group-center">
+                        <div class="armor flexcol flex-group-center">
+
+                            <span>Head</span>
+                            <span>(1-10)</span>
+                            <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.head.cover" {{checked data.characterHitLocations.head.cover}}>
+                            <span title="Armor">{{data.characterHitLocations.head.armor}}</span>
+                            <span title="Total Soak">{{data.characterHitLocations.head.value}}</span>
+                        </div>
+
+                    </div>
+                    <div class="flexrow flex-group-center">
+                        <div class="armor flexcol flex-group-center">
+
+                            <span>Left Arm</span>
+                            <span>(21-30)</span>
+                            <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.lArm.cover" {{checked data.characterHitLocations.lArm.cover}}>                           
+                            <span title="Armor">{{data.characterHitLocations.lArm.armor}}</span>
+                            <span title="Total Soak">{{data.characterHitLocations.lArm.value}}</span>
+                        </div>
+                        <div class="armor flexcol flex-group-center">
+
+                            <span>Body</span>
+                            <span>(31-70)</span>
+                            <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.body.cover" {{checked data.characterHitLocations.body.cover}}>                            
+                            <span title="Armor">{{data.characterHitLocations.body.armor}}</span>
+                            <span title="Total Soak">{{data.characterHitLocations.body.value}}</span>
+                        </div>
+                        <div class="armor flexcol flex-group-center">
+
+                            <span>Right Arm</span>
+                            <span>(11-20)</span>
+                            <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.rArm.cover" {{checked data.characterHitLocations.rArm.cover}}>                            
+                            <span title="Armor">{{data.characterHitLocations.rArm.armor}}</span>
+                            <span title="Total Soak">{{data.characterHitLocations.rArm.value}}</span>
+                        </div>
+                    </div>
+                    <div class="flexrow flex-group-center">
+
+                        <div class="armor flexcol flex-group-center">
+
+                            <span>Left Leg</span>
+                            <span>(71-85)</span>
+                            <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.lLeg.cover" {{checked data.characterHitLocations.lLeg.cover}}>
+                            <span title="Armor" >{{data.characterHitLocations.lLeg.armor}}</span>
+                            <span title="Total Soak">{{data.characterHitLocations.lLeg.value}}</span>
+                        </div>
+                        <div class="armor flexcol flex-group-center">
+
+                            <span>Right Leg</span>
+                            <span>(86-100)</span>
+                            <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.rLeg.cover" {{checked data.characterHitLocations.rLeg.cover}}>
+                            <span title="Armor" >{{data.characterHitLocations.rLeg.armor}}</span>
+                            <span title="Total Soak">{{data.characterHitLocations.rLeg.value}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

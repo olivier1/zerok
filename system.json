@@ -1,22 +1,213 @@
 {
     "name": "zerok",
-    "title": "ZeroK",
-    "description": "ZeroK System",
+    "title": "zerok",
+    "description": "The zerok system for FoundryVTT!",
     "version": "0.1",
-    "minimumCoreVersion": "0.8.9",
+    "minimumCoreVersion": "0.8.6",
     "compatibleCoreVersion": "0.8.9",
+    "templateVersion": 9,
     "author": "Olivier Bouchard Vanasse",
     "esmodules": ["module/zerok.js"],
     "styles": ["css/zerok.css"],
     "scripts": [],
-    "packs": [{
-        "label": "Skills",
-        "entity": "Item",
-        "name": "zerokskills-fantasy",
-        "path": "./packs/zerokskills-fantasy.db",
-        "system": "zerok",
-        "module": "zerok"
-    }],
+    "packs": [ 
+        {
+            "name": "skills",
+            "label": "Skills",
+            "system": "zerok",
+            "module": "zerok",
+            "path": "./packs/skills.db",
+            "entity": "Item",
+            "tag" : "skill"
+        },
+        {
+            "name": "talent-core-dh2",
+            "label": "Talents (Core DH2)",
+            "system": "zerok",
+            "module": "zerok",
+            "path": "./packs/talent-core-dh2.db",
+            "entity": "Item",
+            "tag" : "talentdh2core"
+        },
+        {
+            "label": "Traits (Core DH2)",
+            "entity": "Item",
+            "name": "traits-core-dh2",
+            "path": "./packs/traits-core-dh2.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "traitdh2core"  
+        },
+        {
+            "label": "Role, Homeworld & Background Bonus(Core DH2)",
+            "entity": "Item",
+            "name": "role-homeworld-and-background-bonuscore-dh2",
+            "path": "./packs/role-homeworld-and-background-bonuscore-dh2.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "bonusdh2core"
+        },
+        {
+            "label": "Talents (Enemies Within)",
+            "entity": "Item",
+            "name": "talents-enemies-within",
+            "path": "./packs/talents-enemies-within.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "talentenemywithin"
+        },
+        {
+            "label": "Role, Homeworld & Background Bonus(Enemies Within)",
+            "entity": "Item",
+            "name": "role-homeworld-and-background-bonusenemies-within",
+            "path": "./packs/role-homeworld-and-background-bonusenemies-within.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "bonusenemywithin"
+        },
+        {
+            "label": "Role, Homeworld & Background Bonus(Enemies Without)",
+            "entity": "Item",
+            "name": "role-homeworld-and-background-bonusenemies-without",
+            "path": "./packs/role-homeworld-and-background-bonusenemies-without.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "bonusenemywithout"
+        },
+        {
+            "label": "Talents (Enemies Without)",
+            "entity": "Item",
+            "name": "talents-enemies-without",
+            "path": "./packs/talents-enemies-without.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "talentenemywithout"
+        },
+        {
+            "label": "Talents (Enemies Beyond)",
+            "entity": "Item",
+            "name": "talents-enemies-beyond",
+            "path": "./packs/talents-enemies-beyond.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "talentenemybeyond"
+        },
+        {
+            "label": "Role, Homeworld & Background Bonus(Enemies Beyond)",
+            "entity": "Item",
+            "name": "role-homeworld-and-background-bonusenemies-beyond",
+            "path": "./packs/role-homeworld-and-background-bonusenemies-beyond.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "bonusenemybeyond"
+        },
+        {
+            "label": "Deathwatch Bonus and Drawbacks",
+            "entity": "Item",
+            "name": "deathwatch-bonus-and-drawbacks",
+            "path": "./packs/deathwatch-bonus-and-drawbacks.db",
+            "system": "zerok",
+            "module": "zerok",
+            "tag" : "deathwatchbonusdrawbacks"
+        },
+        {
+            "label": "Homeworld and specialty Abilities (Core OW)",
+            "entity": "Item",
+            "name": "homeworld-and-specialty-abilities-core-ow",
+            "path": "./packs/homeworld-and-specialty-abilities-core-ow.db",
+            "system": "zerok",
+            "module": "zerok"
+            
+        },
+        {
+            "label": "Talents (OW Core)",
+            "entity": "Item",
+            "name": "talents-ow-core",
+            "path": "./packs/talents-ow-core.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Homeworld and Specialty Abilities (Hammer of the Emperor)",
+            "entity": "Item",
+            "name": "homeworld-and-specialty-abilities-hammer-of-the-emperor",
+            "path": "./packs/homeworld-and-specialty-abilities-hammer-of-the-emperor.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Talents (Hammer of the Emperor)",
+            "entity": "Item",
+            "name": "talents-hammer-of-the-emperor",
+            "path": "./packs/talents-hammer-of-the-emperor.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Orders (Hammer of the Emperor)",
+            "entity": "Item",
+            "name": "orders-hammer-of-the-emperor",
+            "path": "./packs/orders-hammer-of-the-emperor.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Homeworld and Specialty Abilities (Shield of Humanity)",
+            "entity": "Item",
+            "name": "homeworld-and-specialty-abilities-shield-of-humanity",
+            "path": "./packs/homeworld-and-specialty-abilities-shield-of-humanity.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Talents (Shield of Humanity)",
+            "entity": "Item",
+            "name": "talents-shield-of-humanity",
+            "path": "./packs/talents-shield-of-humanity.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Orders (Shield of Humanity)",
+            "entity": "Item",
+            "name": "orders-shield-of-humanity",
+            "path": "./packs/orders-shield-of-humanity.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Melee Weapons",
+            "entity": "Item",
+            "name": "melee-weapons",
+            "path": "./packs/melee-weapons.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Ranged Weapons",
+            "entity": "Item",
+            "name": "ranged-weapons",
+            "path": "./packs/ranged-weapons.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Custom Talents",
+            "entity": "Item",
+            "name": "custom-talents",
+            "path": "./packs/custom-talents.db",
+            "system": "zerok",
+            "module": "zerok"
+        },
+        {
+            "label": "Zerok Skills",
+            "entity": "Item",
+            "name": "zerokskills-fantasy",
+            "path": "./packs/zerokskills-fantasy.db",
+            "system": "zerok",
+            "module": "zerok"
+        }
+    ],
     "languages": [
         {
             "lang": "en",
@@ -27,7 +218,7 @@
     "gridDistance": 1,
     "gridUnits": "m",
     "primaryTokenAttribute": "secChar.wounds",
-    "secondaryTokenAttribute": "power",
+    "secondaryTokenAttribute": "secChar.fatigue",
     "socket": true,
     "url": "https://github.com/olivier1/zerok",
     "manifest": "https://raw.githubusercontent.com/olivier1/zerok/master/system.json",

@@ -1,0 +1,149 @@
+<div class="sheet-psy flexcol">
+
+    <div class="psy-header flexrow">
+        {{#unless (contains data.psykana.psykerType.value "navigator")}}
+        <div class="flexcol">
+            <label>Psy Rating:</label>
+            <input type="text" class="combat-resources" data-target="data.psykana.pr.value" value="{{data.psykana.pr.value}}" data-dtype="Number"/>
+
+        </div>
+        <div class="flexcol">
+            <label>Sustained Powers:</label>
+            <input type="text" class="combat-resources" data-target="data.psykana.pr.sustain" value="{{data.psykana.pr.sustain}}" data-dtype="Number"/>
+
+        </div>
+        <div class="flexcol">
+            <label>Effective PR: {{data.psykana.pr.effective}}</label>
+
+        </div>
+        {{/unless}}
+        <div class="flexcol">
+            <label>Class:</label>
+            <select class="psyType-select" name="data.psykana.psykerType.value" data-dtype="String">
+                {{#select data.psykana.psykerType.value}}
+                <option value="bound">Bound</option>
+                <option value="unbound">Unbound</option>
+                <option value="daemon">Daemon</option>
+                <option value="navigator">Navigator</option>
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Psy Modifier:</label>
+            <input type="text" name="data.psykana.mod.value" value="{{data.psykana.mod.value}}">
+        </div>
+        <div class="flexcol">
+            <label>Show:</label>
+            <select class="psyType-select" name="data.psykana.filter" data-dtype="String">
+                
+                {{#select data.psykana.filter}}
+                <option value="">All</option>
+                {{#each psyDisciplines}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+    </div>
+    <a class="item-create button" data-type="psychicPower" title="Add a new Psychic Power">Add Psychic Power</a>
+    <div class="psy-powers grid grid-2col">
+        {{#each actor.psychicPowers as |power key|}}
+        <div class="list-item flexcol">
+            
+            <div class="grid grid-3col">
+
+
+
+
+                <a class="list-item psy-name item-descr" data-name="{{this.name}}" data-item-descr="{{this.data.description.value}}">Name: {{this.name}}</a>
+
+
+
+
+                <label class="list-item">Action: {{power.data.action.value}}</label>
+
+                {{#unless (contains ../data.psykana.psykerType.value "navigator")}}
+                <label class="list-item">Discipline: {{power.data.discipline.value}}</label>
+                <label class="list-item">Power Type: {{power.data.class.value}}</label>
+
+                <label class="list-item">Subtype: {{power.data.subtype.value}}</label>
+                <div class="list-item flexrow">
+                    <label>PR: </label>
+                    <input type="text" class="item-text-input" data-target="data.curPR.value" data-item-id="{{power._id}}" value="{{power.data.curPR.value}}" data-dtype="Number">
+                </div>
+
+
+                <label class="list-item">Sustain: {{power.data.sustain.value}}</label>
+                {{else}}
+                <div class="list-item2">
+                    Training:
+                    <select class="power-training" data-item-id="{{power._id}}"  name="data.training.value">
+                        {{#select power.data.training.value}}
+                        {{#each zerok.navigatorPowerTraining}}
+                        <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                {{/select}}
+                {{/unless}}
+                <label class="list-item">Test Type: {{power.data.testChar.value}}</label>
+
+
+
+                <label class="list-item">Modifier: {{power.data.testMod.value}}</label>
+
+
+
+                <label class="list-item">Range: {{power.data.range.value}}m</label>
+
+                {{#if (contains power.data.class.value "psychic")}}
+
+
+
+                <label class="list-item">Penetration: {{power.data.pen.value}}</label>
+
+                <div class="list-item">
+                    <span>Special: 
+                        {{#each this.flags.zerok as |flag key|}}
+
+                        {{#if this}}
+
+                        {{#with (lookup ../zerok.weaponFlags [key])~}}
+                        <a class="item-descr" data-name="{{label}}" data-item-descr="{{description}}" >
+
+                            {{label}}{{/with}}{{#if (isnumber this)}}({{this}}){{/if}}</a>
+                        {{/if}}{{/each}}
+
+                    </span>
+
+                </div>
+
+                <label class="list-item">Damage Type: {{power.data.damageType.value}}</label>
+
+                {{/if}}
+
+                <div class="list-item flexcol">
+                    <label>Test Target: </label>
+                    <span data-item-id="{{power._id}}" class="rollable powerItem button{{#if (greaterThan power.data.curPR.value ../data.psykana.pr.effective)}} power-push{{else}} power-safe{{/if}}" data-roll-type="focuspower" data-target="{{power.data.target.value}}" data-label="{{power.name}}" data-char="{{power.data.testChar.type}}">{{power.data.target.value}}</span>
+                </div>
+                {{#if (contains power.data.class.value "psychic")}}
+                <label class="list-item">Damage: <a class="damage-roll button" data-label="{{power.name}}"data-formula="{{power.data.damageFormula.value}}" data-weapon="{{power._id}}">{{power.data.damageFormula.value}}</a></label>
+                {{else if (contains power.data.class.value "Buff/Debuff")}}
+                <label class="list-item"><a class="buff-debuff button" data-label="{{power.name}}"data-power="{{power._id}}">Apply Buff/Debuff</a></label>
+                {{/if}}
+                <div class="list-item flexrow">
+                    <span>Favorite <input type="checkbox" class="favorite" data-item-id="{{this._id}}"  {{checked this.data.favorite}}></span>
+                    <a class="item-edit" title="Edit Power" data-item-id="{{power._id}}"></a>
+                    <a class="item-delete" title="Delete Power" data-item-id="{{power._id}}"></a>
+                </div>
+                
+            </div>
+
+
+
+        </div>
+        {{/each}}
+    </div>
+
+</div>

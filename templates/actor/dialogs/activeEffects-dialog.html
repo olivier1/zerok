@@ -1,0 +1,13 @@
+<div id="aeMod" class="aeMod">
+   
+    {{#each actor.effects as |ae key|}}
+    <div class="flexrow">
+        
+        <a class="ae" data-ae-id="{{this.id}}" data-actor-id="{{../actor.id}}" data-token-id="{{../actor.token.id}}">{{this.data.label}}</a>
+        <a class="ae-delete item-delete" title="Delete" data-actor-id="{{../actor.id}}" data-ae-id="{{this.id}}" data-token-id="{{../actor.token.id}}"></a>
+    </div>
+    {{/each}}
+    
+   
+</div>
+<a class="ae-create button" title="Add Ae" data-actor-id="{{actor.id}}" data-token-id="{{../actor.token.id}}">Add Active Effect</a>

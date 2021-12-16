@@ -1,0 +1,105 @@
+<form class="{{cssClass}} item-sheet flexcol">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+
+    </header>
+    <div class="grid grid-3col">
+        <div class="flexcol">
+            <label>Name:</label>
+            <input type="text" value="{{name}}" name="name">
+        </div>
+        <div class="flexcol">
+            <label>Discipline:</label>
+            <select class="discipline" name="data.discipline.value">
+                {{#select data.discipline.value}}
+                {{#each zerok.psychicDisciplines}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Power Type:</label>
+
+            <select class="power-type" name="data.class.value">
+                {{#select data.class.value}}
+                {{#each zerok.psychicPowerTypes}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Action:</label>
+            <input type="text" value="{{data.action.value}}" name="data.action.value">
+        </div>
+        <div class="flexcol">
+            <label>Subtype:</label>
+            <input type="text" value="{{data.subtype.value}}" name="data.subtype.value">
+        </div>
+
+        <div class="flexcol">
+            <label>Test Type:</label>
+
+            <select class="power-char" name="data.testChar.value">
+                {{#select data.testChar.value}}
+                <option value="wp">Willpower</option>
+                <option value="per">Perception</option>
+                <option value="psy">Psyniscience</option>  
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Modifier:</label>
+            <input type="text" value="{{data.testMod.value}}" name="data.testMod.value" data-dtype="Number">
+        </div>
+        <div class="flexcol">
+            <label>Sustain:</label>
+            <input type="text" value="{{data.sustain.value}}" name="data.sustain.value">
+        </div>
+        <div class="flexcol">
+            <label>Requirements:</label>
+            <input type="text" value="{{data.reqs.value}}" name="data.reqs.value">
+        </div>
+        <div class="flexcol">
+            <label>Range:</label>
+            <input type="text" value="{{data.range.formula}}" name="data.range.formula">
+        </div>
+        {{#if (contains data.class.value "Psychic")}}
+        <div class="flexcol">
+            <label>Damage:</label>
+            <input type="text" value="{{data.damageFormula.formula}}" name="data.damageFormula.formula">
+        </div>
+        <div class="flexcol">
+            <label>Penetration:</label>
+            <input type="text" value="{{data.pen.formula}}" name="data.pen.formula" data-dtype="String">
+        </div>
+        <div class="flexcol">
+
+            <a class="special button">Special</a>
+
+
+        </div>
+        <div class="flexcol">
+            <label>Damage Type:</label>
+            <select class="damage-type" name="data.damageType.value">
+                {{#select data.damageType.value}}
+                {{#each zerok.damageTypes}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        {{else if (contains data.class.value "Buff/Debuff")}}
+        {{#if isGM}}
+        <div class="flexcol">
+            <a class="modifier button">Buff/Debuff</a>
+        </div>
+        {{/if}}
+        {{/if}}
+    </div>
+    <div class="item-description">
+        <label>Description:</label>
+        {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+    </div>
+</form>

@@ -1,76 +1,649 @@
-<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+<form class="{{cssClass}} flexcol" autocomplete="off">
 
-  {{!-- Sheet Header --}}
-  <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-    <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-      {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-      use both the "grid" and "grid-Ncol" class where "N" can be any number
-      from 1 to 12 and will create that number of columns.  --}}
-      <div class="resources grid grid-3col">
+    {{#if isOwner}}
 
-        {{!-- "flex-group-center" is also defined in the _grid.scss file
-        and it will add a small amount of padding, a border, and will
-        center all of its child elements content and text. --}}
-        <div class="resource flex-group-center">
-          <label for="data.health.value" class="resource-label">Health</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number"/>
-          </div>
+    <div class="flexrow">
+        <img class="npc-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+        <div class="npcresources">
+            <div class="npcheader">
+                <div class="descrRow flexcol npcdescr">
+                    <span class="descrSpan">Name:</span>
+                    <input type="text" class="combat-resources" data-target="name" value="{{name}}" data-dtype="Number"/>
+                </div>
+                <div class="descrRow flexcol">
+                    <span class="descrSpan">Race:</span>
+                    <select class="raceSelect" name="data.race.value" data-dtype="String">
+                        {{#select data.race.value}}
+
+                        {{#each races}}
+
+                        <option value="{{this}}">{{this}}</option>
+
+                        {{/each}}
+                        {{/select}}
+                    </select>
+
+                </div>
+            </div>
+            <div class="grid grid-3col">
+                <div class="resource flex-group-center">
+                    <label for="data.secChar.wounds.value" class="resource-label">Wounds</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" class="combat-resources" data-target="data.secChar.wounds.value" value="{{data.secChar.wounds.value}}" data-dtype="Number"/>
+
+                        <span> / </span>
+                        <input type="text" class="combat-resources" data-target="data.secChar.wounds.max" value="{{data.secChar.wounds.max}}" data-dtype="Number"/>
+
+                    </div>
+                </div>
+                
+                <div class="resource flex-group-center">
+                    <label class="resource-label">Global Modifier</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" class="combat-resources" data-target="data.globalMOD.value" value="{{data.globalMOD.value}}" data-dtype="Number"/>
+
+                    </div>
+                </div>
+                <div class="resource flex-group-center">
+                    <label class="resource-label">Fate</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" class="combat-resources" data-target="data.secChar.fate.value" value="{{data.secChar.fate.value}}" data-dtype="Number"/>
+
+                        <span> / </span>
+                        <input type="text" class="combat-resources" data-target="data.secChar.fate.max" value="{{data.secChar.fate.max}}" data-dtype="Number"/>
+                    </div>
+                </div>
+                
+                <div class="resource flex-group-center">
+                    <label  class="resource-label">Sudden Death</label>
+                    <div class="resource-content flex-group-center">
+                        <input type="checkbox" name="data.suddenDeath.value" {{checked data.suddenDeath.value}}>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="resource flex-group-center">
-          <label for="data.power.value" class="resource-label">Power</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="data.power.value" value="{{data.power.value}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" name="data.power.max" value="{{data.power.max}}" data-dtype="Number"/>
-          </div>
+
+
+    <nav class="sheet-tabs npc tabs grid grid-5col" data-group="primary">
+
+        <a class="item " data-tab="weapons">CHARS & WEAPONS</a>
+        <a class="item" data-tab="armor">ARMOR & EQUIPMENT</a>
+        <a class="item" data-tab="tnt">TALENTS & TRAITS</a>
+        <a class="item" data-tab="psykana">PSYKANA</a>
+        <a class="item" data-tab="description">DESCRIPTION</a>
+
+    </nav>
+    <section class="sheet-body npc">
+        <div class="tab weapons" data-group="primary" data-tab="weapons">
+            <div class="characteristics grid grid-9col">
+
+
+
+
+
+                <span class="characteristicsSpan"></span>
+
+
+                {{#each data.characteristics as |char key|}}
+                {{#unless (compareString key "inf")}}
+                <div class="charCross flexcol flex-group-center">
+                    <label for="data.characteristics.{{key}}.value" class="resource-label">{{key}}</label>
+                </div>
+                {{/unless}}
+                {{/each}}
+
+
+                <div class="charCross flexcol flex-group-center">
+                    <span class="characteristicsSpan">Base
+                    </span>
+                </div>
+                {{#each data.characteristics as |char key|}}
+                {{#unless (compareString key "inf")}}
+                <div>
+                    <input type="text" class="combat-resources" data-target="data.characteristics.{{key}}.value" value="{{char.value}}" data-dtype="Number"/>
+
+
+                </div>
+                {{/unless}}
+                {{/each}}
+
+                
+
+
+
+
+
+
+                <div class="charCross flexcol flex-group-center">
+                    <span class="characteristicsSpan">Total</span>
+                </div>
+                {{#each data.characteristics as |char key|}}
+                {{#unless (compareString key "inf")}}
+                <div class="charCross flexcol flex-group-center">
+                    <span class="char-total rollable button" data-roll-type="char" data-target="{{char.total}}" data-label="{{char.label}}" data-char="{{key}}" title="Bonus: {{char.bonus}}">{{char.total}}</span>
+                </div>
+                {{/unless}}
+                {{/each}}
+
+
+
+            </div>
+            <div class="flexrow">
+                <a class="item-create button" data-type="rangedWeapon" title="Add a Ranged Weapon">Add ranged weapon</a>
+                <a class="item-create button" data-type="meleeWeapon" title="Add a Melee Weapon">Add melee weapon</a>
+            </div>
+            <div class="grid grid-2col">
+                {{#each actor.meleeWeapons}}
+                <div>
+                    <div class="weapons grid grid-2col">
+                        <div class="weapon-name">
+                            <span>Name: {{this.name}}</span>
+                        </div>
+
+
+                        <div class="list-item">
+                            <span>Attack: </span>
+                            <span class="melee-attack rollable button" data-roll-type="meleeAttack" data-target="{{../data.characteristics.ws.total}}" data-item-id="{{this._id}}" data-label="Melee Attack" data-char="ws">Roll</span>
+                        </div>
+                        <div class="list-item">
+                            <span>Damage: </span>
+                            <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.damageFormula.value}}" data-weapon="{{this._id}}"> {{this.data.damageFormula.value}}</a>
+                        </div>
+                        {{#if this.flags.zerok.force}}
+                        <div class="list-item">
+
+                            <a class="force-roll button" data-label="Force"> Force</a>
+
+
+                        </div>
+                        {{/if}}
+                        <div class="list-item">
+                            <span>Reach: {{this.data.range.value}}m</span>
+                        </div>
+                        <div class="list-item">
+                            <span>Penetration: {{this.data.pen.value}}</span>
+
+                        </div>
+                        <div class="list-item">
+                            <span>Special: 
+
+                                {{#each this.flags.zerok as |flag key|}}
+
+                                {{#if (checkSpecial this)}}
+
+                                {{#with (lookup ../zerok.weaponFlags [key])~}}
+                                <a class="item-descr" data-name="{{label}}" data-item-descr="{{description}}" >
+
+                                    {{label}}{{/with}}{{#if (isnumber this)}}({{this}}){{/if}}</a>
+                                {{/if}}{{/each}}
+                            </span>
+
+                        </div>
+                        <div class="list-item">
+                            <span>Damage Type: {{this.data.damageType.value}}</span>
+
+                        </div>
+                        <div class="list-item">
+                            <span>Weapon Class: {{this.data.class.value}}</span>
+
+
+                        </div>
+                        <div class="list-item">
+                            <span>Weapon Type: {{this.data.type.value}}</span>
+
+
+                        </div>
+                        <div class="list-item flexrow">
+                            <a class="list-button item-edit" title="Edit" data-item-id="{{this._id}}"></a>
+                            <a class="list-button item-delete" title="Delete" data-item-id="{{this._id}}"></a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                {{#each actor.rangedWeapons}}
+                <div>
+
+                    <div class="weapons grid grid-2col">
+                        <div class="weapon-name">
+                            <span>Name: {{this.name}}</span>
+                        </div>
+
+
+                        <div class="list-item">
+                            <span>Attack: </span>
+                            <span class="ranged-attack rollable button" data-roll-type="rangedAttack" data-target="{{../data.characteristics.bs.total}}" data-item-id="{{this._id}}" data-label="Ranged Attack" data-char="bs">Roll</span>
+                        </div>
+                        <div class="list-item">
+                            <span>Damage: </span>
+                            <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.damageFormula.value}}" data-weapon="{{this._id}}"> {{this.data.damageFormula.value}}</a>
+
+                        </div>
+
+                        {{#if this.flags.zerok.force}}
+                        <div class="list-item">
+
+                            <a class="force-roll button" data-label="Force"> Force</a>
+
+
+                        </div>
+                        {{/if}}
+                        {{#if this.flags.zerok.maximal}}
+                        <div class="list-item">
+                            <span>Maximal: <input type="checkbox" class="maximal" data-item-id="{{this._id}}"  {{checked this.flags.zerok.maximalMode}}></span>
+
+
+                        </div>
+                        {{/if}}
+                        {{#if this.flags.zerok.lasModal}}
+                        <div class="list-item">
+                            <span>Las Fire Mode: 
+                                <select class="lasMode"  data-item-id="{{this._id}}" data-dtype="Number">
+                                    {{#select this.flags.zerok.lasMode}}
+
+                                    {{#each this.zerok.lasModes}}
+
+                                    <option value="{{@index}}">{{this}}</option>
+                                    {{/each}}
+                                    {{/select}}
+                                </select>
+                            </span>
+
+
+                        </div>
+                        {{/if}}
+                        <div class="list-item flexrow">
+                            <span>Clip: </span>
+
+                            <input class="item-text-input" type="text" data-target="data.clip.value" value="{{this.data.clip.value}}" name="this.data.clip.value" data-item-id="{{this._id}}" data-dtype="Number">
+                            <span> / </span>
+                            <span>{{this.data.clip.max}}</span>
+
+                        </div>
+                        <div class="list-item">
+                            <span>Range: {{this.data.range.value}}m</span>
+                        </div>
+                        <div class="list-item">
+                            <span>Penetration: {{this.data.pen.value}}</span>
+
+                        </div>
+                        <div class="list-item">
+                            <label>Rate of Fire: {{this.data.rof.[0].value}}/{{this.data.rof.[1].value}}/{{this.data.rof.[2].value}}</label>
+                        </div>
+                        <div class="list-item">
+                            <span>Reload: {{this.data.reload.value}}</span>
+
+                        </div>
+                        <div class="list-item">
+                            <span>Special: 
+
+                                {{#each this.flags.zerok as |flag key|}}
+
+                                {{#if (checkSpecial this)}}
+
+                                {{#with (lookup ../zerok.weaponFlags [key])~}}
+                                <a class="item-descr" data-name="{{label}}" data-item-descr="{{description}}" >
+
+                                    {{label}}{{/with}}{{#if (isnumber this)}}({{this}}){{/if}}</a>
+                                {{/if}}{{/each}}
+                            </span>
+
+                        </div>
+                        <div class="list-item">
+                            <span>Damage Type: {{this.data.damageType.value}}</span>
+
+                        </div>
+                        <div class="list-item">
+                            <span>Weapon Class: {{this.data.class.value}}</span>
+
+
+                        </div>
+                        <div class="list-item">
+                            <span>Weapon Type: {{this.data.type.value}}</span>
+
+
+                        </div>
+                        <div class="list-item flexrow">
+
+                            <a class="list-button item-edit" title="Edit" data-item-id="{{this._id}}"></a>
+                            <a class="list-button item-delete" title="Delete" data-item-id="{{this._id}}"></a>
+
+                        </div>
+
+                    </div>
+                </div>
+                {{/each}}
+            </div>
         </div>
+        <div class="tab armor" data-group="primary" data-tab="armor">
+            <div class="flexrow">
+                <div class="flexcol">
+                    <div class="npc-info">
+                        <span class="section-title">Skills</span>
 
-        <div class="resource flex-group-center">
-          <label for="data.cr" class="resource-label">CR / XP</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="data.cr" value="{{data.cr}}" data-dtype="Number"/>
-            <span> / </span>
-            <input type="text" disabled="true" name="data.xp" value="{{data.xp}}" data-dtype="Number"/>
-          </div>
+                        {{editor content=data.skills.value target="data.skills.value" button=true owner=owner editable=editable rollData=rollData}}
+                    </div>
+                    <div class="npc-info">
+                        <span class="section-title">Equipment</span>
+                        {{editor content=data.equipment.value target="data.equipment.value" button=true owner=owner editable=editable rollData=rollData}}
+                    </div>
+                </div>
+                <div class="flexcol">
+                    <span class="section-title">SIZE</span>
+                    <select class="sizeSelect" name="data.secChar.size.value" data-dtype="Number">
+                        {{#select data.secChar.size.value}}
+
+                        {{#each size}}
+
+                        <option value="{{@index}}">{{this.name}}</option>
+
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                    <div class="flexcol flex-group-center">
+                        <span class="section-title">MOVEMENT</span>
+                        <div class="flexrow movement">
+                            <div class="resource flex-group-center">
+                                <label for="data.fatigue.value" class="resource-label">Half Move</label>
+                                <div class="resource-content flexrow flex-center flex-between">
+                                    <span>{{data.secChar.movement.half}}</span>
+                                </div>
+                            </div>
+                            <div class="resource flex-group-center">
+                                <label for="data.fatigue.value" class="resource-label">Full Move</label>
+                                <div class="resource-content flexrow flex-center flex-between">
+                                    <span>{{data.secChar.movement.full}}</span>
+                                </div>
+                            </div>
+                            <div class="resource flex-group-center">
+                                <label for="data.fatigue.value" class="resource-label">Charge</label>
+                                <div class="resource-content flexrow flex-center flex-between">
+                                    <span>{{data.secChar.movement.charge}}</span>
+                                </div>
+                            </div>
+                            <div class="resource flex-group-center">
+                                <label for="data.fatigue.value" class="resource-label">Run</label>
+                                <div class="resource-content flexrow flex-center flex-between">
+                                    <span>{{data.secChar.movement.run}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="forcefield flexcol">
+                            <span class="section-title">ARMOR & ABSORBTION</span>
+                            <div class="flexrow">
+                                <select class="armor-select" >
+
+                                    <option value="" {{#if data.secChar.wornGear.armor.data}}selected{{/if}}>None</option>
+                                    {{#each actor.armors}}
+
+                                    <option value="{{this._id}}" {{#if this.data.isEquipped}}selected{{/if}}>{{this.name}}</option>
+                                    {{/each}}
+                                </select>
+                                <a class="npc-armor-create plus-button" data-type="armor" title="Add Armor"></a>
+                                {{#if data.secChar.wornGear.armor._id}}
+
+                                <a class="npc-armor-delete minus-button" data-type="armor" title="Delete Armor"></a>
+                                {{/if}}
+
+                            </div>
+                            {{#if data.secChar.wornGear.armor._id}}
+                            <a class="npc-armor-edit button" data-type="armor" title="Edit Armor">Edit Armor</a>
+
+
+                            {{/if}}
+
+                            <div class="flexcol">
+                                <span class="section-title">COVER</span>
+                                <span class="cover-reset button">Reset Cover</span>
+                                <input type="text" class="combat-resources" title="cover" data-target="data.secChar.cover.value" value="{{data.secChar.cover.value}}" data-dtype="Number"/>
+                                <div class="flexrow flex-group-center">
+                                    <div class="armor flexcol flex-group-center">
+
+                                        <span>Head</span>
+                                        <span>(1-10)</span>
+                                        <input type="checkbox"  title="cover" name="data.characterHitLocations.head.cover" {{checked data.characterHitLocations.head.cover}}>
+                                        <span title="Armor">{{data.characterHitLocations.head.armor}}</span>
+                                        <span title="Total Soak">{{data.characterHitLocations.head.value}}</span>
+                                    </div>
+
+                                </div>
+                                <div class="flexrow flex-group-center">
+                                    <div class="armor flexcol flex-group-center">
+
+                                        <span>Left Arm</span>
+                                        <span>(21-30)</span>
+                                        <input type="checkbox"  title="cover" name="data.characterHitLocations.lArm.cover" {{checked data.characterHitLocations.lArm.cover}}>
+                                        <span title="Armor">{{data.characterHitLocations.lArm.armor}}</span>
+                                        <span title="Total Soak">{{data.characterHitLocations.lArm.value}}</span>
+                                    </div>
+                                    <div class="armor flexcol flex-group-center">
+
+                                        <span>Body</span>
+                                        <span>(31-70)</span>
+                                        <input type="checkbox"  title="cover" name="data.characterHitLocations.body.cover" {{checked data.characterHitLocations.body.cover}}>
+                                        <span title="Armor">{{data.characterHitLocations.body.armor}}</span>
+                                        <span title="Total Soak">{{data.characterHitLocations.body.value}}</span>
+                                    </div>
+                                    <div class="armor flexcol flex-group-center">
+
+                                        <span>Right Arm</span>
+                                        <span>(11-20)</span>
+                                        <input type="checkbox"  title="cover" name="data.characterHitLocations.rArm.cover" {{checked data.characterHitLocations.rArm.cover}}> 
+                                        <span title="Armor">{{data.characterHitLocations.rArm.armor}}</span>
+                                        <span title="Total Soak">{{data.characterHitLocations.rArm.value}}</span>
+                                    </div>
+                                </div>
+                                <div class="flexrow flex-group-center">
+
+                                    <div class="armor flexcol flex-group-center">
+
+                                        <span>Left Leg</span>
+                                        <span>(71-85)</span>
+                                        <input type="checkbox"  title="cover" name="data.characterHitLocations.lLeg.cover" {{checked data.characterHitLocations.lLeg.cover}}>
+                                        <span title="Armor" >{{data.characterHitLocations.lLeg.armor}}</span>
+                                        <span title="Total Soak">{{data.characterHitLocations.lLeg.value}}</span>
+                                    </div>
+                                    <div class="armor flexcol flex-group-center">
+
+                                        <span>Right Leg</span>
+                                        <span>(86-100)</span>
+                                        <input type="checkbox"  title="cover" name="data.characterHitLocations.rLeg.cover" {{checked data.characterHitLocations.rLeg.cover}}>
+                                        <span title="Armor" >{{data.characterHitLocations.rLeg.armor}}</span>
+                                        <span title="Total Soak">{{data.characterHitLocations.rLeg.value}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+        <div class="tab tnt" data-group="primary" data-tab="tnt">
+            <!--
+Stays commented until the parse script works
+<div class="npc-info">
 
-      </div>
-    </div>
-  </header>
+<a class="section-title parse-tnt">Talents & Traits</a>
 
-  {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="effects">Effects</a>
-  </nav>
+{{editor content=data.talentsntraits.value target="data.talentsntraits.value" button=true owner=owner editable=editable}}
+</div>-->
+            <div class="tnt flexcol">
+                <a class="tnt-create button" data-type="talentntrait" title="Add a new Talent or Trait">Add Talent or Trait</a>
+                <div class="list list3col grid grid-3col">
+                    <span class="list-item">Name</span>
+                    <span class="list-button"></span>
+                    <span class="list-button"></span>
+                    {{#each actor.talentsntraits as |t key|}}
 
-  {{!-- Sheet Body --}}
-  <section class="sheet-body">
+                    <a class="item-descr list-item" data-name="{{t.name}}" data-item-descr="{{t.data.description.value}}">{{t.name}}{{#unless (compareString "N/A" t.data.specialisation.value)}} ({{t.data.specialisation.value}}){{/unless}} </a>
+                    <a class="list-button item-edit" title="Edit" data-item-id="{{t._id}}"></a>
+                    <a class="list-button item-delete" title="Delete" data-item-id="{{t._id}}"></a>
 
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor content=data.biography target="data.biography" rollData=rollData button=true owner=owner editable=editable}}
-    </div>
 
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/zerok/templates/actor/parts/actor-items.html"}}
-    </div>
 
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/zerok/templates/actor/parts/actor-effects.html"}}
-    </div>
+                    {{/each}}
 
-  </section>
+                </div>
+
+            </div>
+        </div>
+        <div class="tab psykana" data-group="primary" data-tab="psykana">
+            <div class="psy flexcol">
+
+                <div class="psy-header flexrow">
+                    <div class="flexcol">
+                        <label>Psy Rating:</label>
+                        <input type="text" class="combat-resources" data-target="data.psykana.pr.value" value="{{data.psykana.pr.value}}" data-dtype="Number"/>
+
+                    </div>
+                    <div class="flexcol">
+                        <label>Sustained Powers:</label>
+                        <input type="text" class="combat-resources" data-target="data.psykana.pr.sustain" value="{{data.psykana.pr.sustain}}" data-dtype="Number"/>
+                    </div>
+                    <div class="flexcol">
+                        <label>Effective PR:</label>
+                        <input type="text" name="data.psykana.pr.effective" value="{{data.psykana.pr.effective}}" disabled>
+                    </div>
+                    <div class="flexcol">
+                        <label>Class:</label>
+
+                        <select class="psyType-select" name="data.psykana.psykerType.value" data-dtype="String">
+                            {{#select data.psykana.psykerType.value}}
+                            <option value="bound">Bound</option>
+                            <option value="unbound">Unbound</option>
+                            <option value="daemon">Daemon</option>
+
+                            {{/select}}
+                        </select>
+                    </div>
+                    <div class="flexcol">
+                        <label>Psy Modifier:</label>
+                        <input type="text" class="combat-resources" data-target="data.psykana.mod.value" value="{{data.psykana.mod.value}}" data-dtype="Number"/>
+
+                    </div>
+                </div>
+                {{#if (greaterThan data.psykana.pr.value 0)}}
+                <a class="item-create button" data-type="psychicPower" title="Add a new Psychic Power">Add Psychic Power</a>
+                <div class="psy-powers grid grid-2col">
+                    {{#each actor.psychicPowers as |power key|}}
+                    <div class="list-item flexcol">
+
+                        <div class="grid grid-3col">
+
+
+
+
+                            <a class="list-item psy-name item-descr" data-name="{{this.name}}" data-item-descr="{{this.data.description.value}}">Name: {{this.name}}</a>
+
+
+
+
+                            <label class="list-item">Action: {{power.data.action.value}}</label>
+
+                            {{#unless (contains ../data.psykana.psykerType.value "navigator")}}
+                            <label class="list-item">Discipline: {{power.data.discipline.value}}</label>
+                            <label class="list-item">Power Type: {{power.data.class.value}}</label>
+
+                            <label class="list-item">Subtype: {{power.data.subtype.value}}</label>
+                            <div class="list-item flexrow">
+                                <label>PR: </label>
+                                <input type="text" class="item-text-input" data-target="data.curPR.value" data-item-id="{{power._id}}" value="{{power.data.curPR.value}}" data-dtype="Number">
+                            </div>
+
+
+                            <label class="list-item">Sustain: {{power.data.sustain.value}}</label>
+                            {{else}}
+                            <div class="list-item2">
+                                Training:
+                                <select class="power-training" data-item-id="{{power._id}}"  name="data.training.value">
+                                    {{#select power.data.training.value}}
+                                    {{#each zerok.navigatorPowerTraining}}
+                                    <option value="{{this}}">{{this}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+
+                            {{/select}}
+                            {{/unless}}
+                            <label class="list-item">Test Type: {{power.data.testChar.value}}</label>
+
+
+
+                            <label class="list-item">Modifier: {{power.data.testMod.value}}</label>
+
+
+
+                            <label class="list-item">Range: {{power.data.range.value}}m</label>
+
+                            {{#if (contains power.data.class.value "psychic")}}
+
+
+
+                            <label class="list-item">Penetration: {{power.data.pen.value}}</label>
+
+                            <div class="list-item">
+                                <span>Special: 
+                                    {{#each this.flags.zerok as |flag key|}}
+
+                                    {{#if this}}
+
+                                    {{#with (lookup ../zerok.weaponFlags [key])~}}
+                                    <a class="item-descr" data-name="{{label}}" data-item-descr="{{description}}" >
+
+                                        {{label}}{{/with}}{{#if (isnumber this)}}({{this}}){{/if}}</a>
+                                    {{/if}}{{/each}}
+
+                                </span>
+
+                            </div>
+
+                            <label class="list-item">Damage Type: {{power.data.damageType.value}}</label>
+
+                            {{/if}}
+
+                            <div class="list-item flexcol">
+                                <label>Test Target: </label>
+                                <span data-item-id="{{power._id}}" class="rollable powerItem button{{#if (greaterThan power.data.curPR.value ../data.psykana.pr.effective)}} power-push{{else}} power-safe{{/if}}" data-roll-type="focuspower" data-target="{{power.data.target.value}}" data-label="{{power.name}}" data-char="{{power.data.testChar.type}}">{{power.data.target.value}}</span>
+                            </div>
+                            {{#if (contains power.data.class.value "psychic")}}
+                            <label class="list-item">Damage: <a class="damage-roll button" data-label="{{power.name}}"data-formula="{{power.data.damageFormula.value}}" data-weapon="{{power._id}}">{{power.data.damageFormula.value}}</a></label>
+                            {{else if (contains power.data.class.value "Buff/Debuff")}}
+                            <label class="list-item"><a class="buff-debuff button" data-label="{{power.name}}"data-power="{{power._id}}">Apply Buff/Debuff</a></label>
+                            {{/if}}
+                            <div class="list-item flexrow">
+                                
+                                <a class="item-edit" title="Edit Power" data-item-id="{{power._id}}"></a>
+                                <a class="item-delete" title="Delete Power" data-item-id="{{power._id}}"></a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="tab description" data-group="primary" data-tab="description">
+            <div class="item-description">
+                {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable rollData=rollData}}
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    {{else}}
+    <img class="npc-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+    {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=false rollData=rollData}}
+    {{/if}}
 </form>
-

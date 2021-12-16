@@ -1,0 +1,1320 @@
+[
+  {
+    "name": "Acrobatics",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>Acrobatics covers feats of agile movement, graceful motion, and mastery of balance and form. With this skill, characters can leap nimbly across gaping chasms, maintain their balance on a pitching ship deck, or fall gracefully to the ground without snapping their limbs. In combat, an accomplished acrobat can somersault, flip, or cartwheel away from foes, twisting his body out of reach of his enemy or slipping past foes in a blur of motion.&nbsp;</p> <p>Often, characters develop a knack for Acrobatics as part of their training in another field. A courier or thief might learn these knacks as part of travel through densely populated areas. Gladiators, survivalists, and dancers need to be able to perform acrobatic motions as part of their daily routines. Even a Tech- Adept accustomed to working in particularly confined quarters devotes his daily flesh-exhortations to improving flexibility, so that he might more effectively work within narrow ductwork.&nbsp;</p> <p>The GM can call on a player to use the Acrobatics skill when:&nbsp;</p> <p>&bull; He must keep his balance or avoid falling in unstable ground.&nbsp;</p> <p>&bull; He wishes to jump down from a height and land well.&nbsp;</p> <p>&bull; He wants to move over or around a foe or obstacle in his path without breaking his stride.</p> <p>The following are special uses for the Acrobatics skill:&nbsp;</p> <p><strong>Contortionist:</strong> A character can use his Acrobatics skill to escape from bonds or the grip of a foe by twisting and turning his body. As a Full Action, a character may make an Acrobatics skill test to free himself from bonds, such as rope, manacles, or the like. This test can only be attempted once to escape restraints; if the character fails to free himself the first time, then he is simply too tightly bound and unable to contort his way free. The GM can modify this test depending on the quality of the bonds in this situation. Characters may also use Acrobatics to escape from a grapple (see page 221) by using their Acrobatics skill instead of their Agility or Strength when grappling.&nbsp;</p> <p><strong>Manoeuvring:&nbsp;</strong>In combat, a character capable of acrobatics can more easily avoid foes or retreat from combat without harm. The character may make a Disengage action (see page 220) as a Half Action (rather than a Full Action) if he passes a Challenging (+0) Acrobatics skill test.&nbsp;</p> <p><strong>Jumping:</strong> A well-trained acrobat excels at jumping, leaping, and lessening the effect of falls by folding his body as he hits the ground. When jumping or leaping (see page 222), a character may use the Acrobatics skill in the place of Agility and Strength tests. When determining Falling damage, a character can make an Acrobatics skill test to reduce the effective distance fallen by a number of metres equal to his Agility bonus.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, General",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Full Action unless otherwise noted.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Athletics",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>Acolytes are often dependent upon their physical abilities, particularly when situations become violent. Athletics measures a character&rsquo;s ability to run long distances without tiring, climb sheer surfaces, and lift heavy loads. It also allows a character to push himself to greater levels of endurance and shrug off the effects of fatigue when running, swimming, or climbing. A character&rsquo;s background might dispose him more towards certain types of athletics.&nbsp;</p> <p>A GM can keep this in mind when determining the difficulty of a test. For example, a character from a desert world or could be required to make more difficult Athletics tests to swim across a river than an Acolyte who grew up on an aquatic agri-world would.&nbsp;</p> <p>The GM can call on a player to use the Athletics skill when:&nbsp;</p> <p>&bull; He must swim across a body of water or try to stay afloat.&nbsp;</p> <p>&bull; He wishes to push himself beyond his limits and keep going even when exhausted.&nbsp;</p> <p>&bull; He wants to climb a cliff or cross extremely rough ground.&nbsp;</p> <p>The following are special uses for the Athletics skill:&nbsp;</p> <p><strong>Endurance:</strong> Trained athletes are extremely fit and can push themselves far beyond the ability of normal people. As a Free Action, a character with the Athletics skill can make a Difficult (&ndash;10) Athletics skill test whenever he suffers a level of Fatigue (see page 233) as a result of running, swimming, or climbing to ignore its effects. The character can continue to take tests and ignore Fatigue gained in this way indefinitely; however, as soon as he fails a test, he must rest for at least 4 hours and cannot use his Athletics skill again during that time.&nbsp;</p> <p><strong>Heft:</strong> Athletes are also known for their strength and can lift great weights for short periods of time. As a Free Action, a character can make a Challenging (+0) Athletics skill test to increase his carrying capability for a single encounter. For every degree of success the character achieves, his Strength is increased by 10 for the purposes of how much weight he can carry, lift, or drag (see page 248), to a maximum modified Strength of 100. Hefting can only be attempted once, and if the character fails the test, he cannot try again until the next encounter.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "s",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Strength, General",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Full Action unless otherwise noted.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "type": "skill",
+    "name": "Awareness",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>Awareness represents the character&rsquo;s general awareness of his surroundings and the ability to notice inconsistencies that others might dismiss. It encompasses a basic alertness to any changes that might be detected by the senses, including visual cues, sounds, odours, and even air pressure. A highly-trained observer is just as capable of noticing and identifying the presence of a new factor as they are the absence of a common one.&nbsp;</p> <p>Threats to Mankind can lurk in the shadows of any location, and often the subtlest of cues can reveal far deeper meanings. In general, Awareness is used when trying to spot items or individuals that are either hidden or not easy to notice.&nbsp;</p> <p>Scrutiny (see page 114) is used to interpret hidden emotions, motivations, or other undercurrents. So while spotting someone hidden would be Awareness, determining whether someone is lying or being deceitful would be Scrutiny. When Awareness is used against an opponent (such as to spot an ambush) it is an Opposed test (see page 24). Awareness opposes and is opposed by Stealth.&nbsp;</p> <p>The GM can call on a player to use the Awareness skill when:&nbsp;</p> <p>&bull; He is walking into an ambush or being spied upon by a hidden foe.</p> <p>&bull; He wants to search an area for clues or find a hidden item.&nbsp;</p> <p>&bull; He is trying to eavesdrop on a conversation or there is a chance of overhearing some pertinent information.&nbsp;</p> <p>The following is a special use for the Awareness skill:&nbsp;</p> <p><strong>Lip Reading:</strong> Lip reading allows an Acolyte to effectively understand a conversation even though he cannot hear it. The character must have a clear view of the speaker&rsquo;s mouth and understand the language used by the target. The difficulty of this test is modified &ndash;10 for every 10 metres of distance between the character and the speaker.&nbsp;</p> <p>The GM can assign other penalties for darkness, fog, or other factors affecting vision; magnoculars or other vision enhancing devices can help offset this penalty or provide a bonus. A successful Awareness skill test reveals the general gist of the conversation, such as talking about a drop point or the location of a cult gathering. Additional degrees of success reveal correspondingly more information.&nbsp;</p> <p>The character need not make a skill test every round, as one degree of success is enough to follow the conversation for the span of roughly one topic. The GM determines when a new test is necessary.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "per",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Perception, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Free Action made in reaction to something.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Charm",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>Charm is a measure of a character&rsquo;s knack for impressing people and swaying their reactions. The acting character&rsquo;s attitude is key in distinguishing between this and other types of Interaction skills. Charm requires the Acolyte to assume a non-hostile attitude and not make any explicit or implicit threats. Instead, the character&rsquo;s persuasive efforts are dependent upon perceived generosity and good intentions. Such an approach may be completely foreign to some Acolytes, who find persuasion more appealing when matched with force or logic. Others, particularly those who come from luxury or who are masters of manipulation, might use this as their favoured approach to all problems.&nbsp;</p> <p>Often, bonuses or penalties can result from a character&rsquo;s appearance and style of dress. Refer to Chapter VIII: Narrative Tools for more information on social interaction. When Charm is used against an opponent (such as to change his mood) it is an Opposed test (see page 24). Charm is opposed by Willpower.&nbsp;</p> <p>The GM can call on a player to use the Charm skill when:&nbsp;</p> <p>&bull; He wants to make someone like him for whatever reason.&nbsp;</p> <p>&bull; He wishes to distract someone by drawing his focus away from others.&nbsp;</p> <p>&bull; He is gathering information from locals or strangers.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "fel",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Fellowship, Social",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Command",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>Often, a single character is unable to adequately resolve a crisis. At times, even a warband of Acolytes are inadequate to the challenge. Under these circumstances, characters may need to rally a much larger group to assist. Coordinating their allies so that everyone can work together effectively relies upon the Command skill.&nbsp;</p> <p>It represents the ability to effectively motivate and organise others. Characters with a noble background might have some training in this skill. Those with military service are of course practiced with it; even those who have only been given commands are very familiar with the practice and can issue them as well. Other characters might have learned it as a bureaucratic manager or a tribal leader. In contrast, characters accustomed to working independently could have little aptitude for commanding (or being commanded by) others.&nbsp;</p> <p>The GM can call on a player to use the Command skill when:&nbsp;</p> <p>&bull; He wishes to send an NPC ally into an extremely dangerous situation or into open combat.</p> <p>&bull; He needs to rally his allied fighting forces or organise them in the face of a surprise attack.&nbsp;</p> <p>The following are special uses for the Command skill:&nbsp;</p> <p><strong>Inspire:</strong> In some situations, it is not merely enough for an Acolyte to have allies working towards his cause. Instead, his allies must be convinced to give their all in order for success to be achieved. As a Full Action, the character can make a Challenging (+0) Command test to inspire one or more of his followers. Inspired followers receive a +10 on their next skill or characteristic test.&nbsp;</p> <p><strong>Terrify:</strong> An Acolyte can use the Command skill to terrify his followers into fearing him more than Daemons or other abominations As a Reaction, a character can try to counter the effects of Fear (see page 285) in his allies should they fail their Willpower test against a Fear-causing foe. The character makes a Command skill test opposed by the Willpower of the Fear- causing creature. Both the character and the creature add +10 to their rolls for each level of Fear they possess. If the character is successful, his allies ignore the effects of Fear from this creature for the remainder of the encounter.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "fel",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Fellowship, Leadership",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action for simple commands, Full Action for more involved direction.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Commerce",
+    "type": "skill",
+    "data": {
+      "value": -20,
+      "type": "Number",
+      "description": {
+        "value": "<p>The worlds of the Imperium are highly specialised and woven together in a huge, interconnected web to transport goods and services to ensure mutual survival. Few, if any, planets could hope to survive on their own for more than a few months without external support. Forge worlds need food and raw materials from other systems, agri-worlds can seldom produce the machinery required for their harvests, and hive worlds are often so densely occupied that their only local product is the world&rsquo;s population.&nbsp;</p> <p>The Commerce skill represents the understanding of trade, value, and exchange, which allows these worlds to continue to exist at a planetary level, and also more locally at a habway marketplace. Many within the Imperium&rsquo;s vast bureaucracy, and even its military, learn this skill. All humans must practise it to a certain degree, as they acquire the basic necessities for life. Ultimately, thieves and merchants are the most adept, as they must know the value of any goods they plan to steal or sell.&nbsp;</p> <p>When Commerce is used against an opponent (such as to gain a bonus on a Requisition test) it is always an Opposed test (see page 24). Commerce opposes, and is opposed by, either Commerce or Willpower.</p> <p>&nbsp;The GM can call on a player to use the Commerce skill when:&nbsp;</p> <p>&bull; He wants to gain a bonus when attempting a Requisition test (see &ldquo;The Emperor Provides...&rdquo; on page 143).&nbsp;</p> <p>&bull; He wishes to track down a rare item in a hive market.&nbsp;</p> <p>&bull; He wants to know how much an item is worth.&nbsp;</p> <p>The following is a special use for the Commerce skill:</p> <p><strong>Evaluate:</strong> A character can use the Commerce skill to determine the worth of an item or commodity. The GM should make this roll in secret, modifying the result depending on who the Acolyte is dealing with and the setting (see below for example modifiers). A success tells the character the Availability of the item he is evaluating, while a failure tells him nothing. If he fails by more than 3 degrees of failure, the GM should give him a false Availability.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Knowledge",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute, or more for complex deals.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Common Lore",
+    "type": "skill",
+    "data": {
+      "value": -20,
+      "type": "Number",
+      "description": {
+        "value": "<p>All Common Lore skills represent the common knowledge an individual might know about the general information, procedures, divisions, traditions, famed individuals, and superstitions of a particular world, group, organisation, or race. Such information is deeper than mere knowledge of the subject&rsquo;s existence, and more reflects a degree of familiarity that indicates a measure of dedicated interest in the area.&nbsp;</p> <p>This skill differs from Scholastic Lore, which represents scholarly learning one might gain through study and research, and Forbidden Lore, which involves hidden or proscribed knowledge. Common Lore deals with basic information gained from prolonged exposure to a culture or area. Unlike some other skills, Common Lore has multiple Specialisations (see page 95 for more information on how Specialisations work).</p> <p>The GM can call on a player to use a Common Lore skill when:</p> <p>&bull; The GM feels the Player Character might know something about a current situation, location, or individual.&nbsp;</p> <p>&bull; The Player Character wants to know a specific detail about a common subject.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": true,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, General",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Free Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Deceive",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>Acolytes often need to mislead those around them, as the Inquisition&rsquo;s cause involves secrets that could shatter the minds of unprepared innocents. Perpetrators are seldom cooperative, unless they believe that there might be some reward for their service. No matter the motive or the target, all of these untruths are spoken in the service of the Emperor. Deceive measures a character&rsquo;s aptitude for fooling others into believing something that is not true. All who serve an Inquisitor must have some ability in this field, but some become far more specialised in their deceptions.&nbsp;</p> <p>Of course, a Deceive test is only required if the acting character believes he is lying. Relating inaccurate information that the Acolyte believes is true uses the appropriate skill for the situation. When Deceive is used against an opponent (such as to convince someone of a lie or fool them with a disguise) it is always an Opposed test (see page 24). Deceive opposes, and is opposed by, Scrutiny.&nbsp;</p> <p>The GM can call on a player to use the Deceive skill when:&nbsp;</p> <p>&bull; He wants to tell a convincing lie.&nbsp;</p> <p>&bull; He wishes to distract someone with rambling nonsense.&nbsp;</p> <p>&bull; He is trying to disguise himself.&nbsp;</p> <p>The following is a special use for the Deceive skill:&nbsp;</p> <p><strong>Disguise:</strong> An Acolyte with the Deceive skill can create a disguise for himself, given time and raw materials. The time taken depends greatly on the complexity of the disguise; simply putting on an enemy&rsquo;s uniform or covering the one&rsquo;s face with filth may take minutes, while trying to disguise gender or mimic a specific individual may take hours, days, or longer. The GM decides how long formulating a disguise takes and if the character has the materials at hand.&nbsp;</p> <p>Once the disguise is donned, the GM then secretly tests for the player (using his Deceive skill and any appropriate modifiers) whenever the disguise comes under scrutiny (an Opposed test against the Scrutiny of whoever is trying to see through the disguise). If a disguise passes this first test, then the player need not test again unless something changes (suspicion is cast on the character, or a more observant NPC arrives).</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "fel",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Fellowship, Social",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute, or more for complex deceptions.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Dodge",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>Dodge is the ability to avoid blows in melee, elude incoming fire, or leap out of the way of falling debris. It combines nimbleness of movement with trained reflexes and an awareness of all kinds of danger. A character can use his Dodge skill to evade either melee attacks or ranged attacks.&nbsp;</p> <p>Dodging an attack is made as a Reaction to a foe&rsquo;s successful attack. A success indicates that the attack has been avoided and it does not hit the character. In the case of attacks which cause multiple hits (such as automatic fire) each degree of success a character achieves on his Dodge test cancels one hit from the attack. Any excess hits not cancelled by Dodging are then applied to the character as normal.&nbsp;</p> <p>The GM can call on a player to use the Dodge skill when:&nbsp;</p> <p>&bull; He is attacked in melee.&nbsp;</p> <p>&bull; He is attacked with a ranged weapon.&nbsp;</p> <p>&bull; He needs to avoid hazards such as falling wreckage or leap from a collapsing bridge.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, Defence",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute, or more for complex deceptions.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Forbidden Lore",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>All Forbidden Lore skills represent information proscribed or hidden from the average Imperial citizen. In many cases, it is a heinous crime to even possess such data and can quickly draw Inquisitorial attention (even if the possessor himself is working for an Inquisitor).&nbsp;</p> <p>Forbidden Lore has several different Specialisations (see page 95) as listed below. These include all Common Lore (page 102) and Scholastic Lore (page 113) Specialisations, as each area also has blasphemous and dangerous knowledge beyond what is generally known, or secrets the group obsessively keeps to itself.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": true,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Knowledge",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Free Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Inquiry",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Inquiry is used to gain information by asking questions, stimulating conversation, or simply eavesdropping&mdash;all essential for unravelling heresies and identifying those who would act against Mankind. Unlike Charm or Intimidate, which focus on changing a character&rsquo;s disposition or influencing specific individuals, Inquiry can focus on gaining information from both individuals and large groups, and may involve a great deal of time and effort.&nbsp;</p> <p>One or two degrees of success reveals basic information about an area, population group, or specific individuals, while additional degrees of success on a successful test allows the GM to impart more valuable or secretive information to his players.</p> <p>&nbsp;The GM can call on a player to make an Inquiry test when:&nbsp;</p> <p>&bull; He is trying to track down a local crime lord in a hive.&nbsp;</p> <p>&bull; He attempts to learn the attitudes of the local populace towards their leaders.&nbsp;</p> <p>&bull; He seeks a specific type of location such as a shop or tavern.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "fel",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Fellowship, Social",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "One hour or more, depending on the nature of the inquiries, the size of the group targeted, and information sought.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Interrogation",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Interrogation allows a character to extract information from an unwilling subject. The application differs from brutal torture, which involves more physical damage. Rather, it represents skilled application of psychology, various devices, serums, and other, usually less physically-damaging, techniques. The GM may modify the difficulty of the test according to the availability of tools, facilities and other conditions.&nbsp;</p> <p>This is always an Opposed test, pitting the character&rsquo;s Interrogation skill against an opponent&rsquo;s Willpower. If the character wins the Opposed test, he gets one answer for each degree of success. If his opponent wins the Opposed test, the interrogator gets nothing of worth. A roll with two or more degrees of failure inflicts 1d10 plus the interrogator&rsquo;s Willpower bonus in damage to the subject, and prevents any further interrogation for 1d5 days.&nbsp;</p> <p>If the interrogator suffers four or more degrees of failure, he deals the same damage and the subject gains a +30 bonus to Willpower tests made to resist Interrogation at the hands of the character or his allies. Each Interrogation test inflicts one level of Fatigue on the target, regardless of success.&nbsp;</p> <p>The GM can have a player make an Interrogation test when:&nbsp;</p> <p>&bull; He attempts to force an Imperial Adept to reveal hidden information about his superiors.&nbsp;</p> <p>&bull; He is attempting to learn about battle plans from an Imperial Guard commander.&nbsp;</p> <p>&bull; He seeks to have a cultist reveal a hidden meeting place.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "wp",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Willpower, Social",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "One hour or more, depending on the invasiveness of the interrogation and the subject.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Intimidate",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "value": -20,
+      "description": {
+        "value": "<p>The Imperium of Man is constantly at war. Seditious fools across its reach and xenos races from outside its boundaries all work to bring about the downfall of humanity. It is not enough to stop those who have already taken action; it is also vital to prevent others from following these fools or dabbling in matters far beyond their understanding. Fear often serves as the preferred tool for preventing insurrection and heresy.&nbsp;</p> <p>The Intimidate skill is a measure of a character&rsquo;s knack for instilling fear. He may use this ability to make someone perform an action against his will, or extract information from an unwilling subject. It is distinguished from the Command skill largely by the authority that the acting character presents. Refer to page 277 for more information on social interaction. When Intimidate is used against an opponent (such as to frighten him into doing the character&rsquo;s bidding), it is an Opposed test (see page 24). Intimidate is opposed by Willpower.&nbsp;</p> <p>The GM can call on a player to use the Intimidate skill when:&nbsp;</p> <p>&bull; He wants someone to get out of his way.&nbsp;</p> <p>&bull; He wants to coerce someone into acting a certain way.&nbsp;</p> <p>&bull; He is trying to make an opponent back down from a fight.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "characteristic": {
+        "value": "s",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Strength, Social",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Full Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Linguistics",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Linguistics represents the ability to speak, read, and write specific languages, codes, and ciphers. Talents determine the languages a specific character knows, such as the Low Gothic of the masses, a feral world&rsquo;s regional dialect, or even a xenos tongue. When attempting to use a language the character knows, a Linguistics test is only required for a particularly difficult task, such as translating an ancient version of the language or attempting to understand a garbled vox-intercept. Unknown languages, however, always require a Linguistics test to understand on even a basic level.&nbsp;</p> <p>A character might need to speak with a human from a rediscovered world that was forgotten for millennia, or a researcher may need to comprehend a xenos prophecy that predates the Great Crusade. Communicating with those whose language is foreign depends upon a character&rsquo;s knowledge and aptitude in the Linguistics skill. Two key factors play into determining the difficulty for a Linguistics test. The first is the complexity of the message; simple greetings or warnings are far easier to interpret than more complex philosophical or religious concepts. Such communications might not necessitate a test, even if the message is delivered in an entirely foreign tongue.&nbsp;</p> <p>The second difficulty factor is a measure of how foreign the language is to any the character knows. If the communication arrives in a pidgin or archaic dialect of the character&rsquo;s native tongue, then translation could be challenging, but feasible. Conversely, if the message is in a language that a xenos race developed in an entirely different part of the galaxy, deciphering it without additional context might be impossible. Any character who has this a skill knows how to read and write in his primary language. For most of the Imperium, this is Low Gothic.&nbsp;</p> <p>Note that all Acolytes are capable of basic communication in Low Gothic that would not require a skill test, such as normal conversation or reading standard Munitorum manuals. Linguistics is a Specialist skill (see page 95) and requires a player to choose a speciality when first taken. The Linguistics skill may be taken more than once, each time with a new speciality.&nbsp;</p> <p>The GM can call on a player to use the Linguistics skill when:&nbsp;</p> <p>&bull; He must decipher an archaic version of his language.&nbsp;</p> <p>&bull; He wishes to compose a moving piece of prose.&nbsp;</p> <p>&bull; He is trying to convey a message using subtle subtext or a limited vocabulary.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": true,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, General",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Free Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Logic",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>The Logic skill represents the ability to think rationally, solve puzzles, and dissect information clearly and quickly. It can be applied to analyse complex statistics, architectural anomalies, or even achieve some degree of understanding with regards to complex technologies. This skill encompasses the character&rsquo;s basic functional understanding of mathematics, physics, and engineering. Note that this does not include an understanding of complex theories or the terminology involved with them&mdash;that would fall more commonly under Scholastic Lore.&nbsp;</p> <p>All characters have some inherent ability to exercise Logic, observing cause and effect and making inferences regarding likely outcomes. In many instances, a character&rsquo;s ability to comprehend logical phenomena might be impeded by his belief systems, including his faith in the Imperial Creed or the Omnissiah. Characters who frequently need to identify or resolve complex situations can hone this skill through frequent use. The variables involved in any problem determine the inherent difficulty of a Logic test.</p> <p>If a character is provided with all of the necessary background information, a reasonably adept character should be able to successfully solve the problem. If there are too many unknown factors, the problem might only be solved after uncovering additional clues, or through prodigious luck.&nbsp;</p> <p>The GM can call on a player to use the Logic skill when:&nbsp;</p> <p>&bull; He must solve a riddle or puzzle.&nbsp;</p> <p>&bull; He is looking for clues in a vast amount of seemingly unrelated information.</p> <p>&bull; He is trying to win at a game of chance.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Knowledge",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute, or longer for particularly complex problems.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Medicae",
+    "type": "skill",
+    "data": {
+      "type": "number",
+      "description": {
+        "value": "<p>Medicae represents the ability to set broken bones, heal wounds, or even perform complicated surgeries such as attaching cybernetics. The techniques involved in treatment may vary substantially based upon the character&rsquo;s background. A character that learned basic survival skills on a death world might know substantially different treatment methods than one who dwelt within a forge world.&nbsp;</p> <p>Varied backgrounds often lead to changes in the expected outcomes for medical conditions and treatments. A terrible disease that is considered untreatable on a hive world might have a routinely available herbal remedy on a feral world, for example. All characters who face frequent physical trauma achieve some degree of competence in Medicae. This may simply be enough to bind their own wounds in order to avoid an easily-followed trail of blood.&nbsp;</p> <p>Those who specialise in this field may be viewed as saviours by their patients. Alternatively, some may see the healers as blasphemers who have dabbled in treatments that might only be the province of the Emperor or the Omnissiah. The Medicae skill often relies on certain tools (see Chapter V: Armoury) for more complex procedures; even a simple medi-kit can make a significant difference to the effects of this skill.&nbsp;</p> <p>The GM can call on a player to use the Medicae skill when:&nbsp;</p> <p>&bull; He wants to apply first aid to a wounded ally.&nbsp;</p> <p>&bull; He wishes to diagnose an affliction and work out a suitable treatment to treat a fellow member of his warband.&nbsp;</p> <p>&bull; He is trying to perform a surgical procedure such as the careful removal of a limb or organ, or replace the same with cybernetic devices.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Full Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Navigate",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Acolytes charged with investigating threats against humanity must often travel to foreign locations in order to perform their holy duties. Heresy can lurk anywhere, hidden within a planet&rsquo;s depths or even in the dank corridors of a voidcraft. At times, characters might even need to travel among inhuman passages designed by xenos sensibilities.&nbsp;</p> <p>Navigate represents the ability to plot and follow a course from one point to another, either on the surface of a planet or across the stars. In order to use this skill, the character must have access to a map of the relevant region. Alternatively, Navigate can also be used to generate a map or to provide directions to someone unfamiliar with a route. In these cases, the character often starts with only a rough map or a blank parchment and must first construct the guide. The usability of the product created is directly proportionate to the success on the test made to create it.&nbsp;</p> <p>All characters have some basic aptitude with maps, though the subject matter and complexity is relative to their background. A feudal world character might recognise and understand the basics of topographic maps that are completely foreign to a character that came to maturity on a void station. Similarly, a character that is familiar only with travel inside an Imperial hive may be confounded when travelling without man-made landmarks, such as across a barren desert or a trackless sea.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": true,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute for simple location; 1d5 hours for plotting courses or routes.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Navigate: Surface",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Navigate (Surface) covers the ability to navigate across terrestrial environments from frozen tundra to sweltering jungles, as well as navigating man-made environments such as hive cities or subterranean complexes.&nbsp;</p> <p>The Game Master can call on a player to use the Navigate (Surface) skill when:&nbsp;</p> <p>&bull; He wants to make a journey across unfamiliar terrain.</p> <p>&bull; He is lost and needs to get his bearings in a strange place.&nbsp;</p> <p>&bull; He wishes to create a map showing the quickest route from one point to another.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "Navigate",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute for simple location; 1d5 hours for plotting courses or routes.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Navigate: Stellar",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Navigate (Stellar) is the ability to plot a course across real space using stars, planets, and other celestial phenomena. This ability is primarily used aboard voidships moving through star systems.&nbsp;</p> <p>The Game Master can call on a player to use the Navigate (Stellar) skill when:&nbsp;</p> <p>&bull; He wants to make a journey within a star system.&nbsp;</p> <p>&bull; He finds his ship stranded in an unknown region of space.&nbsp;</p> <p>&bull; He wishes to find the quickest route from one location within a system (such as a planet) to another location in the system.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "Navigate",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute for simple location; 1d5 hours for plotting courses or routes.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Navigate: Warp",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Navigate (Warp) is the rare ability to navigate not reality, but the shifting and ever-changing vista of the Warp. This is most commonly used by those who must guide voidships with a Warp engine through the Immaterium. This can range from Navigators using their mutant powers to plot courses using the Astronomican to normal humans navigating shorter passages with Warp charts on familiar, stable routes.&nbsp;</p> <p>The Game Master can call on a player to use the Navigate (Warp) skill when:&nbsp;</p> <p>&bull; He must guide a starship through the Warp.</p> <p>&bull; He needs to convert a journey into a Warp route chart.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "Navigate",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute for simple location; 1d5 hours for plotting courses or routes.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "type": "skill",
+    "name": "Operate",
+    "data": {
+      "description": {
+        "value": "<p>The Operate skill represents a character&rsquo;s aptitude to control and direct all manner of vehicles and heavy equipment. Through the remarkable consistency of Standard Template Construction, the control systems used to operate dramatically different vehicles are extremely similar. In many instances, this may be due to an interaction between the vehicle&rsquo;s machine spirit and the controlled systems used to direct the craft. In other cases, this is due to a simplification or approximation of controls, intended to reduce the effort required to learn to operate the vehicle.&nbsp;</p> <p>All characters who come from worlds with any degree of technology learn the basics of operation. Essentially, the need to control a craft of some sort is largely unavoidable. However, familiarity with a basic civilian autocarriage is scarcely adequate preparation for the nuanced art of flying an Imperial Valkyrie or firing a heavy macrobattery at an enemy voidship.&nbsp;</p> <p>A character with the Operate skill is adept at piloting, driving, or operating a particular type of vehicle or machine. No test is normally required to pilot or drive a vehicle unless it is in a combat situation or other unusual circumstances such as extremely rough terrain or high speeds.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": true,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Operate: Surface",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Operate (Surface) covers the ability to pilot any vehicle that primarily operates on the surface of a planet. Groundcars, walkers, treaded vehicles, boats, and skimmers (hovering or flying vehicles that must remain very low to the ground) can all be piloted using Operate (Surface).&nbsp;</p> <p>The Game Master can call on a player to use the Operate (Surface) skill when:&nbsp;</p> <p>&bull; He is driving a vehicle in a combat situation.&nbsp;</p> <p>&bull; He wishes to push his vehicle beyond its normal limits.&nbsp;</p> <p>&bull; He is attempting to manoeuvre his bike through a crowded habway filled with civilians.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "Operate",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "type": "skill",
+    "name": "Operate: Aeronautica",
+    "data": {
+      "description": {
+        "value": "<p>Operate (Aeronautica) covers the ability to pilot any vehicle that operates in three dimensions. This primarily covers atmospheric fliers such as the Imperial Navy Thunderbolt or Chaos Hellblade, but also includes small, manoeuvrable voidcraft such as landers, shuttles, starfighters, and bombers. Piloting jump packs that provide limited air mobility is also covered by this ability.&nbsp;</p> <p>The GM can call on a player to use the Operate (Aeronautica) skill when:&nbsp;</p> <p>&bull; He is piloting a vehicle in a combat situation.&nbsp;</p> <p>&bull; He wishes to fly his vehicle beyond its normal safe altitude.</p> <p>&bull; He is trying to land an damaged Arvus Lighter in the midst of a meteor shower.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "Operate",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Operate: Voidship",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Operate (Voidship) covers the ability to pilot large void-faring vessels that are often kilometres long and millennia old. Any space- going vessel that requires a captain and large crew, and cannot be conceivably piloted by a single individual, is operated with this skill.&nbsp;</p> <p>The Game Master can call on a player to use the Operate (Voidship) skill when:&nbsp;</p> <p>&bull; He is manoeuvring a voidship.&nbsp;</p> <p>&bull; He is overseeing the use of a macrobattery, orbital laser, or some other massive ship&rsquo;s weapon.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "Operate",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Parry",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>When engaged in combat, avoiding an opponent&rsquo;s assault is often every bit as crucial as striking the critical blow. Parry is the ability to block attacks in close combat, deflecting them using one&rsquo;s hands or weapons. An Acolyte targeted by melee attacks can turn aside these attacks using the Parry skill.&nbsp;</p> <p>This is a Reaction (and as such can usually only be attempted once each turn) and can only be used against close combat attacks from foes engaged with the character in melee. A success indicates that the attack has been parried and does not hit the character. In the case of attacks which cause multiple hits (such as those from a foe with the Lightning Attack talent) each degree of success a character achieves on his Parry test discounts one hit from the attack. Any excess hits not discounted by Parrying are then applied to the character as normal.&nbsp;</p> <p>The GM can call on a player to use the Parry skill when:&nbsp;</p> <p>&bull; He is attacked in melee and wishes to deflect the blow.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "ws",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Weapon skill, Defence",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Reaction.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Psyniscience",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Those with the Psyniscience skill sense the currents and eddies of the Warp and Immaterium. Characters can use the skill to detect the presence or absence of Daemons and the use of psychic powers. Psyniscience also allows detection of psychic phenomena, disturbances, voids, or other areas where the flow of the Immaterium has been unsettled or disrupted. The difficulty for a Psyniscience test is based upon the potency of any nearby Warp activity.&nbsp;</p> <p>In general, the more powerful the activity, the easier it may be to sense. At the same time, by attempting to identify such a presence, a character must temporarily open his mind to its influence. Particularly potent threats may be able to seize this opportunity, and react aggressively to the probe. While subtler activity is far less dangerous to the acting character, it is also far more difficult to sense.&nbsp;</p> <p>To purchase this skill, the character must have a special ability stating he has access to it (such as the Psyker trait), reflecting his attunement to the Warp.&nbsp;</p> <p>Unless otherwise noted, he can use the Psyniscience skill to detect entities, locales, and events up to a number of kilometres away equal to his Perception bonus. The GM can, though, alter this range depending on the situation. A character who is not a psyker can also use this skill, representing his ability to recognise the subtle phenomena, such as strange patterns of dust motes or odd sensory distortions, which often accompany psychic disturbances. The general results of Psyniscience tests are summarized on Table 3&ndash;4: Psyniscience Results.&nbsp;</p> <p>The GM can call on a player to use the Psyniscience skill when:</p> <p>&nbsp;&bull; He is hunting for the location of a Daemon.&nbsp;</p> <p>&bull; He wishes to determine whether a psyker has used his powers recently in the area.&nbsp;</p> <p>&bull; He is trying to find a weak point between realspace and the Immaterium.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "per",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Perception, Psyker",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Scholastic Lore",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>All Scholastic Lore skills represent information that an Acolyte would need to learn in a formal setting or institution of learning, whether from a knowledgeable mentor, an organisation, or even the careful study of rare tomes. Unlike Common Lore, this information is not readily available to the average inhabitant of a planet, but differs from Forbidden Lore in that it is not proscribed from study. Scholastic Lore has several Specialisations (see page 95). These include all those for Common Lore, as even commonly known information can be studied to greater depths.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": true,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Knowledge",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Free Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Scrutiny",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>The Scrutiny skill helps assess the people or objects an Acolyte encounters. A character can use this skill to determine an individual&rsquo;s truthfulness, his motives, and appraise his personality and temperament. It can also be used to analyse an object or display in detail, determining information that may be hidden or simply not readily apparent. This test may also be used when methodically searching an area or object for clues or other inconsistencies.&nbsp;</p> <p>It is characteristic of a mental analysis of the person or object in question, to identify any inconsistencies between its appearance, signs of wear, and overall style. Any disparity can be a sign of other dangers; one sewer section lacking the foetid odour of the rest may be just as troubling as a suspicious bulge beneath a suspect&rsquo;s clothing.&nbsp;</p> <p>In general, Scrutiny is used to interpret hidden emotions, motivations, or details unnoticeable unless subjected to a careful analysis. Awareness is used when trying to spot items or individuals. Thus, while spotting someone hidden would be Awareness (see page 100), and telling when someone is lying would be Scrutiny. Scrutiny is opposed by the Deceive skill.&nbsp;</p> <p>The GM can call on a player to use the Scrutiny skill when:&nbsp;</p> <p>&bull; He wants to tell if someone is lying.&nbsp;</p> <p>&bull; He wants to collate information and conclusions from a complex report.&nbsp;</p> <p>&bull; He is interpreting augur or auspex readings and determining what these results mean.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "per",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Perception, General",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Security",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>The Security skill deals with mastery of locks and safeguards, including breaking into secure places or protecting them from intrusion. A character with the Security skill is trained to bypass locks or defeat codes, whether using cogitators and tech against machine spirits or simple mechanical devices against physical latches.&nbsp;</p> <p>Acolytes with Security are also able to safeguard systems and locales by making passive defences more secure, and even setting traps for unwary intruders and thieves.&nbsp;</p> <p>The GM can call on a player to use the Security skill when:&nbsp;</p> <p>&bull; He wants to open a locked door.&nbsp;</p> <p>&bull; He wishes to break into a cogitator and discover its secrets.&nbsp;</p> <p>&bull; He is trying to lay traps for an ambush or to protect a camp.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Intelligence, Tech",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute, reduced by 10 seconds for each degree of success.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Sleight of Hand",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Acolytes use the Sleight of Hand skill for any task requiring a combination of deception and dexterity. A charlatan or confidence man utilises very comparable skills to those of a pickpocket when committing his crimes. The test can substitute papers, remove jewellery, or obtain a target&rsquo;s oath-cog or ident-seal.&nbsp;</p> <p>Sleight of Hand also allows a character to conceal his actions when in plain sight, such as hiding weapons from someone searching his person. The difficulty of the test depends on the size of the object and the intensity of observation. This is always an Opposed test against the opponent&rsquo;s Awareness or Scrutiny.&nbsp;</p> <p>The GM can call on a player to use Sleight of Hand when:&nbsp;</p> <p>&bull; He attempts to steal something from the target&rsquo;s pocket.&nbsp;</p> <p>&bull; He seeks to palm evidence at a crime scene.&nbsp;</p> <p>&bull; He tries to plant illegal narcotics into a suspect&rsquo;s robes.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, Finesse",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Half Action, or can be performed as a Free Action with an additional –10 penalty.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Stealth",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Stealth is a measure of a character&rsquo;s ability to remain unnoticed while moving through the dense crowds of a hive, the open croplands of an agri-world, or the blast craters of a scarred battlefield. In some environments, this requires the character to remain unseen, but in others it is far more important for the character to be inconspicuous. A character that can blend in amongst the massed labourers of a manufactorum might be just as adept at infiltrating a complex as one who might scale the walls in the dead of night. An Acolyte with this skill can move silently or conceal himself from others, either to escape from his foes or take them by surprise.&nbsp;</p> <p>The difficulty for a Stealth test is generally based upon the environment where it is attempted, as well as the character&rsquo;s outerwear, clothing, and armour. Some gear may assist a character in remaining unseen, though if this equipment is identified, it can often reveal the infiltrator&rsquo;s true nature. In some instances, defenders might use abilities and equipment that have the potential to offset the character&rsquo;s own equipment. In these cases, strategy and timing can be crucial to remaining undetected. When Stealth is used against an opponent (such as to hide from a foe or shadow a target) it is an Opposed test (see page 24). Stealth opposes and is opposed by Awareness.&nbsp;</p> <p>The GM can call on a player to use the Stealth skill when:&nbsp;</p> <p>&bull; He wants to scout an enemy force without being detected.&nbsp;</p> <p>&bull; He wants to sneak up on a foe and kill him quietly.&nbsp;</p> <p>&bull; He wishes to follow someone without arousing suspicion.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "agi",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Agility, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Free Action as part of Movement.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Survival",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>The Survival skill is a measure of a character&rsquo;s ability to subsist without the support of civilisation. It is absolutely vital for those who dwell in the untamed wilds, far from the protection of fortified encampments or cities. Those who live within the urban jungles of underhives or city ruins must also achieve some mastery of this field, as they cannot depend upon reliable sources of food and water. The knacks associated with this field often have applications even within structured society, especially for those with a more independent nature.&nbsp;</p> <p>A character with the Survival skill can live off the land, ride beasts, and predict weather with only a minimum of equipment and without the need for resupply or support. It can be used to create primitive items such as bows or blades, as well as basic clothing. Survival is also used to track prey (human or otherwise) across all kinds of terrain by following the tell-tale signs they leave on the environment around them.&nbsp;</p> <p>The difficulty for a Survival test is associated with the environmental constraints where it is made. If a planet&rsquo;s atmosphere, fauna, and water are laced with deadly toxins, then finding the materials necessary for life could be nearly impossible. Use of the skill does not only indicate a knack for finding life&rsquo;s essentials; it can also indicate an aptitude for avoiding the deadliest of threats.&nbsp;</p> <p>The GM can call on a player to use the Survival skill when:</p> <p>&bull; He wants to find food or water in a hostile environment.&nbsp;</p> <p>&bull; He wishes to start a fire with only handmade tools.&nbsp;</p> <p>&bull; He is trying to track a foe across the depths of an underhive.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "per",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Perception, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "Full Action.",
+        "type": "String"
+      }
+    }
+  },
+  {
+    "name": "Tech-Use",
+    "type": "skill",
+    "data": {
+      "type": "Number",
+      "description": {
+        "value": "<p>Tech-Use is a measure of an Acolyte&rsquo;s ability to use and interact with all manner of technological devices, from proper implementation of the Rites of Striking to the temperatures of holy lubricants a machine spirit finds most soothing. It can also be used to build basic or complex technical devices with the right amount of time and materials. Tech-Use is more an understanding of the Blessings of the Omnissiah and the rites of the Machine Cult than it is an actual knowledge of the science behind technology&mdash;in the 41 st Millennium, however, this amounts to the same thing.&nbsp;</p> <p>The difficulty for this skill use is related to the complexity of the device and its design nature. A simple tool of Eldar origin, for example, might be every bit as dangerous as a venting plasma gun to the uninitiated. Conversely, no amount of familiarity with the blessed design principles of a Warp engine can make it an easily understood device.&nbsp;</p> <p>The GM can call on a player to use the Tech-Use skill when:</p> <p>&bull; He wants to repair a broken weapon or vehicle.&nbsp;</p> <p>&bull; He wishes to push a piece of technology beyond its normal capabilities or operating parameters.</p> <p>&bull; He is trying to determine how a piece of unknown or unfamiliar technology works.</p>",
+        "type": "String"
+      },
+      "parent": {
+        "value": "",
+        "type": "String"
+      },
+      "hasChildren": {
+        "value": false,
+        "type": "Boolean"
+      },
+      "value": -20,
+      "characteristic": {
+        "value": "int",
+        "type": "String"
+      },
+      "mod": {
+        "value": 0,
+        "type": "Number"
+      },
+      "total": {
+        "value": 0,
+        "type": "Number"
+      },
+      "aptitudes": {
+        "value": "Perception, Fieldcraft",
+        "type": "String"
+      },
+      "skillUse": {
+        "value": "1 minute, or more for more complex systems.",
+        "type": "String"
+      }
+    }
+  }
+]

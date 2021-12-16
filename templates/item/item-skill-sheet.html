@@ -1,0 +1,62 @@
+
+
+    <form class="{{cssClass}} item-sheet new-skill flexcol">
+         <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+        
+    </header>
+        <div class="flexcol">
+            <label>Skill Type:</label>
+            <select class="skill-type" name="data.parent.value">
+                
+                {{#select data.parent.value}}
+                <option class="new-skill-select" value="" selected>Stand Alone Skill</option>
+                {{#each skillgroups as |skill key|}}
+                
+                
+                <option class="new-skill-select" value="{{skill.data.name}}">{{skill.data.name}}</option>
+                
+                {{/each}}
+                {{/select}}
+               
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Specialisations:</label>
+        <input id="children" type="checkbox" class="skill-children" name="data.hasChildren.value" {{#if (compareString data.parent.value)}} {{checked data.hasChildren.value}}{{else}} disabled {{/if}}>
+        </div>
+        <div class="flexcol">
+            <label>Name:</label>
+            
+            <input type="text" class="name skill-dialog" name="name" value="{{name}}" data-dtype="String" required>
+        </div>
+        <div class="flexcol">
+            <label>Characteristic</label>
+            <select class="skill-characteristic" name="data.characteristic.value">
+                {{#select data.characteristic.value}}
+                <option value="ws">Weapon Skill</option>
+                <option value="bs">Ballistic Skill</option>
+                <option value="s">Strength</option>
+                <option value="t">Toughness</option>
+                <option value="agi">Agility</option>
+                <option value="int">Intelligence</option>
+                <option value="per">Perception</option>
+                <option value="wp">Willpower</option>
+                <option value="fel">Fellowship</option>   
+               {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+        <label>Aptitudes:</label>
+            <input type="text" class="aptitudes skill-dialog" name="data.aptitudes.value" value="{{data.aptitudes.value}}" data-dtype="String" required>
+        </div>
+        <div class="flexcol">
+        <label>Skill Use:</label>
+            <input type="text" class="skill-use skill-dialog" name="data.skillUse.value" value="{{data.skillUse.value}}" data-dtype="String" required>
+        </div>
+        <div class="item-description">
+        <label>Skill Description:</label>
+            {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+        </div>
+        
+    </form>

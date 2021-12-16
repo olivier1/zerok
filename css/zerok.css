@@ -1,0 +1,762 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap");
+/* Global styles */
+
+
+@font-face {
+    font-family: "CaslonAntique";
+    src: url('../fonts/CaslonAntique.ttf');
+}
+@font-face {
+    font-family: "CaslonAntique";
+    src: url('../fonts/CaslonAntique-Bold.ttf');
+    font-weight:bold;
+}
+@font-face {
+    font-family: "CaslonAntique";
+    src: url('../fonts/CaslonAntique-Italic.ttf');
+    font-style:italic;
+}
+.zerok{
+    font-size:16px;
+    font-family: "CaslonAntique";
+
+
+}
+
+
+.button:hover, .button:focus {
+    color: #000;
+    text-shadow: 0 0 10px red;
+    cursor: pointer;
+}
+
+
+.grid,
+.grid-2col {
+    display: grid;
+    grid-column: span 2 / span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 0px;
+    margin: 10px 0;
+    padding: 0;
+    place-items: center;
+
+}
+
+.grid-3col {
+    grid-column: span 3 / span 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+    grid-column: span 4 / span 4;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+    grid-column: span 5 / span 5;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+    grid-column: span 5 / span 5;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-7col {
+    grid-column: span 7 / span 7;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+    grid-column: span 8 / span 8;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+    grid-column: span 9 / span 9;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+    grid-column: span 10 / span 10;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+    grid-column: span 11 / span 11;
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+    grid-column: span 12 / span 12;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+.flex-group-left {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.flex-group-right {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.flex-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+}
+.zerok .button{
+    text-align:center;
+    border-style:inset;
+    border-color:dimgray;
+    border-width: medium;
+    padding:5px;
+    display:grid;
+}
+
+.flex-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+/* Styles limited to zerok sheets */
+.underline{
+    text-decoration:underline;
+}
+.zerok .item-form {
+    font-family: "Roboto", sans-serif;
+}
+.zerok .charSheet{
+    overflow:auto;
+}
+.zerok header.sheet-header {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 0px;
+    flex: 0 0 0px;
+    flex-wrap:nowrap;
+    overflow: visible;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 0px;
+}
+
+.zerok .sheet-header .profile-img {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    height: 9.6em;
+    width:auto;
+    margin-right: 10px;
+}
+.zerok .sheet-main .header-fields {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    flex-direction: column;
+}
+.zerok .descr{
+    flex:0;   
+    place-items: center stretch;
+    margin-top: 0px;
+    margin-bottom:5px;
+}
+.zerok .descr .descrRow{
+    width:100%;
+    height:100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom:2px;
+    border: 1px solid #999;
+    font-weight: bold;
+    font-style:bold;
+    text-transform: uppercase;
+
+}
+.zerok .sheet-main .header-fields .creationOps{
+    border:1px solid #999;
+    font-weight:bold;
+    font-style:bold;
+    text-transform: uppercase;
+    margin-top:0px;
+    margin-bottom:2px;
+}
+.zerok .sheet-main .header-fields .descr .raceSelect{
+    flex:auto;
+    height: 25px;
+}
+.zerok .sheet-main .header-fields .descr input[type="text"]{
+    height: 25px !important;
+    flex: auto;
+}
+.zerok .sheet-main .header-fields .creationOps .creationRow{
+    padding-left: 10px;
+}
+.zerok .sheet-main .header-fields .eliteAdvances{
+    border:1px solid #999;
+    font-weight:bold;
+    font-style:bold;
+    text-transform: uppercase;
+    padding-left: 10px;
+}
+
+
+
+
+.zerok  .characteristics{
+    margin-top:5px;
+}
+.zerok  .characteristics  span.characteristicsSpan{
+    font-weight: bold;
+    font-style:bold;
+
+
+}
+.zerok .charSelect{
+    width:100%;
+
+}
+
+.zerok .sheet-main .header-fields .char{
+    width: 100%;
+}
+.charCross{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.char-total{
+    width:100%;
+    height:100%;
+}
+
+.zerok nav.sheet-tabs {
+    -webkit-box-flex: 1;
+    margin-top: 0px;
+    height: 150px;
+    font-weight:bold;
+    font-style:bold;
+    flex:auto;
+
+}
+.zerok nav.sheet-tabs2 {
+    -webkit-box-flex: 1;
+    margin-top: 0px;
+    height: 70px;
+    font-weight:bold;
+    font-style:bold;
+    flex:auto;
+
+}
+.zerok nav.sheet-tabs.npc {
+    -webkit-box-flex: 1;
+    margin-top: 0px;
+    height: auto;
+    font-weight:bold;
+    font-style:bold;
+    flex:none;
+
+}
+
+.zerok .sheet-content,
+.zerok .sheet-content .tab,
+
+.zerok .sheet-content .tab .editor {
+    height: 100%;
+    overflow: auto;
+}
+.zerok .sheet-content .tab{
+    overflow:scroll;
+}
+.zerok .sheet-body.npc .tab {
+    overflow: visible;
+}
+.zerok .sheet-body{
+    flex: 1;
+    overflow:auto;
+}
+.zerok .sheet-body.npc{
+    flex: 10;
+    overflow:visible;
+}
+
+
+.zerok .tox .tox-editor-container {
+    background: #fff;
+}
+
+.zerok .tox .tox-edit-area {
+    padding: 0 8px;
+}
+.zerok .resource{
+    width:100%;
+    height:100%;
+
+}
+
+.zerok .resource-label {
+    font-weight: bold;
+    font-style:bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.zerok .tabs {
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+
+}
+
+.zerok .tabs .item {
+    line-height: 12px;
+    height:50px;
+    width:100%;
+    border: 1px solid #999;
+
+    padding-top:1em;
+
+}
+.zerok .tabs .item.active {
+    text-decoration: underline;
+    text-shadow: none;
+    border: 3px solid #999;
+}
+.zerok .list{
+    border: 1px solid #999;
+    flex:none;
+    justify-items: stretch;
+    align-items: stretch;
+}
+.zerok .list3col{
+
+    grid-template-columns: auto 30px 30px;
+}
+.zerok .list4col{
+
+    grid-template-columns: auto auto 30px 30px;
+}
+.zerok .list5col{
+
+    grid-template-columns: 50% auto auto 30px 30px;
+}
+.zerok .list6col{
+
+    grid-template-columns: 50% auto auto auto 30px 30px;
+}
+.zerok .list7col{
+
+    grid-template-columns: 40% auto auto auto auto 30px 30px;
+}
+.zerok .list-item{
+    border: 1px solid #999;
+    width:100%;
+    height:100%;
+    padding:3px;
+}
+.zerok .list-item2{
+    border: 1px solid #999;
+    width:100%;
+    height:100%;
+    padding:3px;
+    grid-column-end :span 2;
+}
+.zerok .list-item-header{
+    border: 3px solid #999;
+    width:100%;
+    height:100%;
+    padding:3px;
+}
+.zerok .list-item-header2{
+    border: 3px solid #999;
+    width:100%;
+    height:100%;
+    padding:3px;
+    grid-column-end :span 2;
+}
+.zerok .list-item-header3{
+    border: 3px solid #999;
+    width:100%;
+    height:100%;
+    padding:3px;
+    grid-column-end :span 3;
+}
+.zerok .power-training{
+    width:100%;
+}
+.zerok .skills{
+
+    border: 1px solid #AAA;
+
+
+}
+.zerok .skills .skills-header{
+    border: 1px solid #AAA;
+    width:100%;
+    grid-column:initial;
+    grid-template-columns: 25% 15% 20% 14% 16% 5% 5% ;
+    place-items: start stretch;
+    margin:0px;
+
+
+}
+.zerok .skills .skills-header .gap{
+    background-image:"" !important;
+    background-color: black !important;
+    border: 1px solid black !important;
+}
+.zerok .skills .skills-header select{
+    width:100%;
+}
+.zerok .skills .skills-header span{
+    border: 1px solid #AAA;
+    font-weight:bold;
+    font-style:bold;
+    padding:3px;
+
+}
+.zerok .skills .skills-header a{
+    border: 1px solid #AAA;
+    font-weight:bold;
+    font-style:bold;
+    padding:3px;
+
+}
+.zerok .skills .skillItem{
+    flex:1;
+    grid-column:initial;
+    width:100%;
+    height:100%;
+
+}
+.zerok .skills .skills-header .skill-group{
+    font-weight: bold !important;
+    font-style:bold;
+    text-transform: uppercase;
+}
+
+.zerok .skills .skills-header .skillSubItem{
+    padding-left:10px !important;
+    height:100%;
+}
+.zerok .item-edit{
+    background-image: url("../icons/editicon.png") !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:30px !important; 
+    height:30px !important;
+    margin-left:3px;
+    display:inherit;
+}
+.item-delete{
+    background-image: url("../icons/deleteicon.png") !important; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:30px !important;
+    height:30px !important;
+    margin-left:3px;
+    display:inherit;
+}
+.zerok .weapon-name{
+    grid-column: span 2;
+    border: 3px solid black;
+    width:100%;
+    padding:3px;
+    font-weight: bolder;
+}
+.zerok .ammo-list{
+    overflow: auto;
+}
+.zerok .weapon-select{
+    flex-basis:50%;
+}
+.zerok .plus-button{
+    background-image: url("../icons/plus.png") !important; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:15px !important;
+    height:15px !important;
+    margin-left:3px;
+    display:inherit;
+}
+.zerok .minus-button{
+    background-image: url("../icons/minus.png") !important; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:15px !important;
+    height:15px !important;
+    margin-left:3px;
+    display:inherit;
+}
+
+.zerok .items-list {
+    list-style: none;
+    margin: 7px 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.zerok .items-list .item-header {
+    font-weight: bold;
+    font-style:bold;
+}
+
+.zerok .items-list .item {
+    height: 30px;
+    line-height: 24px;
+    padding: 3px 0;
+    border-bottom: 1px solid #BBB;
+
+}
+
+.zerok .items-list .item .item-image {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 24px;
+    flex: 0 0 24px;
+    margin-right: 5px;
+}
+
+.zerok .items-list .item img {
+    display: block;
+}
+
+.zerok .items-list .item-name {
+    margin: 0;
+}
+
+.zerok .items-list .item-controls {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 86px;
+    flex: 0 0 86px;
+    text-align: right;
+}
+.zerok .new-skill{
+    font-weight: 14px;
+}
+.zerok .sheet-corruption-insanity{
+    height:100%;
+}
+.zerok .corruption{
+    margin-right:3px;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.zerok .corr-item{
+    flex:none;
+    margin-bottom: 5px;
+}
+
+.zerok .section-title{
+    text-align: center;
+    border-bottom: 2px solid #999;
+    width:100%;
+    font-weight: bold;
+}
+.zerok .sheet-gear{
+    align-items: start;
+}
+.zerok .cyber{
+
+    margin-right: 3px;
+}
+.zerok .combat-weaponsarmor{
+    align-items: start;
+}
+.zerok .forcefield{
+    width:100%;
+}
+.zerok .armor{
+    border: 1px solid #999;
+}
+.zerok .armor-select{
+    flex:16;
+}
+.zerok .weapons{
+    text-align: left;
+}
+.zerok .item-sheet{
+    flex: 1;
+
+}
+.zerok .item-description{
+    flex-grow:10;
+    height: 300px;
+}
+.zerok .actor-background{
+    flex-grow:10;
+    height: 100%;
+}
+.zerok .backgroundandnotes{
+    height:100%
+}
+.zerok .editor{
+    height:100%;
+}
+.zerok .psy-name{
+    grid-column: span 3;
+    border: 3px solid black;
+    width:100%;
+    height:100%;
+    padding:3px;
+    font-weight: bolder;
+}
+.zerok .npcskillntraits{
+    height:100%;
+    width:100%;
+}
+.zerok .npcstuff{
+    flex-grow: 10;
+    height:100%;
+    width:100%;
+}
+.zerok .npc-img{
+    width:150px;
+    height: 210px !important;
+}
+.zerok .npcheader{
+
+    display:grid;
+    grid-template-columns: auto auto;
+}
+.zerok .npcresources{
+    flex-grow: 2;
+}
+.zerok .npcdescr{
+    grid-column: span 1;
+}
+.zerok .npc-info{
+    overflow: visible;
+    height:50%;
+}
+.zerok .cod{
+    flex:6;
+}
+.zerok .movementbox{
+    align-items:center;
+}
+.zerok .movementbox .movementlabel{
+    height:75%;
+}
+.zerok .movementbox .movementnumber{
+    height:25%;
+    border-top: 1px solid #999;
+}
+.test-success{
+    background-color: green !important;
+    background-image: "" !important;
+    color: white !important;
+}
+.test-failure{
+    background-color: red !important;
+    background-image: "" !important;
+    color: white !important;
+}
+.power-push{
+    border-color: red !important;
+}
+.power-safe{
+    border-color: green !important;
+}
+.special-list{
+    display:flex;
+    justify-self: flex-start;
+    padding-left:3px;
+    border: 1px solid #999;
+    height:100%;
+    width:100%;
+}
+.weapon-special-number{
+    flex: 1;
+    width: 50px;
+    justify-self: flex-end;
+}
+.dialog-column{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+
+
+.attack-section input{
+    flex:1;
+}
+.attack-section label{
+    flex:4;
+}
+.tntselect{
+    width:100%;
+    height:530px;
+    overflow: auto;
+}
+.tntitem{
+    border: 1px solid #999;
+    width:100%;
+    height:100%;
+    padding:3px;
+}
+.tntheaderitem{
+    border: 3px solid #999;
+    width:100%;
+    height:100%;
+    padding:3px;
+}
+.tntcheckbox{
+   grid-column-start:span 1; 
+}
+.tntname{
+    grid-column-start:span 3;
+}
+.tntprereqs{
+    grid-column-start:span 3;
+}
+.tnttier{
+    grid-column-start:span 1; 
+}
+.tntaptitudes{
+    grid-column-start:span 2;
+}
+.tntdescr{
+    grid-column-start:span 1; 
+}
+.tntdialog .window-content{
+    overflow:inherit;
+}
+[hidden] { display: none !important; }

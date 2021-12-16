@@ -1,0 +1,50 @@
+<form class="{{cssClass}} item-sheet flexcol">
+ <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+        
+    </header>
+    <div class="flexcol">
+        <label>Name:</label>
+        <input type="text" value="{{name}}" name="name">
+    </div>
+    <div class="flexcol">
+        <label>Type:</label>
+        <select class="damage-type" name="data.type.value">
+                {{#select data.type.value}}
+                {{#each zerok.spaceshipCargoTypes}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+    </div>
+    {{#if (contains data.type.value "Torpedoes")}}
+    <div class="flexcol">
+        <label>Damage:</label>
+        <input type="text" value="{{data.damage.value}}" name="data.damage.value">
+    </div>
+    
+    <div class="flexcol">
+        <label>Rating:</label>
+        <input type="text" value="{{data.rating.value}}" name="data.rating.value">
+    </div>
+    {{/if}}
+    <div class="flexcol">
+        <label>Profit Factor Per Quantity:</label>
+        <input type="text" value="{{data.pf.value}}" name="data.pf.value">
+    </div>
+    <div class="flexcol">
+        <label>Rarity:</label>
+        <select class="damage-type" name="data.rarity.value">
+                {{#select data.rarity.value}}
+                {{#each zerok.spaceshipCargoRarity}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+    </div>
+    
+    <div class="item-description">
+        <label>Description:</label>
+        {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+    </div>
+</form>

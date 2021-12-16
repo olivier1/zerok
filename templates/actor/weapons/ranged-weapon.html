@@ -1,0 +1,60 @@
+<div class="weapons grid grid-2col">
+    <div class="list-item">
+        <span>Name: {{this.name}}</span>
+    </div>
+
+    <div class="list-item">
+        <span>Range: {{this.data.range.value}}m</span>
+    </div>
+    <div class="list-item">
+        <span class="ranged-attack rollable button" data-roll-type="rangedAttack" data-target="{{data.characteristics.bs.total}}" data-item-id="this._id" data-label="Ranged Attack" data-char="bs">Attack Roll</span>
+    </div>
+    <div class="list-item">
+        <span>Damage: </span> 
+        <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.damageFormula.value}}" data-weapon="{{this._id}}"> {{this.data.damageFormula.value}}</a>
+
+    </div>
+    <div class="list-item">
+        <span>Penetration: {{this.data.pen.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <label>Rate of Fire: {{this.data.rof.[0].value}}/{{this.data.rof.[1].value}}/{{this.data.rof.[2].value}}</label>
+    </div>
+    <div class="list-item flexrow">
+        <span>Clip: </span>
+
+        <input class="clip-current" type="text" value="{{this.data.clip.value}}" name="actor.wornGear.weapons.1.data.clip.value" data-item-id="{{this._id}}" data-dtype="Number">
+        <span> / </span>
+        <span>{{this.data.clip.max}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Reload: {{this.data.reload.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Special: 
+            {{#each this.flags.specials}}
+            {{#if this.value}}
+            <a class="item-descr" data-name="{{this.label}}" data-item-descr="{{this.description}}" >{{this.label}}{{#if (isdefined this.num)}}({{this.num}}){{/if}}</a>
+            {{/if}}{{/each}}
+        </span>
+
+    </div>
+    <div class="list-item">
+        <span>Damage Type: {{this.data.damageType.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Class: {{this.data.class.value}}</span>
+
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Type: {{this.data.type.value}}</span>
+
+
+    </div>
+
+</div>

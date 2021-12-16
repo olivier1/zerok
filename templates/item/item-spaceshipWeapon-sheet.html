@@ -1,0 +1,63 @@
+<form class="{{cssClass}} item-sheet flexcol">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+
+    </header>
+    <div class="flexcol">
+        <label>Name:</label>
+        <input type="text" value="{{name}}" name="name">
+    </div>
+    <div class="flexcol">
+        <label>Power:</label>
+        <input type="text" value="{{data.power.value}}" name="data.power.value">
+    </div>
+    <div class="flexcol">
+        <label>Space:</label>
+        <input type="text" value="{{data.space.value}}" name="data.space.value">
+    </div>
+    <div class="flexcol">
+        <label>Ship Points:</label>
+        <input type="text" value="{{data.sp.value}}" name="data.sp.value">
+    </div>
+    <div class="flexcol">
+        <label>Type:</label>
+        <select class="damage-type" name="data.type.value">
+            {{#select data.type.value}}
+            {{#each zerok.spaceshipWeaponTypes}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <div class="flexcol">
+        <label>Damage:</label>
+        <input type="text" value="{{data.damage.value}}" name="data.damage.value">
+    </div>
+    <div class="flexcol">
+        <label>Range:</label>
+        <input type="text" value="{{data.range.value}}" name="data.range.value">
+    </div>
+    <div class="flexcol">
+        <label>Strength:</label>
+        <input type="text" value="{{data.strength.value}}" name="data.strength.value">
+    </div>
+    <div class="flexcol">
+        <label>Location:</label>
+        <select class="damage-type" name="data.location.value">
+            {{#select data.location.value}}
+            {{#each zerok.spaceshipWeaponLocations}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    {{#if isGM}}
+    <div class="flexcol">
+        <a class="modifier button">Modifiers</a>
+    </div>
+    {{/if}}
+    <div class="item-description">
+        <label>Description:</label>
+        {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+    </div>
+</form>

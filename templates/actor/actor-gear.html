@@ -1,0 +1,35 @@
+<div class="sheet-gear flexrow">
+    
+    <div class="cyber flexcol">
+        <span class="section-title">CARRY</span>
+        <div class="carry flexcol">
+            <span>Mod: <input type="text" class="combat-resources" data-target="data.carry.mod" value="{{data.carry.mod}}" data-dtype="Number"/></span>
+            <span>Total Weight: {{data.carry.value}}kg</span>
+            <span>Max Weight: {{data.carry.max}}kg</span>
+        </div>
+        <span class="section-title">WARGEAR</span>
+        <a class="wargear-create button" title="Add a new Wargear">Add Wargear</a>
+
+        <div class="list list5col grid grid-5col">
+            <a class="list-item sort-button" data-sort-type="name" data-path="name" data-item-type="wargear">Name</a>
+            <a class="list-item sort-button" data-sort-type="amount" data-path="data.amount.value" data-item-type="wargear">Amount</a>
+            <a class="list-item sort-button" data-sort-type="weight" data-path="data.weight.total" data-item-type="wargear">Weight</a>
+            <span class="list-button"></span>
+            <span class="list-button"></span>
+            {{#each actor.wargear as |w key|}}
+
+
+            <a class="item-descr list-item drag" data-name="{{w.name}}" data-item-descr="{{w.data.description.value}}">{{w.name}}</a>
+            <input type="text" class="item-text-input list-item" data-target="data.amount.value" value="{{w.data.amount.value}}" data-item-id="{{w._id}}" data-dtype="Number">
+            <span class="list-item">{{w.data.weight.total}}kg</span>
+
+            <a class="list-button item-edit" title="Edit" data-item-id="{{w._id}}"></a>
+            <a class="list-button item-delete" title="Delete" data-item-id="{{w._id}}"></a>
+
+
+
+            {{/each}}
+
+        </div>
+    </div>
+</div>

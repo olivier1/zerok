@@ -1,73 +1,811 @@
 {
-  "Actor": {
-    "types": ["character", "npc"],
-    "templates": {
-      "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
+    "Actor": {
+        "types": [
+            "npc",
+            "PC"
+            
+        ],
+        "templates": {
+            "sorting":{
+                "sort":{}
+            },
+            "description": {
+                "sex": {
+                    "value": "",
+                    "type": "String"
+                },
+                "age": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "build": {
+                    "value": "",
+                    "type": "String"
+                },
+                "hair": {
+                    "value": "",
+                    "type": "String"
+                },
+                "eye": {
+                    "value": "",
+                    "type": "String"
+                },
+                "race": {
+                    "value": "",
+                    "type": "String"
+                },
+                "notesAndBackground":{
+                    "background":"",
+                    "notes":""
+                }
+            },
+            "creationOptions": {
+                "eliteAdvances": {
+                    "value": "",
+                    "type": "String"
+                },
+                "quirks": {
+                    "value": "",
+                    "type": "String"
+                },
+                "superstitions": {
+                    "value": "",
+                    "type": "String"
+                },
+                "momentos": {
+                    "value": "",
+                    "type": "String"
+                }
+            },
+            "creationOptionsDH": {
+                "homeWorld": {
+                    "value": "",
+                    "type": "String"
+                },
+                "background": {
+                    "value": "",
+                    "type": "String"
+                },
+                "role": {
+                    "value": "",
+                    "type": "String"
+                },
+                "divination": {
+                    "value": "",
+                    "type": "String"
+                }
+            },
+            "creationOptionsDW": {
+                "chapter": {
+                    "value": "",
+                    "type": "String"
+                },
+                "background": {
+                    "value": "",
+                    "type": "String"
+                },
+                "role": {
+                    "value": "",
+                    "type": "String"
+                }
+            },
+            "creationOptionsOW": {
+                "homeWorld": {
+                    "value": "",
+                    "type": "String"
+                },
+                "regiment": {
+                    "value": "",
+                    "type": "String"
+                },
+                "specialty": {
+                    "value": "",
+                    "path":"",
+                    "type": "String"
+                }
+            },
+            "characters": {
+                "skillmods":{},
+                "secChar": {
+                    "wounds": {
+                        "type": "Number",
+                        "min": -10,
+                        "value": 10,
+                        "max": 10
+                    },
+                    "fatigue": {
+                        "type": "Number",
+                        "min": 0,
+                        "value": 0,
+                        "max": 6
+                    },
+                    "fate": {
+                        "type": "Number",
+                        "min": 0,
+                        "value": 0,
+                        "max": 0
+                    },
+                    "corruption": {
+                        "value": 0,
+                        "type": "Number",
+                        "chars": "",
+                        "mod": 0
+                    },
+                    "insanity": {
+                        "type": "Number",
+                        "value": 0,
+                        "shock": "",
+                        "mod": 0
+                    },
+                    "wornGear": {
+                        "weapons": [],
+                        "extraWeapons":[],
+                        "armor": {},
+                        "forceField": {}
+                    },
+                    "movement": {
+                        "half": 0,
+                        "full": 0,
+                        "charge": 0,
+                        "run": 0,
+                        "mod": 0,
+                        "multi": 1
+                    },
+                    "attacks": {
+                        "standard": 10,
+                        "charge": 20,
+                        "allOut": 30,
+                        "stun": -20,
+                        "guarded": -10,
+                        "semi":0,
+                        "full":-10,
+                        "aim": {
+                            "half": 10,
+                            "full": 20
+                        },
+                        "swift": 0,
+                        "lightning": -10,
+                        "called": -20,
+                        "gangup": {
+                            "0": 0,
+                            "1": 10,
+                            "2": 20
+                        },
+                        "range": {
+                            "pointblank": 30,
+                            "short": 10,
+                            "standard": 0,
+                            "long": -10,
+                            "extreme": -30
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "mod": 0,
+                        "stealth": 0,
+                        "movement": 0,
+                        "label": "Average",
+                        "size":1
+                    },
+                    "lastHit": {
+                        "value": "body",
+                        "label": "Body",
+                        "dos": 1,
+                        "type": "String",
+                        "aim":false
+                    },
+                    "cover": {
+                        "value": 0,
+                        "type": "String"
+                    },
+                    "initiative":{
+                        "value":0,
+                        "type":"Number"
+                    },
+                    "fearMod":0
+                },
+                "globalMOD": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "characteristics": {
+                    "ws": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Weapon Skill"
+                    },
+                    "bs": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Ballistic Skill"
+                    },
+                    "s": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Strength"
+                    },
+                    "t": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Toughness"
+                    },
+                    "agi": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Agility"
+                    },
+                    "int": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Intelligence"
+                    },
+                    "wp": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Willpower"
+                    },
+                    "fel": {
+                        "type": "Number",
+                        "value": 30,
+                        "mod": 0,
+                        "advance": 0,
+                        "total": 0,
+                        "bonus": 0,
+                        "uB": 0,
+                        "max":100,
+                        "label": "Fellowship"
+                    }
+                },
+                "characterHitLocations": {
+                    "head": {
+                        "value": 0,
+                        "armor": 0,
+                        "armorMod":0,
+                        "cover": false,
+                        "cyber": false,
+                        "shield": 0,
+                        "type": "Number",
+                        "label": "Head"
+                    },
+                    "body": {
+                        "value": 0,
+                        "armor": 0,
+                        "armorMod":0,
+                        "cover": false,
+                        "cyber": false,
+                        "shield": 0,
+                        "type": "Number",
+                        "label": "Body"
+                    },
+                    "rArm": {
+                        "value": 0,
+                        "armor": 0,
+                        "armorMod":0,
+                        "cover": false,
+                        "cyber": false,
+                        "shield": 0,
+                        "type": "Number",
+                        "label": "Right Arm"
+                    },
+                    "lArm": {
+                        "value": 0,
+                        "armor": 0,
+                        "armorMod":0,
+                        "cover": false,
+                        "cyber": false,
+                        "shield": 0,
+                        "type": "Number",
+                        "label": "Left Arm"
+                    },
+                    "rLeg": {
+                        "value": 0,
+                        "armor": 0,
+                        "armorMod":0,
+                        "cover": false,
+                        "cyber": false,
+                        "shield": 0,
+                        "type": "Number",
+                        "label": "Right Leg"
+                    },
+                    "lLeg": {
+                        "value": 0,
+                        "armor": 0,
+                        "armorMod":0,
+                        "cover": false,
+                        "cyber": false,
+                        "shield": 0,
+                        "type": "Number",
+                        "label": "Left Leg"
+                    }
+                },
+                "psykana": {
+                    "pr": {
+                        "value": 0,
+                        "maxPush": 0,
+                        "sustain": 0,
+                        "effective": 0,
+                        "type": "Number"
+                    },
+                    "psykerType": {
+                        "value": "bound",
+                        "type": "String"
+                    },
+                    "mod": {
+                        "value": 0,
+                        "type": "Number"
+                    }
+                },
+                "suddenDeath": {
+                    "value": false,
+                    "type": "Boolean"
+                }
+            },
+            "player": {
+                "experience": {
+                    "type": "Number",
+                    "spent": 0,
+                    "starting": 2000,
+                    "earned": 0,
+                    "value": 0
+                },
+                "carry": {
+                    "value": 0,
+                    "mod":0,
+                    "max": 0
+                },
+                "aptitudes": []
+            }
         },
-        "power": {
-          "value": 5,
-          "min": 0,
-          "max": 5
+        "PC": {
+            "templates": [
+                "description",
+                "characters",
+                "creationOptions",
+                "creationOptionsDW",
+                "player",
+                "sorting"
+            ]
         },
-        "biography": ""
-      }
-    },
-    "character": {
-      "templates": ["base"],
-      "attributes": {
-        "level": {
-          "value": 1
+        "npc": {
+            "templates": [
+                "description",
+                "characters",
+                "sorting"
+            ],
+            "skills": {
+                "value": "",
+                "type": "String"
+            },
+            "talentsntraits": {
+                "value": "",
+                "type": "String"
+            },
+            "equipment": {
+                "value": "",
+                "type": ""
+            },
+            "description": {
+                "value": "",
+                "type": "String"
+            }
         }
-      },
-      "abilities": {
-        "str": {
-          "value": 10
+        
+    },
+    "Item": {
+        "types": [
+            "meleeWeapon",
+            "rangedWeapon",
+            "ammunition",
+            "wargear",
+            "armor",
+            "spell",
+            "skill",
+            "mutation",
+            "malignancy",
+            "disorder",
+            "injury",
+            "talentntrait",
+            "advancement",
+            "mission"
+        ],
+        "templates": {
+            "weapon": {
+                
+                "damageFormula": {
+                    "value": "1d10",
+                    "formula": "1d10",
+                    "type": "String"
+                },
+                "pen": {
+                    "value": 0,
+                    "formula": "0",
+                    "type": "String"
+                },
+                "attackMods": {
+                    "single": 10,
+                    "semi": 0,
+                    "full": -10,
+                    "suppressive":-20,
+                    "aim": {
+                        "half": 10,
+                        "full": 20
+                    },
+                    "range": {
+                        "pointblank": 30,
+                        "short": 10,
+                        "standard": 0,
+                        "long": -10,
+                        "extreme": -30
+                    }
+                },
+                "testMod": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "range": {
+                    "value": 1,
+                    "formula": "1",
+                    "type": "String"
+                },
+                "damageType": {
+                    "value": "",
+                    "type": "String"
+                },
+                "class": {
+                    "value": "",
+                    "type": "String"
+                },
+                "type": {
+                    "value": "",
+                    "type": "String"
+                },
+                "twohanded": {
+                    "value": false,
+                    "type": "Boolean"
+                }
+            },
+            "description": {
+                "description": {
+                    "value": "",
+                    "type": "String"
+                }
+            },
+            "equippable": {
+                "isEquipped":false
+            },
+            "physicalProp": {
+                "weight": {
+                    "value": 0,
+                    "total": 0,
+                    "type": "Number"
+                },
+                "rarity": {
+                    "value": "",
+                    "type": "String"
+                },
+                "amount": {
+                    "value": 1,
+                    "type": "Number"
+                },
+                "quality": {
+                    "value": "Common",
+                    "type": "String"
+                }
+            },
+            "tableEntry": {
+                "min": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "max": {
+                    "value": 0,
+                    "type": "Number"
+                }
+            }
         },
-        "dex": {
-          "value": 10
+        "meleeWeapon": {
+            "templates": [
+                "weapon",
+                "description",
+                "physicalProp",
+                "equippable"
+            ],
+            "mods": [],
+            "shield": {
+                "value": 0,
+                "type": "Number"
+            }
         },
-        "con": {
-          "value": 10
+        "rangedWeapon": {
+            "templates": [
+                "weapon",
+                "description",
+                "physicalProp",
+                "equippable"
+            ],
+            "rof": [{
+                "value": "s",
+                "type": "String"
+            },
+                    {
+                        "value": 0,
+                        "type": "Number"
+                    },
+                    {
+                        "value": 0,
+                        "type": "Number"
+                    }
+                   ],
+            "clip": {
+                "value": 0,
+                "max": 0,
+                "consumption": 1,
+                "formula": "",
+                "type": "Number"
+            },
+            "mods": [],
+            "ammo": {
+                "_id": ""
+            },
+            "reload": {
+                "value": "",
+                "type": "String"
+            }
         },
-        "int": {
-          "value": 10
+        "ammunition": {
+            "templates": [
+                "weapon",
+                "description",
+                "physicalProp"
+            ],
+            "currentClip": {
+                "value": 0,
+                "type": "String"
+            },
+            "default":{
+                "value": true,
+                "type": "Boolean"
+            }
         },
-        "wis": {
-          "value": 10
+        "wargear": {
+            "templates": [
+                "description",
+                "physicalProp"
+            ]
         },
-        "cha": {
-          "value": 10
+        "armor": {
+            "templates": [
+                "description",
+                "physicalProp",
+                "equippable"
+            ],
+            "maxAgi": {
+                "value": 0,
+                "type": "Number"
+            },
+            "ap": {
+                "head": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "body": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "lArm": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "rArm": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "lLeg": {
+                    "value": 0,
+                    "type": "Number"
+                },
+                "rLeg": {
+                    "value": 0,
+                    "type": "Number"
+                }
+            }
+        },
+        "spell": {
+            "templates": [
+                "weapon",
+                "description"
+            ],
+            "action": {
+                "value": "",
+                "type": "String"
+            },
+            "class": {
+                    "value": "Psychic Bolt",
+                    "type": "String"
+                },
+            "subtype": {
+                "value": "",
+                "type": "String"
+            },
+            "discipline": {
+                "value": "",
+                "type": "String"
+            },
+            "testChar": {
+                "value": "wp",
+                "type": "Characteristic"
+            },
+            "sustain": {
+                "value": "",
+                "type": "String"
+            },
+            "curPR": {
+                "value": 1,
+                "number": "Number"
+            },
+            "reqs": {
+                "value": "",
+                "type": "String"
+            },
+            "target": {
+                "value": 0,
+                "type": "Number"
+            },
+            "training":{
+                "value": "",
+                "type": "String"
+            }
+        },
+        "skill": {
+            "templates": [
+                "description"
+            ],
+            "parent": {
+                "value": "",
+                "type": "String"
+            },
+            "hasChildren": {
+                "value": false,
+                "type": "Boolean"
+            },
+            "type": "Number",
+            "value": -20,
+            "characteristic": {
+                "type": "String",
+                "value": "int"
+            },
+            "mod": {
+                "value": 0,
+                "type": "Number"
+            },
+            "total": {
+                "value": 0,
+                "type": "Number"
+            },
+            "aptitudes": {
+                "value": "",
+                "type": "String"
+            },
+            "skillUse": {
+                "value": "",
+                "type": "String"
+            }
+        },
+        "mutation": {
+            "templates": [
+                "description",
+                "tableEntry"
+            ]
+        },
+        "malignancy": {
+            "templates": [
+                "description",
+                "tableEntry"
+            ]
+        },
+        "disorder": {
+            "templates": [
+                "description",
+                "tableEntry"
+            ]
+        },
+        "injury": {
+            "templates": [
+                "description"
+            ],
+            "bodyPart":{
+                "value":"",
+                "type":"String"
+            }
+        },
+        "talentntrait": {
+            "templates": [
+                "description"
+            ],
+            "tier": {
+                "value": 1,
+                "type": "Number"
+            },
+            "prereqs": {
+                "value": "",
+                "type": "String"
+            },
+            "aptitudes": {
+                "value": "",
+                "type": "String"
+            },
+            "specialisation":{
+                "value":"N/A",
+                "type":"String"
+            },
+            "flagId":{
+                "value":"",
+                "type":"String"
+            },
+            "tags":{
+                "value":"",
+                "type":"String"
+            }
+        },
+        "advancement": {
+            "templates": [
+                "description"
+            ],
+            "cost": {
+                "value": 0,
+                "type": "Number"
+            }
+        },
+        "mission": {
+            "templates": [
+                "description"
+            ],
+            "exp": {
+                "value": 0,
+                "type": "Number"
+            }
         }
-      }
-    },
-    "npc": {
-      "templates": ["base"],
-      "cr": 0
     }
-  },
-  "Item": {
-    "types": ["item", "feature", "spell"],
-    "templates": {
-      "base": {
-        "description": ""
-      }
-    },
-    "item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": 0,
-      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
-    },
-    "feature": {
-      "templates": ["base"]
-    },
-    "spell": {
-      "templates": ["base"],
-      "spellLevel": 1
-    }
-  }
 }

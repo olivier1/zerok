@@ -1,0 +1,156 @@
+<div class="zerok grid grid-2col">
+    <div class="flexcol dialog-column">
+        <div class="flexcol attack-section">
+            <label class="section-title">Attack Action</label>
+            <div class="list-item flexrow"{{#unless single}} hidden{{/unless}}>
+
+                <input type="radio" name="attack-type" value="{{modifiers.standard}}" index='0'attacktype="standard"label="Standard" {{#if single}}checked{{/if}}><label>Standard: +{{modifiers.standard}}</label>
+            </div>
+            <div class="list-item flexrow" {{#unless semi}} hidden{{/unless}}>
+
+                <input type="radio" name="attack-type" value="{{modifiers.semi}}" index='1' attacktype="semi"label="Semi-Auto"><label>Semi-Auto: +{{modifiers.semi}}</label>
+            </div>
+            <div class="list-item flexrow" {{#unless full}} hidden{{/unless}}>
+
+                <input type="radio" name="attack-type" value="{{modifiers.full}}" index='2'attacktype="full"label="Full-Auto"{{#unless single}}checked{{/unless}}><label>Full-Auto: {{modifiers.full}}</label>
+            </div>
+            <div class="list-item flexrow" {{#unless supp}} hidden{{/unless}}>
+
+                <input type="radio" name="attack-type" value="{{modifiers.suppressive}}" index='3' attacktype="full"label="Suppressing Fire"><label>Suppressing Fire: {{modifiers.suppressive}}</label>
+            </div>
+
+            <div class="list-item flexrow" {{#unless single}} hidden{{/unless}}>
+
+                <input type="radio" name="attack-type" value="{{modifiers.called}}" index='0' attacktype="called" label="Called Shot" ><label>Called Shot: {{modifiers.called}}</label>
+                <select name="calledLoc">
+                    <option value="9">Head</option>
+                    <option value="69">Body</option>
+                    <option value="29">Left Arm</option>
+                    <option value="19">Right Arm</option>
+                    <option value="84">Left Leg</option>
+                    <option value="99">Right Leg</option>
+                </select>
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="guarded" value="{{modifiers.guarded}}" label="Guarded"><label>Guarded: {{modifiers.Guarded}}</label>
+            </div>
+
+
+        </div>
+        {{#unless modifiers.inaccurate}}
+        <div class="flexcol attack-section">
+            <label class="section-title">Aiming</label>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="aim-type" value="0" checked><label>None: +0</label>
+
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="aim-type" value="{{modifiers.aim.half}}"><label>Half Aim: +{{modifiers.aim.half}}</label>
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="aim-type" value="{{modifiers.aim.full}}"><label>Full Aim: +{{modifiers.aim.full}}</label>
+            </div>
+        </div>
+        {{/unless}}
+        <div class="flexcol attack-section">
+            <label class="section-title">Distance</label>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.standard}}" {{#if options.normal}} checked{{/if}}><label>Standard: +{{modifiers.range.standard}}</label>
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="distance" value="{{modifiers.range.pointblank}}"{{#if options.pointblank}} checked{{/if}}><label>Point blank: +{{modifiers.range.pointblank}}</label>
+
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.short}}" {{#if options.short}} checked{{/if}}><label>Short: +{{modifiers.range.short}}</label>
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.long}}" {{#if options.long}} checked{{/if}}><label>Long: {{modifiers.range.long}}</label>
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.extreme}}" {{#if options.extreme}} checked{{/if}}><label>Extreme: {{modifiers.range.extreme}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="flexcol dialog-column">
+
+
+        <div class="flexcol attack-section">
+            <label class="section-title">Visibility</label>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="visibility" value="0" checked><label>Normal: +0</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="visibility" value="-10" ><label>Fog/mist/shadow/smoke: -10</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="visibility" value="-20" ><label>Darkness: -20</label>
+
+            </div>
+
+        </div>
+        <div class="flexcol attack-section">
+            <label class="section-title">Target is</label>
+
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="prone" value="-10"{{#if options.prone}} checked{{/if}}><label>Prone/Knocked Down/Higher Ground: -10</label>
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="high" value="10"><label>You are on higher ground: +10</label>
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="surprised" value="30" {{#if options.helpless}} checked{{/if}}><label>Surprised/Unaware: +30</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="running" value="-20" {{#if options.running}} checked{{/if}}><label>Running: -20</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="stunned" value="20" {{#if options.stunned}} checked{{/if}}><label>Stunned: +20</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="concealed" value="-30" ><label>Fully Concealed: -30</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="melee" value="-20" ><label>In melee: -20</label>
+
+            </div>
+            <select class="size" name="size">
+              
+                {{#if options.size}}
+                {{#each size}}
+                <option value="{{this.mod}}" {{#if (equals @index ../options.size)}}selected{{/if}}>{{this.name}}</option>
+              
+                {{/each}}
+                {{else}}
+                {{#each size}}
+                <option value="{{this.mod}}" {{#if (contains this.name "average")}}selected{{/if}}>{{this.name}}</option>
+               
+                {{/each}}
+                {{/if}}
+            </select>
+
+        </div>
+    </div>
+
+</div>
+<label class="section-title">Other Modifiers</label>
+<input type="text" id="modifier" name="other" value="{{modifiers.testMod}}">

@@ -1,0 +1,17 @@
+
+<div class="grid grid-2col">
+   
+{{#each specials}}
+    <div class="special-list">
+        <label title="{{this.description}}">{{this.label}}</label>
+        
+        {{#if (isdefined this.num)}}
+        <input type="text" class="weapon-special-number" id="{{@key}}num" value="{{this.num}}">
+        {{else}}
+        <input type="checkbox" class="weapon-special" id="{{@key}}" {{checked this.value}}>
+        {{/if}}
+    </div>
+    
+    
+{{/each}}
+</div>

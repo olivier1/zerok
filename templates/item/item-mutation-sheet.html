@@ -1,0 +1,29 @@
+<form class="{{cssClass}} item-sheet flexcol">
+ <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+        
+    </header>
+    <div class="flexcol">
+        <label>Name:</label>
+        <input type="text" value="{{name}}" name="name">
+    </div>
+    <div class="flexcol">
+        <label>Table Range:</label>
+        <div class="flexrow">
+            <div class="flexcol">
+                <label>Min:</label>
+                <input type="text" value="{{data.min.value}}" name="data.min.value">
+            </div>
+            <div class="flexcol">
+                <label>Max:</label>
+                <input type="text" value="{{data.max.value}}" name="data.max.value">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="item-description">
+        <label>Description:</label>
+        {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+    </div>
+</form>

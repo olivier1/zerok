@@ -1,0 +1,126 @@
+<form class="{{cssClass}} item-sheet flexcol">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+
+    </header>
+    <span>You will have to create an ammunition item in order to fire your ranged weapon, unless it is a thrown weapon in which case it will use the amount of the weapon as ammo.</span>
+    <div class="grid grid-3col">
+        <div class="flexcol">
+            <label>Name:</label>
+            <input type="text" value="{{name}}" name="name">
+        </div>
+
+        <div class="flexcol">
+            <label>Range:</label>
+            <input type="text" value="{{data.range.formula}}" name="data.range.formula">
+        </div>
+        <div class="flexcol">
+            <label>Damage:</label>
+            <input type="text" value="{{data.damageFormula.formula}}" name="data.damageFormula.formula">
+        </div>
+        <div class="flexcol">
+            <label>Penetration:</label>
+            <input type="text" value="{{data.pen.formula}}" name="data.pen.formula" data-dtype="String">
+        </div>
+        <div class="flexcol">
+            <label>Clip Size:</label>
+            <input type="text" value="{{data.clip.formula}}" name="data.clip.formula" data-dtype="Number">
+        </div>
+        <div class="flexcol">
+            <label>Reload:</label>
+            <input type="text" value="{{data.reload.value}}" name="data.reload.value">
+        </div>
+        <div class="flexcol">
+            <a class="special button">Special</a>
+        </div>
+        {{#if isGM}}
+        <div class="flexcol">
+            <a class="modifier button">Modifiers</a>
+        </div>
+        {{/if}}
+        <div class="flexcol">
+            <label>Rate of Fire:</label>
+            <div class="flexrow">
+                <input type="text" value="{{data.rof.[0].value}}" name="data.rof.0.value">
+                <span>/</span>
+                <input type="text" value="{{data.rof.[1].value}}" name="data.rof.1.value">
+                <span>/</span>
+                <input type="text" value="{{data.rof.[2].value}}" name="data.rof.2.value">
+            </div>
+
+
+        </div>
+        <div class="flexcol">
+            <label>Damage Type:</label>
+            <select class="damage-type" name="data.damageType.value">
+                
+                {{#select data.damageType.value}}
+                {{#each zerok.damageTypes}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Weapon Class:</label>
+
+            <select class="weapon-type"  name="data.class.value">
+                {{#select data.class.value}}
+                {{#each zerok.rangedWeaponClasses}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Weapon Type:</label>
+
+            <select class="weapon-type"  name="data.type.value">
+                {{#select data.type.value}}
+                {{#each zerok.rangedWeaponTypes}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Item Quality:</label>
+
+            <select class="quality"  name="data.quality.value">
+                {{#select data.quality.value}}
+                {{#each zerok.itemQualities}}
+                <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Rarity:</label>
+            <select class="power-type" name="data.rarity.value">
+                {{#select data.rarity.value}}
+                <option value="100">Ubiquitous</option>
+                <option value="30">Abundant</option>  
+                <option value="20">Plentiful</option>
+                <option value="10">Common</option> 
+                <option value="0">Average</option>
+                <option value="-10">Scarce</option> 
+                <option value="-20">Rare</option>
+                <option value="-30">Very rare</option> 
+                <option value="-40">Extremely rare</option>
+                <option value="-50">Near Unique</option>
+                <option value="-60">Unique</option>
+
+
+                {{/select}}
+            </select>
+        </div>
+        <div class="flexcol">
+            <label>Weight:</label>
+            <input type="text" value="{{data.weight.value}}" name="data.weight.value">
+        </div>
+    </div>
+    <div class="item-description">
+        <label>Description:</label>
+        {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+    </div>
+</form>

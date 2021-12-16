@@ -1,0 +1,101 @@
+<form class="{{cssClass}} item-sheet flexcol">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+
+    </header>
+    <div class="flexcol">
+        <label>Name:</label>
+        <input type="text" value="{{name}}" name="name">
+    </div>
+    <div class="flexcol">
+        <label>Weight:</label>
+        <input type="text" value="{{data.weight.value}}" name="data.weight.value">
+    </div>
+    <div class="flexcol">
+        <label>Item Quality:</label>
+
+        <select class="quality"  name="data.quality.value">
+            {{#select data.quality.value}}
+            {{#each zerok.itemQualities}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <div class="flexcol">
+        <label>Rarity:</label>
+        <select class="power-type" name="data.rarity.value">
+            {{#select data.rarity.value}}
+            <option value="100">Ubiquitous</option>
+            <option value="30">Abundant</option>  
+            <option value="20">Plentiful</option>
+            <option value="10">Common</option> 
+            <option value="0">Average</option>
+            <option value="-10">Scarce</option> 
+            <option value="-20">Rare</option>
+            <option value="-30">Very rare</option> 
+            <option value="-40">Extremely rare</option>
+            <option value="-50">Near Unique</option>
+            <option value="-60">Unique</option>
+
+
+            {{/select}}
+        </select>
+    </div>
+    <div class="flexcol">
+        <label>Max Agility:</label>
+        <input type="text" value="{{data.maxAgi.value}}" name="data.maxAgi.value">
+    </div>
+    {{#if isGM}}
+    <div class="flexcol">
+        <a class="modifier button">Modifiers</a>
+    </div>
+    {{/if}}
+    <div class="flexcol">
+        <a class="special button">Special Qualities</a>
+    </div>
+    <div class="armor-wrap flexcol">
+        <div class="flexrow flex-group-center">
+            <div class="flexcol">
+
+                <label>Head</label>
+                <input type="text" value="{{data.ap.head.value}}" name="data.ap.head.value">
+            </div>
+
+        </div>
+        <div class="flexrow flex-group-center">
+            <div class="flexcol">
+
+                <label>Left Arm</label>
+                <input type="text" value="{{data.ap.lArm.value}}" name="data.ap.lArm.value">
+            </div>
+            <div class="flexcol">
+
+                <label>Body</label>
+                <input type="text" value="{{data.ap.body.value}}" name="data.ap.body.value">
+            </div>
+            <div class="flexcol">
+
+                <label>Right Arm</label>
+                <input type="text" value="{{data.ap.rArm.value}}" name="data.ap.rArm.value">
+            </div>
+        </div>
+        <div class="flexrow flex-group-center">
+
+            <div class="flexcol">
+
+                <label>Left Leg</label>
+                <input type="text" value="{{data.ap.lLeg.value}}" name="data.ap.lLeg.value">
+            </div>
+            <div class="flexcol">
+
+                <label>Right Leg</label>
+                <input type="text" value="{{data.ap.rLeg.value}}" name="data.ap.rLeg.value">
+            </div>
+        </div>
+    </div>
+    <div class="item-description">
+        <label>Description:</label>
+        {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+    </div>
+</form>

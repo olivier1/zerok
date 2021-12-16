@@ -1,0 +1,203 @@
+{{#unless (compareString data.secChar.wornGear.weapons.[0])}}
+{{#if (contains actor.wornGear.weapons.[0].type "ranged")}}
+<div class="weapons grid grid-2col">
+    <div class="list-item">
+        <span>Name: {{actor.wornGear.weapons.[0].name}}</span>
+    </div>
+
+    <div class="list-item">
+        <span>Range: {{actor.wornGear.weapons.[0].data.range.value}}m</span>
+    </div>
+    <div class="list-item">
+        <span class="ranged-attack rollable button" data-roll-type="rangedAttack" data-target="{{data.characteristics.bs.total}}" data-item-id="actor.wornGear.weapons.0._id" data-label="Ranged Attack" data-char="bs">Attack Roll</span>
+    </div>
+
+    <div class="list-item">
+        <span>Damage: </span>
+        <a class="damage-roll button" data-label="{{actor.wornGear.weapons.[0].name}}"data-formula="{{actor.wornGear.weapons.[0].data.damageFormula.value}}" data-weapon="{{actor.wornGear.weapons.[0]._id}}"> {{actor.wornGear.weapons.[0].data.damageFormula.value}}</a>
+
+    </div>
+    <div class="list-item">
+        <span>Penetration: {{actor.wornGear.weapons.[0].data.pen.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <label>Rate of Fire: {{actor.wornGear.weapons.[0].data.rof.[0].value}}/{{actor.wornGear.weapons.[0].data.rof.[1].value}}/{{actor.wornGear.weapons.[0].data.rof.[2].value}}</label>
+    </div>
+    <div class="list-item flexrow">
+        <span>Clip: </span>
+
+        <input class="clip-current" type="text" value="{{actor.wornGear.weapons.[0].data.clip.value}}" name="actor.wornGear.weapons.0.data.clip.value" data-item-id="{{actor.wornGear.weapons.[0]._id}}" data-dtype="Number">
+        <span> / </span>
+        <span>{{actor.wornGear.weapons.[0].data.clip.max}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Reload: {{actor.wornGear.weapons.[0].data.reload.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Special: {{actor.wornGear.weapons.[0].data.special.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Damage Type: {{actor.wornGear.weapons.[0].data.damageType.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Class: {{actor.wornGear.weapons.[0].data.class.value}}</span>
+
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Type: {{actor.wornGear.weapons.[0].data.type.value}}</span>
+
+
+    </div>
+
+</div>
+
+{{else}}
+<div class="weapons grid grid-2col">
+    <div class="list-item">
+        <span>Name: {{actor.wornGear.weapons.[0].name}}</span>
+    </div>
+
+    <div class="list-item">
+        <span>Reach: {{actor.wornGear.weapons.[0].data.range.value}}m</span>
+    </div>
+    <div class="list-item">
+        <span class="melee-attack rollable button" data-roll-type="meleeAttack" data-target="{{data.characteristics.ws.total}}" data-item-id="actor.wornGear.weapons.0._id" data-label="Melee Attack" data-char="ws">Attack Roll</span>
+    </div>
+    <div class="list-item">
+        <span>Damage: </span>
+        <a class="damage-roll button" data-label="{{actor.wornGear.weapons.[0].name}}"data-formula="{{actor.wornGear.weapons.[0].data.damageFormula.value}}+@characteristics.s.bonus" data-weapon="{{actor.wornGear.weapons.[0]._id}}"> {{actor.wornGear.weapons.[0].data.damageFormula.value}}+{{data.characteristics.s.bonus}}</a>
+    </div>
+    <div class="list-item">
+        <span>Penetration: {{actor.wornGear.weapons.[0].data.pen.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Special: {{actor.wornGear.weapons.[0].data.special.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Damage Type: {{actor.wornGear.weapons.[0].data.damageType.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Class: {{actor.wornGear.weapons.[0].data.class.value}}</span>
+
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Type: {{actor.wornGear.weapons.[0].data.type.value}}</span>
+
+
+    </div>
+
+</div>
+
+{{/if}}
+{{/unless}}
+
+{{#unless (compareString data.secChar.wornGear.weapons.[1])}}
+{{#unless (compareString data.secChar.wornGear.weapons.[1] data.secChar.wornGear.weapons.[0])}}
+{{#if (contains actor.wornGear.weapons.[1].type "ranged")}}
+<div class="weapons grid grid-2col">
+    <div class="list-item">
+        <span>Name: {{actor.wornGear.weapons.[1].name}}</span>
+    </div>
+
+    <div class="list-item">
+        <span>Range: {{actor.wornGear.weapons.[1].data.range.value}}m</span>
+    </div>
+    <div class="list-item">
+        <span class="ranged-attack rollable button" data-roll-type="rangedAttack" data-target="{{data.characteristics.bs.total}}" data-item-id="actor.wornGear.weapons.[1]._id" data-label="Ranged Attack" data-char="bs">Attack Roll</span>
+    </div>
+    <div class="list-item">
+        <span>Damage: </span> 
+        <a class="damage-roll button" data-label="{{actor.wornGear.weapons.[1].name}}"data-formula="{{actor.wornGear.weapons.[1].data.damageFormula.value}}" data-weapon="{{actor.wornGear.weapons.[1]._id}}"> {{actor.wornGear.weapons.[1].data.damageFormula.value}}</a>
+
+    </div>
+    <div class="list-item">
+        <span>Penetration: {{actor.wornGear.weapons.[1].data.pen.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <label>Rate of Fire: {{actor.wornGear.weapons.[1].data.rof.[0].value}}/{{actor.wornGear.weapons.[1].data.rof.[1].value}}/{{actor.wornGear.weapons.[1].data.rof.[2].value}}</label>
+    </div>
+    <div class="list-item flexrow">
+        <span>Clip: </span>
+
+        <input class="clip-current" type="text" value="{{actor.wornGear.weapons.[1].data.clip.value}}" name="actor.wornGear.weapons.1.data.clip.value" data-item-id="{{actor.wornGear.weapons.[1]._id}}" data-dtype="Number">
+        <span> / </span>
+        <span>{{actor.wornGear.weapons.[1].data.clip.max}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Reload: {{actor.wornGear.weapons.[1].data.reload.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Special: {{actor.wornGear.weapons.[1].data.special.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Damage Type: {{actor.wornGear.weapons.[1].data.damageType.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Class: {{actor.wornGear.weapons.[1].data.class.value}}</span>
+
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Type: {{actor.wornGear.weapons.[1].data.type.value}}</span>
+
+
+    </div>
+
+</div>
+
+{{else}}
+<div class="weapons grid grid-2col">
+    <div class="list-item">
+        <span>Name: {{actor.wornGear.weapons.[1].name}}</span>
+    </div>
+
+    <div class="list-item">
+        <span>Reach: {{actor.wornGear.weapons.[1].data.range.value}}m</span>
+    </div>
+    <div class="list-item">
+        <span class="melee-attack rollable button" data-roll-type="meleeAttack" data-target="{{data.characteristics.ws.total}}" data-item-id="actor.wornGear.weapons.[1]._id" data-label="Melee Attack" data-char="ws">Attack Roll</span>
+    </div>
+    <div class="list-item">
+        <span>Damage: </span>
+        <a class="damage-roll button" data-label="{{actor.wornGear.weapons.[1].name}}"data-formula="{{actor.wornGear.weapons.[1].data.damageFormula.value}}+@characteristics.s.bonus" data-weapon="{{actor.wornGear.weapons.[1]._id}}"> {{actor.wornGear.weapons.[1].data.damageFormula.value}}+{{data.characteristics.s.bonus}}</a>
+    </div>
+    <div class="list-item">
+        <span>Penetration: {{actor.wornGear.weapons.[1].data.pen.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Special: {{actor.wornGear.weapons.[1].data.special.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Damage Type: {{actor.wornGear.weapons.[1].data.damageType.value}}</span>
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Class: {{actor.wornGear.weapons.[1].data.class.value}}</span>
+
+
+    </div>
+    <div class="list-item">
+        <span>Weapon Type: {{actor.wornGear.weapons.[1].data.type.value}}</span>
+    </div>
+
+</div>
+{{/if}}
+{{/unless}}
+{{/unless}}

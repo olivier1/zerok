@@ -1,0 +1,106 @@
+<div class="zerok grid grid-2col">
+    <div class="flexcol dialog-column">
+
+
+        <div class="flexcol attack-section">
+            <label class="section-title">Distance</label>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.standard}}" {{#if options.normal}} checked{{/if}}><label>Standard: +{{modifiers.range.standard}}</label>
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="distance" value="{{modifiers.range.pointblank}}"{{#if options.pointblank}} checked{{/if}}><label>Point blank: +{{modifiers.range.pointblank}}</label>
+
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.short}}" {{#if options.short}} checked{{/if}}><label>Short: +{{modifiers.range.short}}</label>
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.long}}"{{#if options.long}} checked{{/if}} ><label>Long: {{modifiers.range.long}}</label>
+            </div>
+            <div class="list-item flexrow">
+                <input type="radio" name="distance" value="{{modifiers.range.extreme}}" {{#if options.extreme}} checked{{/if}}><label>Extreme: {{modifiers.range.extreme}}</label>
+            </div>
+        </div>
+        <div class="flexcol attack-section">
+            <label class="section-title">Visibility</label>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="visibility" value="0" checked><label>Normal: +0</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="visibility" value="-10" ><label>Fog/mist/shadow/smoke: -10</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="radio" name="visibility" value="-20" ><label>Darkness: -20</label>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="flexcol dialog-column">
+
+
+        
+        <div class="flexcol attack-section">
+            <label class="section-title">Target is</label>
+
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="prone" value="-10" {{#if options.prone}} checked{{/if}}><label>Prone/Knocked Down/Higher Ground: -10</label>
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="high" value="10"><label>You are on higher ground: +10</label>
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="surprised" value="30" {{#if options.helpless}} checked{{/if}}><label>Surprised/Unaware: +30</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="running" value="-20" {{#if options.running}} checked{{/if}}><label>Running: -20</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="stunned" value="20" {{#if options.stunned}} checked{{/if}}><label>Stunned: +20</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="concealed" value="-30" ><label>Fully Concealed: -30</label>
+
+            </div>
+            <div class="list-item flexrow">
+
+                <input type="checkbox" name="melee" value="-20" ><label>In meelee: -20</label>
+
+            </div>
+            <select class="size" name="size">
+               
+                {{#if options.size}}
+                {{#each size}}
+                <option value="{{this.mod}}" {{#if (equals @index ../options.size)}}selected{{/if}}>{{this.name}}</option>
+              
+                {{/each}}
+                {{else}}
+                {{#each size}}
+                <option value="{{this.mod}}" {{#if (contains this.name "average")}}selected{{/if}}>{{this.name}}</option>
+               
+                {{/each}}
+                {{/if}}
+            </select>
+
+
+        </div>
+    </div>
+
+</div>
+<label>Other Modifiers</label>
+<input type="text" id="modifier" name="other" value="0">

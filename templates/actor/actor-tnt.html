@@ -1,0 +1,19 @@
+<div class="sheet-tnt flexcol">
+    <a class="tnt-create button" data-type="talentntrait" title="Add a new Talent or Trait">Add Talent or Trait</a>
+    <div class="list list3col grid grid-3col">
+        <a class="list-item sort-button" data-sort-type="name" data-path="name" data-item-type="talentsntraits">Name</a>
+        <span class="list-button"></span>
+        <span class="list-button"></span>
+        {{#each actor.talentsntraits as |t key|}}
+        
+            <a class="item-descr list-item drag" data-id="{{t._id}}" data-name="{{t.name}}" data-item-descr="{{t.data.description.value}}">{{t.name}}{{#unless (compareString "N/A" t.data.specialisation.value)}} ({{t.data.specialisation.value}}){{/unless}} </a>
+            <a class="list-button item-edit" title="Edit" data-item-id="{{t._id}}"></a>
+            <a class="list-button item-delete" title="Delete" data-item-id="{{t._id}}"></a>
+        
+
+        
+        {{/each}}
+
+    </div>
+
+</div>

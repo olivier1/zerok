@@ -1,0 +1,14 @@
+
+<div class="zerok chat-message flexcol">
+    
+    <span class="chat-line">{{title}}</span>
+    <div class="flexrow">
+        <span class="chat-line">{{rollResult}}</span>
+        <span class="chat-line">{{target}}</span>   
+    </div>
+    <span class="chat-line {{#if success}}test-success{{else}}test-failure{{/if}}">{{pass}}</span>
+    <span class="roll-result">{{dos}}</span>
+    {{#unless reroll}}
+    <a class="button reroll" data-actor="{{actor}}" data-char="{{char}}" data-roll-type="{{type}}" data-target="{{targetNumber}}" data-label="{{label}}" data-weapon="{{weapon}}" data-fire="{{fireRate}}">Reroll</a>
+    {{/unless}}
+</div>

@@ -1,0 +1,47 @@
+<form class="{{cssClass}} item-sheet flexcol">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{name}}"/>
+
+    </header>
+    <div class="flexcol">
+        <label>Name:</label>
+        <input type="text" value="{{name}}" name="name">
+    </div>
+    <div class="flexcol">
+        <label>Tier:</label>
+        <input type="text" value="{{data.tier.value}}" name="data.tier.value">
+    </div>
+    <div class="flexcol">
+        <label>Prerequisites:</label>
+        <input type="text" value="{{data.prereqs.value}}" name="data.prereqs.value">
+    </div>
+    <div class="flexcol">
+        <label>Aptitudes:</label>
+        <input type="text" value="{{data.aptitudes.value}}" name="data.aptitudes.value">
+    </div>
+    <div class="flexcol">
+        <label>Specialisation:</label>
+        <input type="text" value="{{data.specialisation.value}}" name="data.specialisation.value">
+    </div>
+    {{#if isGM}}
+    Don't change this unless you know what youre doing!
+
+    <div class="flexcol">
+        <a class="modifier button">Modifiers</a>
+    </div>
+
+    <div class="flexcol">
+        <label>Tags:</label>
+        <input type="text" value="{{data.tags.value}}" name="data.tags.value">
+    </div>
+
+    <div class="flexcol">
+        <label>Flag Id:</label>
+        <input type="text" value="{{data.flagId.value}}" name="data.flagId.value">
+    </div>
+    {{/if}}
+    <div class="item-description">
+        <label>Description:</label>
+        {{editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable}}
+    </div>
+</form>

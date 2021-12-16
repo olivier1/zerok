@@ -1,0 +1,190 @@
+<div class="sheet-main flexcol">
+
+
+
+
+
+    <div class="header-fields">
+        <div class="descr grid grid-3col">
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Name:</span>
+                 <input type="text" class="combat-resources" data-target="name" value="{{actor.name}}" data-dtype="Number"/>
+            </div>
+
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Age:</span>
+                <input type="text" class="combat-resources" data-target="data.age.value" value="{{data.age.value}}" data-dtype="Number"/>
+            </div>
+
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Race:</span>
+                <select class="raceSelect" name="data.race.value" data-dtype="String">
+                    {{#select data.race.value}}
+
+                    {{#each races}}
+
+                    <option value="{{this}}">{{this}}</option>
+
+                    {{/each}}
+                    {{/select}}
+                </select>
+
+            </div>
+
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Build:</span>
+                <input type="text" class="combat-resources" data-target="data.build.value" value="{{data.build.value}}" data-dtype="Number"/>
+            </div>
+
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Hair:</span>
+                <input type="text" class="combat-resources" data-target="data.hair.value" value="{{data.hair.value}}" data-dtype="Number"/>
+            </div>
+
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Eye:</span>
+                <input type="text" class="combat-resources" data-target="data.eye.value" value="{{data.eye.value}}" data-dtype="Number"/>
+            </div>
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Quirks:</span>
+                <input type="text" class="combat-resources" data-target="data.quirks.value" value="{{data.quirks.value}}" data-dtype="Number"/>
+            </div>
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Birthdate:</span>
+                <input type="text" class="combat-resources" data-target="data.superstitions.value" value="{{data.superstitions.value}}" data-dtype="Number"/>
+            </div>
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Star Sign:</span>
+                <input type="text" class="combat-resources" data-target="data.momentos.value" value="{{data.momentos.value}}" data-dtype="Number"/>
+            </div>
+
+        </div>
+        <div class="descr grid grid-3col">
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Siblings:</span>
+                <input type="text" class="combat-resources" data-target="data.chapter.value" value="{{data.chapter.value}}" data-dtype="Number"/>
+            </div>
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Birthplace:</span>
+                <input type="text" class="combat-resources" data-target="data.background.value" value="{{data.background.value}}" data-dtype="Number"/>
+            </div>
+            <div class="descrRow flexcol">
+                <span class="descrSpan">Career:</span>
+                
+                 <input type="text" class="combat-resources" data-target="data.role.value" value="{{data.role.value}}" data-dtype="Number"/>
+            </div>
+
+        </div>
+        <div class="eliteAdvances flexcol">
+
+            <span class="descrSpan">Career Path:</span>
+            <input type="text" class="combat-resources" data-target="data.eliteAdvances.value" value="{{data.eliteAdvances.value}}" data-dtype="Number"/>
+
+        </div>
+        <div class="resources flexrow">
+
+            <div class="flex-group-center">
+                <label for="data.secChar.wounds.value" class="resource-label">Wounds</label>
+                <div class="resource-content flexrow flex-center flex-between">
+                    <input type="text" class="combat-resources" data-target="data.secChar.wounds.value" value="{{data.secChar.wounds.value}}" data-dtype="Number"/>
+                    <span> / </span>
+                    <input type="text" class="combat-resources" data-target="data.secChar.wounds.max" value="{{data.secChar.wounds.max}}" data-dtype="Number"/>
+                </div>
+            </div>
+            <div class=" flex-group-center">
+                <label for="data.fatigue.value" class="resource-label">Global Modifier</label>
+                <div class="resource-content flexrow flex-center flex-between">
+                    <input type="text" class="combat-resources" data-target="data.globalMOD.value" value="{{data.globalMOD.value}}" data-dtype="Number"/>
+                </div>
+            </div>
+            <div class=" flex-group-center">
+                <label for="data.fatigue.value" class="resource-label">Fate</label>
+                <div class="resource-content flexrow flex-center flex-between">
+                    <input type="text" class="combat-resources" data-target="data.secChar.fate.value" value="{{data.secChar.fate.value}}" data-dtype="Number"/>
+                    <span> / </span>
+                    <input type="text" class="combat-resources" data-target="data.secChar.fate.max" value="{{data.secChar.fate.max}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="characteristics grid grid-9col">
+
+
+
+            
+            <span class="characteristicsSpan"></span>
+          
+
+
+            {{#each data.characteristics as |char key|}}
+            {{#unless (compareString key "inf")}}
+            <div class="charCross flexcol flex-group-center">
+                <label for="data.characteristics.{{key}}.value" class="resource-label">{{key}}</label>
+            </div>
+            {{/unless}}
+            {{/each}}
+
+
+            <div class="charCross flexcol flex-group-center">
+                <span class="characteristicsSpan">Base
+                </span>
+            </div>
+            {{#each data.characteristics as |char key|}}
+            {{#unless (compareString key "inf")}}
+            <div>
+                <input type="text" class="combat-resources" data-target="data.characteristics.{{key}}.value" value="{{char.value}}" data-dtype="Number"/>
+               
+
+            </div>
+            {{/unless}}
+            {{/each}}
+
+            
+            <div class="charCross flexcol flex-group-center">  
+                <span class="characteristicsSpan">Adv</span>
+            </div>
+            {{#each data.characteristics as |char key|}}
+            {{#unless (compareString key "inf")}}
+
+            <select class="charSelect" name="data.characteristics.{{key}}.advance" data-dtype="Number">
+                {{#select char.advance}}
+                <option value="0">0%</option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+                <option value="25">25%</option>
+                {{/select}}
+            </select>
+            {{/unless}}
+            {{/each}}
+
+
+            <div class="charCross flexcol flex-group-center"> 
+                <span class="characteristicsSpan">Temp</span>
+            </div>
+            {{#each data.characteristics as |char key|}}
+            {{#unless (compareString key "inf")}}
+            <input type="text" class="combat-resources" data-target="data.characteristics.{{key}}.mod" value="{{char.mod}}" data-dtype="Number"/>
+            
+            {{/unless}}
+            {{/each}}
+
+
+            <div class="charCross flexcol flex-group-center">
+                <span class="characteristicsSpan">Total</span>
+            </div>
+            {{#each data.characteristics as |char key|}}
+            {{#unless (compareString key "inf")}}
+            <div class="charCross flexcol flex-group-center">
+                <span class="char-total rollable button" data-roll-type="char" data-target="{{char.total}}" data-label="{{char.label}}" data-char="{{key}}" title="Bonus: {{char.bonus}}">{{char.total}}</span>
+            </div>
+            {{/unless}}
+            {{/each}}
+
+
+
+        </div>
+    </div>
+</div>

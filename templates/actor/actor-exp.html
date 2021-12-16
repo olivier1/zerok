@@ -1,0 +1,139 @@
+<div class="sheet-exp flexcol">
+    <label class="section-title">APTITUDES</label>
+    <div class="grid grid-2col">
+        
+        <select class="apt1-select" name="data.aptitudes.0" data-dtype="String">
+            {{#select data.aptitudes.[0]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select class="apt1-select" name="data.aptitudes.1" data-dtype="String">
+            {{#select data.aptitudes.[1]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select class="apt1-select" name="data.aptitudes.2" data-dtype="String">
+            {{#select data.aptitudes.[2]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select class="apt1-select" name="data.aptitudes.3" data-dtype="String">
+            {{#select data.aptitudes.[3]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select class="apt1-select" name="data.aptitudes.4" data-dtype="String">
+            {{#select data.aptitudes.[4]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select class="apt1-select" name="data.aptitudes.5" data-dtype="String">
+            {{#select data.aptitudes.[5]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select class="apt1-select" name="data.aptitudes.6" data-dtype="String">
+            {{#select data.aptitudes.[6]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <select class="apt1-select" name="data.aptitudes.7" data-dtype="String">
+            {{#select data.aptitudes.[7]}}
+            <option value="">None</option>
+            {{#each aptitudes as |apt|}}
+
+            <option value="{{apt}}">{{apt}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        
+    </div>
+    <label class="section-title">EXPERIENCE</label>
+    <div class="flexrow">
+        <div class="flexcol">
+            <label>Starting Exp:</label>
+            <input type="text" name="data.experience.starting" value="{{data.experience.starting}}" data-dtype="Number">
+        </div>
+        <div class="flexcol">
+            <label>Exp Earned:</label>
+            <span class="exp-item">{{data.experience.earned}}</span>
+        </div>
+        <div class="flexcol">
+            <label>Exp Spent:</label>
+            <span class="exp-item">{{data.experience.spent}}</span>
+        </div>
+        <div class="flexcol">
+             <label>Remaining Exp:</label>
+            <span class="exp-item">{{data.experience.value}}</span>
+        </div>
+    </div>
+    <label class="section-title">ADVANCEMENTS</label>
+    <a class="item-create button" data-type="advancement" title="Add a new Advancement">Add Advancement</a>
+    <div class="list list4col grid grid-4col">
+        <a class="list-item sort-button" data-sort-type="name" data-path="name" data-item-type="advancements">Name</a>
+        <a class="list-item sort-button" data-sort-type="cost" data-path="data.cost.value" data-item-type="advancements">Cost</a>
+        <span class="list-button"></span>
+        <span class="list-button"></span>
+        {{#each actor.advancements as |a key|}}
+        
+            <a class="item-descr list-item" data-name="{{a.name}}" data-item-descr="{{a.data.description.value}}">{{a.name}}</a>
+            <label class="list-item">{{a.data.cost.value}}</label>
+           
+            <a class="list-button item-edit" title="Edit" data-item-id="{{a._id}}"></a>
+            <a class="list-button item-delete" title="Delete" data-item-id="{{a._id}}"></a>
+       
+
+        
+        {{/each}}
+
+    </div>
+    <span class="section-title">MISSIONS</span>
+    <a class="item-create button" data-type="mission" title="Add a new Mission">Add Mission</a>
+    <div class="list list5col grid grid-5col">
+        <a class="list-item sort-button" data-sort-type="name" data-path="name" data-item-type="missions">Name</a>
+        <a class="list-item sort-button" data-sort-type="exp" data-path="data.exp.value" data-item-type="missions">Exp</a>
+        <a class="list-item sort-button" data-sort-type="inf" data-path="data.inf.value" data-item-type="missions">Inf</a>
+        <span class="list-button"></span>
+        <span class="list-button"></span>
+        {{#each actor.missions as |m key|}}
+       
+            <a class="item-descr list-item" data-name="{{m.name}}" data-item-descr="{{m.data.description.value}}">{{m.name}}</a>
+            <span class="list-item">{{m.data.exp.value}}</span>
+            <span class="list-item">{{m.data.inf.value}}</span>
+            <a class="list-button item-edit" title="Edit" data-item-id="{{m._id}}"></a>
+            <a class="list-button item-delete" title="Delete" data-item-id="{{m._id}}"></a>
+       
+
+        
+        {{/each}}
+
+    </div>
+</div>

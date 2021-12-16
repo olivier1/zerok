@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CSS compiler for the zerok system",
   "scripts": {
-    "build": "gulp build",
+    "build": "gulp",
     "compile": "gulp css",
     "watch": "gulp",
     "gulp": "gulp"
@@ -11,7 +11,7 @@
   "browserslist": [
     "last 3 versions"
   ],
-  "author": "John Doe",
+  "author": "Olivier Bouchard vanasse",
   "license": "MIT",
   "private": true,
   "dependencies": {
