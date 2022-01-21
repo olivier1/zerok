@@ -264,20 +264,7 @@ export class zerokItem extends Item {
                     }
                 }
 
-                if(actor.data.data.horde.value){
-                    let hordeDmgBonus=Math.min(2,Math.floor(actor.data.data.secChar.wounds.value/10));
-                    if(actor.getFlag("zerok","overwhelming")&&item.type==="meleeWeapon"&&actor.data.data.secChar.wounds.value>=20){
-                        hordeDmgBonus+=1;
-                    }
-                    let form= item.data.damageFormula.value
-                    let dPos = form.indexOf('d');
-                    let dieNum = form.substr(0,dPos);
-                    let newNum=parseInt(dieNum)+hordeDmgBonus;
-                    form=form.slice(dPos);
-                    form=newNum+form;
-                    item.data.damageFormula.value=form;
-                }
-
+                
                 try{
                     if(this.getFlag("zerok","force")){
                         let pr=parseInt(data.psykana.pr.value);

@@ -340,7 +340,7 @@ export default class zerokPCActorSheet extends zerokBaseActorSheet {
         const rightHand=document.getElementById("right");
         var update=[];
         var previousWeaponID="";
-
+        console.log(data.secChar)
         if(hand==="right"){
             previousWeaponID=data.secChar.wornGear.weapons[0].id;
             if(previousWeaponID){

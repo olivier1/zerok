@@ -111,7 +111,7 @@ export class zerokActor extends Actor {
         let actorData=this.data;
         if(actorData.flags.zerok===undefined){actorData.flags.zerok={}}
         const data = actorData.data;
-        if(actorData.type === 'dwPC'||actorData.type === 'dhPC'||actorData.type === 'owPC' || actorData.type === 'npc'){
+        if(actorData.type === 'PC' || actorData.type === 'npc'){
             this._prepareCharacterBaseData(data);
         }
     }
@@ -149,7 +149,7 @@ export class zerokActor extends Actor {
     prepareEmbeddedEntities(){
         this.applyActiveEffects();
         let actorData=this.data;
-        if(actorData.type === 'dwPC'||actorData.type === 'dhPC'||actorData.type === 'owPC'){
+        if(actorData.type === 'PC'){
             let items=this.data.items;
             const data=actorData.data;
 
@@ -248,35 +248,7 @@ export class zerokActor extends Actor {
         }
 
 
-        else if(actorData.type === "spaceship"){
-            let items=this.data.items;
-            let data=actorData.data;
-
-            data.cargo.value=0;
-            data.cargo.profit=0;
-            data.power.value=0;
-            data.space.value=0;
-            data.shipPoints.spent=0;
-            data.shipPoints.remaining=0;
-
-            this.items.forEach((zerokItem,id,items)=>{
-                let item=zerokItem.data;
-                if(item.type==="spaceshipComponent"||item.type==="spaceshipWeapon"){
-                    data.power.value+=parseInt(item.data.power.value);
-                    data.space.value+=parseInt(item.data.space.value);
-                    data.shipPoints.spent+=parseInt(item.data.sp.value);
-                }else if(item.type==="spaceshipCargo"){
-
-                    data.cargo.value+=parseInt(item.data.space.value);
-                    item.data.pf.total=eval(item.data.pf.value)*parseFloat(item.data.space.value);
-                    data.cargo.profit+=item.data.pf.total;
-                }
-
-
-            });
-
-            data.shipPoints.remaining=parseInt(data.shipPoints.value)-data.shipPoints.spent;
-        }
+        
 
     }
     //OVERRIDE

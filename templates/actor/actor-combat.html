@@ -1,6 +1,6 @@
 <div class="sheet-combat flexcol">
 
-    <div class="characteristics grid grid-10col">
+    <div class="characteristics grid grid-9col">
         <span class="characteristicsSpan"></span>
 
         {{#each data.characteristics as |char key|}}
@@ -31,14 +31,7 @@
                 <input type="text" class="combat-resources" data-target="data.secChar.wounds.max" value="{{data.secChar.wounds.max}}" data-dtype="Number"/>
             </div>
         </div>
-        <div class="flex-group-center">
-            <label for="data.secChar.fatigue.value" class="resource-label">Fatigue</label>
-            <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" class="combat-resources" data-target="data.secChar.fatigue.value" value="{{data.secChar.fatigue.value}}" data-dtype="Number"/>
-                <span> / </span>
-                <span type="text">{{data.secChar.fatigue.max}}</span>
-            </div>
-        </div>
+        
 
         <div class="flex-group-center">
             <label for="data.fatigue.value" class="resource-label">Global Modifier</label>
@@ -474,26 +467,7 @@
                     </div>
                 </div>
             </div>
-            <div class="forcefield flexcol">
-
-                <span class="section-title">FORCE FIELD</span>
-                <div class="flexcol flex-group-center">
-                    <select class="force-field" >
-                        
-                        <option value="" {{#if data.secChar.wornGear.forceField.data}}selected{{/if}}>None</option>
-                        {{#each actor.forceFields}}
-                        <option value="{{this._id}}" {{#if this.data.isEquipped}}selected{{/if}}>{{this.name}}</option>
-                        {{/each}}
-                    </select>
-                    {{#if data.secChar.wornGear.forceField._id}}
-                    <div class="forcefield flexrow flex-group-center">
-                        <label>Overload: {{data.secChar.wornGear.forceField.data.rating.overload}}</label>
-                        <label>Rating: </label> 
-                        <span class="forcefield rollable button" data-roll-type="forcefield" data-target="{{data.secChar.wornGear.forceField.data.rating.value}}" data-label="{{data.secChar.wornGear.forceField.name}}" data-char="{{data.secChar.wornGear.forceField.data.rating.overload}}" >{{data.secChar.wornGear.forceField.data.rating.value}}</span>
-                    </div>
-                    {{/if}}
-                </div>
-            </div>
+            
             <div class="forcefield flexcol" >
                 <span class="section-title">ARMOR & ABSORBTION</span>
                 <select class="armor-select" >
@@ -512,7 +486,7 @@
                         <div class="armor flexcol flex-group-center">
 
                             <span>Head</span>
-                            <span>(1-10)</span>
+                            <span>(1-15)</span>
                             <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.head.cover" {{checked data.characterHitLocations.head.cover}}>
                             <span title="Armor">{{data.characterHitLocations.head.armor}}</span>
                             <span title="Total Soak">{{data.characterHitLocations.head.value}}</span>
@@ -523,7 +497,7 @@
                         <div class="armor flexcol flex-group-center">
 
                             <span>Left Arm</span>
-                            <span>(21-30)</span>
+                            <span>(16-355)</span>
                             <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.lArm.cover" {{checked data.characterHitLocations.lArm.cover}}>                           
                             <span title="Armor">{{data.characterHitLocations.lArm.armor}}</span>
                             <span title="Total Soak">{{data.characterHitLocations.lArm.value}}</span>
@@ -531,7 +505,7 @@
                         <div class="armor flexcol flex-group-center">
 
                             <span>Body</span>
-                            <span>(31-70)</span>
+                            <span>(56-80)</span>
                             <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.body.cover" {{checked data.characterHitLocations.body.cover}}>                            
                             <span title="Armor">{{data.characterHitLocations.body.armor}}</span>
                             <span title="Total Soak">{{data.characterHitLocations.body.value}}</span>
@@ -539,7 +513,7 @@
                         <div class="armor flexcol flex-group-center">
 
                             <span>Right Arm</span>
-                            <span>(11-20)</span>
+                            <span>(36-55)</span>
                             <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.rArm.cover" {{checked data.characterHitLocations.rArm.cover}}>                            
                             <span title="Armor">{{data.characterHitLocations.rArm.armor}}</span>
                             <span title="Total Soak">{{data.characterHitLocations.rArm.value}}</span>
@@ -550,7 +524,7 @@
                         <div class="armor flexcol flex-group-center">
 
                             <span>Left Leg</span>
-                            <span>(71-85)</span>
+                            <span>(81-90)</span>
                             <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.lLeg.cover" {{checked data.characterHitLocations.lLeg.cover}}>
                             <span title="Armor" >{{data.characterHitLocations.lLeg.armor}}</span>
                             <span title="Total Soak">{{data.characterHitLocations.lLeg.value}}</span>
@@ -558,7 +532,7 @@
                         <div class="armor flexcol flex-group-center">
 
                             <span>Right Leg</span>
-                            <span>(86-100)</span>
+                            <span>(91-100)</span>
                             <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.rLeg.cover" {{checked data.characterHitLocations.rLeg.cover}}>
                             <span title="Armor" >{{data.characterHitLocations.rLeg.armor}}</span>
                             <span title="Total Soak">{{data.characterHitLocations.rLeg.value}}</span>

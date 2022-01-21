@@ -3,7 +3,7 @@
         "types": [
             "npc",
             "PC"
-            
+
         ],
         "templates": {
             "sorting":{
@@ -217,6 +217,7 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Weapon Skill"
                     },
@@ -228,6 +229,7 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Ballistic Skill"
                     },
@@ -239,6 +241,7 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Strength"
                     },
@@ -250,6 +253,7 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Toughness"
                     },
@@ -261,6 +265,7 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Agility"
                     },
@@ -272,6 +277,7 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Intelligence"
                     },
@@ -283,6 +289,7 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Willpower"
                     },
@@ -294,9 +301,15 @@
                         "total": 0,
                         "bonus": 0,
                         "uB": 0,
+                        "career":0,
                         "max":100,
                         "label": "Fellowship"
                     }
+                },
+
+                "currency":{
+                    "value":0,
+                    "income":0
                 },
                 "characterHitLocations": {
                     "head": {
@@ -431,7 +444,7 @@
                 "type": "String"
             }
         }
-        
+
     },
     "Item": {
         "types": [
@@ -452,7 +465,7 @@
         ],
         "templates": {
             "weapon": {
-                
+
                 "damageFormula": {
                     "value": "1d10",
                     "formula": "1d10",
@@ -662,9 +675,9 @@
                 "type": "String"
             },
             "class": {
-                    "value": "Psychic Bolt",
-                    "type": "String"
-                },
+                "value": "Psychic Bolt",
+                "type": "String"
+            },
             "subtype": {
                 "value": "",
                 "type": "String"

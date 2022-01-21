@@ -657,10 +657,10 @@ export default class zerokBaseActorSheet extends ActorSheet {
         }else if(dataset.formula){
             let roll = new Roll(dataset.formula, this.actor.data.data);
             let label = dataset.label ? `Rolling ${dataset.label} damage.` : '';
-            roll.roll().toMessage({
+            roll.roll().then(roll=>{roll.toMessage({
                 speaker: ChatMessage.getSpeaker({ actor: this.actor }),
                 flavor: label
-            });
+            });})
         }
     }
     //handles applying active effects from psychic powers

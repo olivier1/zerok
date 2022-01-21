@@ -23,7 +23,7 @@ returns the roll message*/
             target=1;
         }
         let roll=new Roll("1d100ms<@tar",{tar:target});
-        roll.roll();
+        await roll.roll();
         let weapon
         if(zerokWeapon){
             weapon=zerokWeapon.data
@@ -166,7 +166,7 @@ returns the roll message*/
             //blast
             if((weapon.data.type==="Launcher"||weapon.data.type==="Grenade")&&zerokWeapon.getFlag("zerok","blast")&&!testResult&&jam){
                 let fumbleRoll=new Roll("1d10");
-                fumbleRoll.roll();
+                await fumbleRoll.roll();
                 await fumbleRoll.toMessage({
                     speaker: ChatMessage.getSpeaker({ actor: actor }),
                     flavor: "Rolling for fumble."
@@ -192,13 +192,13 @@ returns the roll message*/
                                  author:actor.name};
                 await ChatMessage.create(chatScatter,{});
                 let distanceRoll=new Roll("1d5");
-                distanceRoll.roll();
+                await distanceRoll.roll();
                 await distanceRoll.toMessage({
                     speaker: ChatMessage.getSpeaker({ actor: actor }),
                     flavor: "Rolling for scatter distance."
                 });
                 let directionRoll=new Roll("1d10");
-                directionRoll.roll();
+                await directionRoll.roll();
                 await directionRoll.toMessage({
                     speaker: ChatMessage.getSpeaker({ actor: actor }),
                     flavor: "Rolling for scatter direction."
@@ -247,7 +247,7 @@ returns the roll message*/
                         }
                     }
                     let psyRoll=new Roll("1d100+@mod",{mod:mod})
-                    psyRoll.roll();
+                    await psyRoll.roll();
                     await psyRoll.toMessage({
                         speaker: ChatMessage.getSpeaker({ actor: actor }),
                         flavor: "Psychic Phenomena!"
@@ -283,7 +283,7 @@ returns the roll message*/
             //generating insanity when degrees of failure are high enough
             if(testDos>=3){
                 let insanityRoll=new Roll("1d5");
-                insanityRoll.roll();
+                await insanityRoll.roll();
                 await insanityRoll.toMessage({
                     speaker: ChatMessage.getSpeaker({ actor: actor }),
                     flavor: "Rolling insanity for 3+ Degrees of failure (Add to sheet)"
@@ -291,7 +291,7 @@ returns the roll message*/
             }
             if(game.combats.active){
                 let fearRoll=new Roll("1d100 +@mod",{mod:testDos*10});
-                fearRoll.roll();
+                await fearRoll.roll();
                 await fearRoll.toMessage({
                     speaker: ChatMessage.getSpeaker({ actor: actor }),
                     flavor: "Shock Roll!"
