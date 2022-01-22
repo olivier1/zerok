@@ -617,6 +617,7 @@ export default class zerokBaseActorSheet extends ActorSheet {
         event.preventDefault();
         const element = event.currentTarget;
         const dataset = element.dataset;
+        console.log(dataset);
         if(dataset.weapon){
 
             let actor=this.actor;

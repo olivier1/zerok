@@ -230,18 +230,18 @@
                     <span>Name: {{this.name}}</span>
                 </div>
 
-
+                
                 <div class="list-item">
                     <span>Attack: </span> 
                     {{#if (greaterThan this.data.data.clip.value 0)}}
-                    <span class="ranged-attack rollable button" data-roll-type="rangedAttack" data-target="{{../data.characteristics.bs.total}}" data-item-id="{{this._id}}" data-label="Ranged Attack" data-char="bs">Roll</span>
+                    <span class="ranged-attack rollable button" data-roll-type="rangedAttack" data-target="{{../data.characteristics.bs.total}}" data-item-id="{{this.id}}" data-label="Ranged Attack" data-char="bs">Roll</span>
                     {{else}}
-                    <span class="weapon-reload button" data-weapon="{{this._id}}" >Reload</span>
+                    <span class="weapon-reload button" data-weapon="{{this.id}}" >Reload</span>
                     {{/if}}
                 </div>
                 <div class="list-item">
                     <span>Damage: </span> 
-                    <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.data.damageFormula.value}}" data-weapon="{{this._id}}"> {{this.data.data.damageFormula.value}}</a>
+                    <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.data.damageFormula.value}}" data-weapon="{{this.id}}"> {{this.data.data.damageFormula.value}}</a>
 
                 </div>
                 {{#if this.data.flags.zerok.force}}
@@ -254,7 +254,7 @@
                 {{/if}}
                 {{#if this.data.flags.zerok.maximal}}
                 <div class="list-item">
-                    <span>Maximal: <input type="checkbox" class="maximal" data-item-id="{{this._id}}"  {{checked this.data.flags.zerok.maximalMode}}></span>
+                    <span>Maximal: <input type="checkbox" class="maximal" data-item-id="{{this.id}}"  {{checked this.data.flags.zerok.maximalMode}}></span>
 
 
                 </div>
@@ -262,7 +262,7 @@
                 {{#if this.data.flags.zerok.lasModal}}
                 <div class="list-item">
                     <span>Las Fire Mode: 
-                        <select class="lasMode"  data-item-id="{{this._id}}" data-dtype="Number">
+                        <select class="lasMode"  data-item-id="{{this.id}}" data-dtype="Number">
                             {{#select this.data.flags.zerok.lasMode}}
                             
                             {{#each this.data.zerok.lasModes}}
@@ -281,7 +281,7 @@
                 <div class="list-item ammo-list">
 
                     <label>Remaining Ammo:</label>
-                    <select class="weapon-ammo" data-weapon="{{this._id}}" data-previous="{{this.data.data.ammo._id}}">
+                    <select class="weapon-ammo" data-weapon="{{this.id}}" data-previous="{{this.data.data.ammo._id}}">
 
                         {{#select this.data.data.ammo._id}}
                         <option value="">None</option>
@@ -289,7 +289,7 @@
                         {{#each ../actor.equippableAmmo}}
                         {{#if (compareString this.data.class.value ../this.data.data.class.value)}}
                         {{#if (compareString this.data.type.value ../this.data.data.type.value)}}
-                        <option value="{{this._id}}">{{this.name}}:{{this.data.amount.value}}</option>
+                        <option value="{{this.id}}">{{this.name}}:{{this.data.amount.value}}</option>
                         {{/if}}
                         {{/if}}
                         {{/each}}
@@ -307,7 +307,7 @@
                 <div class="list-item flexrow">
                     <span>Current Clip: </span>
 
-                    <input class="item-text-input" type="text" data-target="data.clip.value"  value="{{this.data.data.clip.value}}" data-item-id="{{this._id}}" data-dtype="Number">
+                    <input class="item-text-input" type="text" data-target="data.clip.value"  value="{{this.data.data.clip.value}}" data-item-id="{{this.id}}" data-dtype="Number">
                     <span> / </span>
                     <span>{{this.data.data.clip.max}}</span>
 
@@ -373,7 +373,7 @@
                 </div>
                 <div class="list-item">
                     <span>Damage: </span>
-                    <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.data.damageFormula.value}}" data-weapon="{{this._id}}"> {{this.data.data.damageFormula.value}}</a>
+                    <a class="damage-roll button" data-label="{{this.name}}"data-formula="{{this.data.data.damageFormula.value}}" data-weapon="{{this.id}}"> {{this.data.data.damageFormula.value}}</a>
                 </div>
                 {{#if this.data.flags.zerok.force}}
                 <div class="list-item">
@@ -497,7 +497,7 @@
                         <div class="armor flexcol flex-group-center">
 
                             <span>Left Arm</span>
-                            <span>(16-355)</span>
+                            <span>(16-35)</span>
                             <input type="checkbox" class="combat-resources" title="cover" name="data.characterHitLocations.lArm.cover" {{checked data.characterHitLocations.lArm.cover}}>                           
                             <span title="Armor">{{data.characterHitLocations.lArm.armor}}</span>
                             <span title="Total Soak">{{data.characterHitLocations.lArm.value}}</span>

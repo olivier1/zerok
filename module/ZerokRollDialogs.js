@@ -112,18 +112,7 @@ export class zerokRollDialogs{
             templateOptions["modifiers"].testMod+=10;
         }
         templateOptions["size"]=game.zerok.zerok.size;
-        if(actor.data.data.horde.value){
-            let hordeSize=actor.data.data.secChar.wounds.value;
-            if(hordeSize>=120){
-                templateOptions["modifiers"].testMod+=60;
-            }else if(hordeSize>=90){
-                templateOptions["modifiers"].testMod+=50;
-            }else if(hordeSize>=60){
-                templateOptions["modifiers"].testMod+=40;
-            }else if(hordeSize>=30){
-                templateOptions["modifiers"].testMod+=30;
-            }
-        }
+        
         let targets=game.user.targets;
         if(actor.getFlag("zerok","fieldvivisection")&&targets.size>0){
             
@@ -215,18 +204,7 @@ export class zerokRollDialogs{
         templateOptions["modifiers"].suppressive=itemData.data.attackMods.suppressive;
         templateOptions["modifiers"].aim=itemData.data.attackMods.aim;
         templateOptions["modifiers"].testMod=itemData.data.testMod.value;
-        if(actor.data.data.horde.value){
-            let hordeSize=actor.data.data.secChar.wounds.value;
-            if(hordeSize>=120){
-                templateOptions["modifiers"].testMod+=60;
-            }else if(hordeSize>=90){
-                templateOptions["modifiers"].testMod+=50;
-            }else if(hordeSize>=60){
-                templateOptions["modifiers"].testMod+=40;
-            }else if(hordeSize>=30){
-                templateOptions["modifiers"].testMod+=30;
-            }
-        }
+       
         templateOptions["modifiers"].inaccurate=item.getFlag("zerok","innacurate");
 
 

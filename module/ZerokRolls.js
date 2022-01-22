@@ -46,7 +46,7 @@ returns the roll message*/
             fireRate:fireRate
         }
         if(!reroll){
-            templateOptions["actor"]=actor._id;
+            templateOptions["actor"]=actor.id;
             templateOptions["char"]=char;
             templateOptions["type"]=type;
             templateOptions["targetNumber"]=target;
@@ -519,7 +519,7 @@ returns the roll message*/
             }
             let roll=new Roll(form,actor.data.data);
             let label = weapon.name ? `Rolling ${weapon.name} damage.` : 'damage';
-            roll.roll();
+            await roll.roll();
             //calculate righteous for non targetted rolls
             let tenz=0;
 
